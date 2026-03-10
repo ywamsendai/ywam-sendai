@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  /* This is where we define your "Monastic" colors */
+  --color-gold-accent: #d4af37;
+  --color-dark-bg: #050505;
+  
+  /* Fonts for Gen Z / Ancient feel */
+  --font-serif: "Cinzel", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Base resets to make sure snap-scroll works */
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-dark-bg);
+    color: white;
+  }
+}

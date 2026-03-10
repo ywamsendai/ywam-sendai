@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+const { title, lang = 'en' } = Astro.props;
+---
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#050505] text-zinc-200 antialiased overflow-x-hidden">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  h1, h2 { font-family: 'Cinzel', serif; }
+  body { font-family: 'Inter', sans-serif; }
+  
+  /* Smooth scroll for that "Insta-swipe" feel */
+  html { scroll-behavior: smooth; }
+  
+  /* Custom scrollbar - subtle and dark */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #050505; }
+  ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
+</style>

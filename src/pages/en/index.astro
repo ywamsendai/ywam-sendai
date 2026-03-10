@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="YWAM Sendai | Theosis in the Heart of Japan">
+  <main class="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+    
+    <section class="h-screen w-full snap-start relative flex flex-col items-center justify-center p-6 text-center">
+      <div class="absolute inset-0 z-0">
+        <img src="/hero-sendai.jpg" alt="Sendai Landscape" class="w-full h-full object-cover opacity-50 grayscale-[0.2]" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#050505]"></div>
+      </div>
+      
+      <div class="relative z-10 animate-in fade-in zoom-in duration-1000">
+        <h1 class="text-7xl md:text-9xl font-serif tracking-tighter mb-2">Sendai.</h1>
+        <p class="text-gold-accent tracking-[0.4em] uppercase text-xs md:text-sm font-light">Ancient Faith • Modern Mission</p>
+      </div>
+
+      <div class="absolute bottom-10 animate-bounce opacity-50">
+        <span class="text-[10px] tracking-widest uppercase">Scroll to Enter</span>
+      </div>
+    </section>
+
+    <section class="min-h-screen w-full snap-start bg-dark-bg p-4 md:p-10 flex flex-col justify-center">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+        
+        <div class="md:col-span-2 md:row-span-2 bg-zinc-900/50 border border-zinc-800 rounded-[2rem] p-8 flex flex-col justify-end min-h-[400px] group hover:border-[#d4af37]/50 transition-colors">
+          <span class="text-gold-accent text-xs uppercase tracking-widest mb-4">Our DNA</span>
+          <h2 class="text-4xl md:text-5xl font-serif mb-4">Theosis.</h2>
+          <p class="text-zinc-400 text-lg leading-relaxed">We don't just preach; we participate. Living the life of God in the neighborhood of Sendai.</p>
+        </div>
+
+        <div class="bg-zinc-900/50 border border-zinc-800 rounded-[2rem] p-6 flex flex-col justify-between hover:bg-zinc-800/50 transition-all">
+          <div class="text-2xl font-serif italic text-zinc-500">One Church.</div>
+          <p class="text-sm text-zinc-400">Bridging Anglican, Orthodox, and Charismatic traditions.</p>
+        </div>
+
+        <div class="bg-[#d4af37] text-black rounded-[2rem] p-6 flex flex-col justify-between">
+          <div class="text-2xl font-bold uppercase tracking-tighter">Live Japan.</div>
+          <p class="text-sm font-medium opacity-80">Full-time presence in Tohoku since 2010. Authentic community.</p>
+        </div>
+
+        <div class="md:col-span-2 bg-zinc-900/50 border border-zinc-800 rounded-[2rem] p-8 flex items-center gap-6">
+          <div class="h-16 w-16 rounded-full border border-[#d4af37] flex items-center justify-center text-gold-accent shrink-0 text-xl">
+            90+
+          </div>
+          <div>
+            <h3 class="font-bold text-zinc-200">The Longevity Table</h3>
+            <p class="text-sm text-zinc-500">Nut/Dairy-free. Science-backed nutrition. Blueprint & NOVOS adapted.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="h-screen w-full snap-start bg-zinc-950 flex flex-col items-center justify-center p-6 text-center">
+      <h2 class="text-4xl font-serif mb-8 text-zinc-500">Curious about the journey?</h2>
+      
+      <div class="flex flex-col gap-4 w-full max-w-xs">
+        <a href="https://chat.openai.com/g/your-custom-gpt-link" class="w-full py-4 bg-[#d4af37] text-black font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-[#d4af37]/10">
+          Ask our AI Assistant
+        </a>
+        <a href="/handbook" class="w-full py-4 border border-zinc-800 text-zinc-400 font-medium rounded-full hover:bg-zinc-900 transition-colors">
+          Browse the Handbook
+        </a>
+      </div>
+
+      <footer class="absolute bottom-8 text-[10px] text-zinc-700 tracking-widest uppercase">
+        Established 2010 • Sendai, Japan
+      </footer>
+    </section>
+
+  </main>
+</Layout>
