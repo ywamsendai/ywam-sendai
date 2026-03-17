@@ -24,7 +24,7 @@ export default defineConfig({
         {
           label: 'Start Here',
           items: [
-            { label: 'Vision', slug: 'en/vision' },
+            { label: 'Vision', slug: 'vision' },
           ],
         },
       ],
