@@ -6,62 +6,63 @@
   --color-dark-bg: #050505;
 
   /* Typography Stack */
-  /* Serif: Cinzel for headers, followed by Japanese Mincho for elegance */
   --font-serif: "Cinzel", "YuMincho", "Hiragino Mincho ProN", "MS PMincho", serif;
-  
-  /* Sans: Inter for English, Hiragino Sans for the cleanest Japanese UI look */
-  --font-sans: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ  ProN W3", "Microsoft YaHei", sans-serif;
+  --font-sans: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Microsoft YaHei", sans-serif;
 }
 
+/* 1. Global Resets (Safe for both Vibe and Guide) */
 @layer base {
   html {
-    /* Improves Japanese readability by slightly increasing line height */
-    line-height: 1.75;
+    scrollbar-gutter: stable;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-dark-bg);
-    color: white;
-    /* Sets the default font to Sans */
-    font-family: var(--font-sans);
-  }
-
-  /* Specific tweak for Japanese characters to prevent them from looking too "crowded" */
-  :lang(ja) {
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    letter-spacing: 0.03em;
-  }
 }
 
-
-/* 1. Force the scrollbar to the HTML level for consistency */
-html {
-  scrollbar-gutter: stable;
-  scroll-snap-type: y mandatory; /* This is the "stickiness" engine */
+/* 2. The "Vibe" Scope (Only applies to your landing page) 
+   Apply this class to the <main> or <body> tag of your landing page. */
+.vibe-landing {
+  background-color: var(--color-dark-bg);
+  color: white;
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  min-height: 100vh;
 }
 
-/* 2. The Golden Scrollbar */
-::-webkit-scrollbar {
+.vibe-landing:lang(ja) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  letter-spacing: 0.03em;
+}
+
+/* 3. Vibe-Specific Scrollbars */
+.vibe-landing::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+.vibe-landing::-webkit-scrollbar-track {
   background: #050505;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #d4af37; /* Gold */
+.vibe-landing::-webkit-scrollbar-thumb {
+  background-color: #d4af37;
   border-radius: 20px;
-  border: 2px solid #050505; /* Creates a nice gap */
+  border: 2px solid #050505;
 }
 
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #d4af37 #050505;
+/* 4. Starlight Protection 
+   This ensures Starlight keeps its default look regardless of Tailwind v4 global settings. */
+@layer starlight {
+  :root {
+    /* Prevents the 'white' text from landing page leaking into Guide light mode */
+    --sl-color-white: #ffffff;
+    --sl-color-black: #000000;
+  }
+}
+
+/* 5. Sticky Scroll Engine (Vibe Landing Page only) */
+.vibe-landing-scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }

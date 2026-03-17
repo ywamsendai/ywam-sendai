@@ -6,6 +6,11 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   // site: 'https://www.ywamsendai.org',
   output: 'server',
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
+  },
 
   adapter: cloudflare({
     platformProxy: { 
@@ -41,11 +46,18 @@ export default defineConfig({
       ],
       // This helps prevent Tailwind from stripping Starlight's styles
       disable404Route: false, 
+      customCss: [
+        './src/styles/starlight-fix.css',
+      ],
     }),
   ],
 
   vite: {
     plugins: [tailwindv4()],
+    css: {
+      // This helps on Windows/Cloudflare dev environments
+      devSourcemap: true,
+    },
     ssr: {
       // This tells Vite: "Don't try to optimize these, just load them normally"
       noExternal: ['@astrojs/starlight', 'astro-expressive-code', '@expressive-code/core'],
