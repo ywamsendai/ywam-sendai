@@ -8,7 +8,10 @@ export default defineConfig({
   output: 'server',
 
   adapter: cloudflare({
-    platformProxy: { enabled: true },
+    platformProxy: { 
+      enabled: true,
+      configPath: 'wrangler.jsonc', 
+    },
     prerenderEnvironment: 'node',
   }),
 
