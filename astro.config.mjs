@@ -14,8 +14,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'YWAM Sendai Handbook',
+      defaultLocale: 'en',
       locales: {
-        root: { label: 'English', lang: 'en' },
+        en: { label: 'English', lang: 'en' },
         ja: { label: '日本語', lang: 'ja' },
       },
 
@@ -23,7 +24,7 @@ export default defineConfig({
         {
           label: 'Start Here',
           items: [
-            { label: 'Vision & Unity', slug: 'vision' },
+            { label: 'Vision', slug: 'en/vision' },
           ],
         },
       ],
@@ -31,6 +32,6 @@ export default defineConfig({
   ],
 
   vite: {
-    plugins: [tailwindv4()], // 2. Add it here, NOT in integrations
+    plugins: [tailwindv4()],
   },
 });
