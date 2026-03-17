@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Apply | YWAM Sendai">
+  <main class="min-h-screen bg-dark-bg flex flex-col items-center p-4 md:p-10">
+    
+    <div class="w-full max-w-4xl flex justify-between items-center mb-8">
+      <a href="/en" class="text-[10px] tracking-[0.3em] text-zinc-500 hover:text-gold-accent transition-colors uppercase">
+        ← Back to Vision
+      </a>
+      <span class="text-[10px] tracking-[0.3em] text-zinc-700 uppercase">Sendai Candidate Portal</span>
+    </div>
+
+    <div class="w-full max-w-4xl bg-zinc-900/50 border border-zinc-800 rounded-[2.5rem] overflow-hidden shadow-2xl">
+      <div class="fillout-container">
+         <iframe
+          src="https://forms.fillout.com/t/2SNM7DhHQKus"
+          width="100%"
+          height="700px"
+          frameborder="0"
+          title="YWAM Sendai Application"
+          class="min-h-[700px]">
+        </iframe>
+      </div>
+    </div>
+
+    <footer class="mt-10 text-[9px] text-zinc-600 tracking-widest uppercase">
+      Secure Application Environment
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* This ensures the form feels native to the page */
+  .fillout-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+</style>

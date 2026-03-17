@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export const metadata = {
+  school: "Discipleship Bible School",
+  location: "Sendai, Japan",
+  method: "Inductive Bible Study",
+  curriculum: "Chronological, 66 Books",
+};
+---
+
+<Layout title="Discipleship Bible School | YWAM Sendai">
+  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20">
+    
+    <div class="h-[40vh] relative flex items-center justify-center overflow-hidden">
+      <img src="/hero-sendai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <div class="relative z-10 text-center">
+        <a href="/en" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← Back to Vision</a>
+        <h1 class="text-5xl md:text-7xl font-serif text-white uppercase">DBS</h1>
+        <p class="tracking-[.2em] uppercase text-xs mt-2">Discipleship Bible School</p>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 mt-12 space-y-20">
+      
+      <section class="prose prose-invert max-w-none">
+        <h2 class="text-3xl font-serif text-white italic">The Story that Shapes Us.</h2>
+        <p class="text-lg leading-relaxed text-zinc-400">
+          The Discipleship Bible School (DBS) is a 12-week immersion into the heart of the Biblical narrative. Rather than just studying the Bible as a textbook, we encounter it as the <span class="text-gold-accent font-semibold">Living Word</span>. In Sendai, we read through all 66 books chronologically, discovering how the story of God’s redemption culminates in Christ and continues through His Church today.
+        </p>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4">Inductive Study</h3>
+          <p class="text-sm leading-relaxed">Learn to observe, interpret, and apply the Scriptures for yourself. We move past "opinions" to see what the text actually says in its original context, allowing it to challenge our modern worldviews.</p>
+        </div>
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4">Communal Reading</h3>
+          <p class="text-sm leading-relaxed">Experience the Word as the early Church did—together. We engage in "Public Reading of Scripture" and small group discussions that foster deep community and shared revelation.</p>
+        </div>
+      </div>
+
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
+          <span class="block text-[10px] uppercase text-zinc-500 mb-2">Next Date</span>
+          <span class="text-zinc-200 font-bold">April 2026</span>
+        </div>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
+          <span class="block text-[10px] uppercase text-zinc-500 mb-2">Duration</span>
+          <span class="text-zinc-200 font-bold">12 Weeks</span>
+        </div>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
+          <span class="block text-[10px] uppercase text-zinc-500 mb-2">Tuition</span>
+          <span class="text-zinc-200 font-bold">¥XXX,XXX</span>
+        </div>
+      </section>
+
+      <div class="text-center py-10 border-t border-zinc-800">
+        <h3 class="text-2xl font-serif mb-6">Let the Word transform you.</h3>
+        <a href="/en/apply" class="inline-block px-12 py-4 bg-gold-accent text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-transform">
+          Start Application
+        </a>
+      </div>
+
+    </div>
+  </main>
+</Layout>

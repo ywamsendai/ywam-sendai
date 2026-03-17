@@ -1,17 +1,116 @@
 ---
-
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="YWAM 仙台 | 存在・形成・宣教" lang="ja" isSnap={true}>
+  <main>
+    
+    <section class="h-screen w-full snap-start relative flex flex-col items-center justify-center p-6 text-center">
+      <div class="absolute inset-0 z-0">
+        <img src="/hero-sendai.jpg" alt="仙台の風景" class="w-full h-full object-cover opacity-40 grayscale-[0.3]" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-dark-bg"></div>
+      </div>
+      
+      <div class="relative z-10">
+        <h1 class="text-6xl md:text-9xl font-serif tracking-tighter mb-4 text-white">仙台</h1>
+        <p class="text-gold-accent tracking-[0.4em] uppercase text-xs md:text-sm font-sans font-light">
+          神の臨在 • 霊的形成 • 宣教
+        </p>
+      </div>
+      <div class="absolute bottom-10 animate-bounce opacity-30 text-[10px] tracking-[0.5em] font-sans">SCROLL</div>
+    </section>
+
+    <section class="min-h-screen w-full snap-start bg-dark-bg p-8 flex flex-col justify-center">
+      <div class="max-w-4xl mx-auto">
+        <span class="text-gold-accent text-xs uppercase tracking-widest block mb-6 text-center italic font-sans">私たちが大切にしていること</span>
+        <h2 class="text-4xl md:text-5xl font-serif text-center mb-12 text-white leading-tight">東北の地に、<br class="md:hidden" />深く根ざす。</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div class="space-y-6 text-zinc-400 leading-relaxed text-base font-sans">
+            <p>
+              2018年に設立されたYWAM仙台は、単なる宣教団体ではなく、仙台の街に深く根ざした「生きた修道院」のようなコミュニティを目指しています。
+            </p>
+            <p>
+              聖公会、正教会、そしてペンテコステ・カリスマの伝統を越え、キリストにある一つの教会として歩んでいます。私たちの核心にあるのは「<span class="text-gold-accent font-serif italic">神化（テオシス）</span>」です。それは、神との親密な交わりを通して、キリストの似姿へと変えられていくプロセスです。
+            </p>
+          </div>
+          <div class="bg-zinc-900/40 border border-zinc-800 p-8 rounded-[2.5rem]">
+            <h3 class="text-zinc-100 font-bold mb-4 border-b border-zinc-800 pb-2 text-sm font-sans">私たちのコミットメント</h3>
+            <ul class="space-y-4 text-sm font-sans">
+              <li class="flex gap-3 text-zinc-300"><span>†</span> 日本の諸教会との一致と協力</li>
+              <li class="flex gap-3 text-zinc-300"><span>†</span> 持続可能な長期的な宣教</li>
+              <li class="flex gap-3 text-zinc-300"><span>†</span> 隣人に寄り添う関係性の宣教</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	<section class="min-h-screen w-full snap-start bg-zinc-950 p-6 flex flex-col justify-center">
+	<div class="max-w-6xl mx-auto w-full">
+		<span class="text-gold-accent text-[10px] uppercase tracking-[0.4em] block mb-4 text-center font-sans">Training for the Harvest</span>
+		<h2 class="text-4xl font-serif mb-12 text-center text-white">神の国のために整えられる。</h2>
+		
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-sans">
+		<div class="group relative overflow-hidden bg-zinc-900 border border-zinc-800 p-10 rounded-[3rem] hover:border-gold-accent/50 transition-all">
+			<h3 class="text-gold-accent text-xs uppercase tracking-widest mb-2">Discipleship Training School</h3>
+			<h4 class="text-4xl font-serif mb-4 italic text-white">DTS</h4>
+			<p class="text-zinc-400 mb-8 leading-relaxed">神を知り、神を知らせる。5ヶ月間の学びと伝道を通し、東北の地でキリストの弟子としての歩みを始めます。</p>
+			<div class="flex justify-between items-end border-t border-zinc-800 pt-6">
+			<span class="text-[10px] text-zinc-500 uppercase tracking-widest">次回の開始: 2026年 9月</span>
+			<a href="/ja/dts" class="text-xs font-bold underline underline-offset-8 text-white">詳細を見る</a>
+			</div>
+		</div>
+
+		<div class="group relative overflow-hidden bg-zinc-900 border border-zinc-800 p-10 rounded-[3rem] hover:border-gold-accent/50 transition-all">
+			<h3 class="text-gold-accent text-xs uppercase tracking-widest mb-2">Discipleship Bible School</h3>
+			<h4 class="text-4xl font-serif mb-4 italic text-white">DBS</h4>
+			<p class="text-zinc-400 mb-8 leading-relaxed">12週間。聖書全体の物語。帰納的研究法を用いて、神の御言葉を深く、そして情熱的に学びます。</p>
+			<div class="flex justify-between items-end border-t border-zinc-800 pt-6">
+			<span class="text-[10px] text-zinc-500 uppercase tracking-widest">次回の開始: 2026年 4月</span>
+			<a href="/ja/dbs" class="text-xs font-bold underline underline-offset-8 text-white">詳細を見る</a>
+			</div>
+		</div>
+		</div>
+	</div>
+	</section>
+
+    <section class="min-h-screen w-full snap-start bg-zinc-950 p-8 flex flex-col justify-center">
+      <div class="max-w-5xl mx-auto w-full">
+        <h2 class="text-3xl font-serif mb-16 text-center italic text-zinc-500 underline underline-offset-8 decoration-gold-accent/30">Tohoku Rhythms</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 font-sans">
+          
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold tracking-widest text-zinc-200">形成 - Formation</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">University of the Nations (UofN) の学びを通し、御言葉を深く知り、霊的に整えられる場を提供します。</p>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold tracking-widest text-zinc-200">臨在 - Presence</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">仙台での宣教は「臨在のミニストリー」です。地域の人々と生活を共にし、キリストの愛を体現します。</p>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold tracking-widest text-zinc-200">憐れみ - Compassion</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">東北のニーズに応え、キリストの手足となって、具体的な助けと希望を届けます。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+	<section class="h-screen w-full snap-start flex flex-col items-center justify-center p-6 text-center">
+	<h2 class="text-4xl md:text-5xl font-serif mb-6 text-white italic">新しい一歩を。</h2>
+	<p class="text-zinc-500 mb-12 max-w-sm text-sm font-sans">
+		些細な質問でも、仙台への召しを感じている方でも、あなたのストーリーを聞かせてください。
+	</p>
+	
+	<div class="flex flex-col gap-4 w-full max-w-xs font-sans">
+		<button class="open-hub-trigger w-full py-5 bg-gold-accent text-black font-black rounded-full hover:scale-105 transition-transform uppercase tracking-widest text-xs cursor-pointer">
+		つながる
+		</button>
+	</div>
+	</section>
+
+  </main>
+</Layout>

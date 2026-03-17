@@ -1,28 +1,57 @@
 ---
 import '../styles/global.css';
-const { title, lang = 'en' } = Astro.props;
+import ConnectHub from '../components/ConnectHub.astro';
+const { title, lang = 'en', isSnap = false } = Astro.props;
+
+// Logic to determine the "opposite" link
+// This assumes your structure is /en/... and /ja/...
+const currentPath = Astro.url.pathname;
+const switchTarget = lang === 'en' 
+  ? currentPath.replace('/en', '/ja') 
+  : currentPath.replace('/ja', '/en');
 ---
-<html lang={lang}>
+<!DOCTYPE html>
+<html lang={lang} class:list={[
+  "bg-dark-bg antialiased scroll-smooth selection:bg-gold-accent/30",
+  { "snap-y snap-mandatory": isSnap }
+]}>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter:wght@300;600&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#050505] text-zinc-200 antialiased overflow-x-hidden">
-    <slot />
+  <body class="bg-dark-bg m-0 p-0 text-white font-sans">
+    
+    <nav class="fixed top-0 right-0 z-50 p-6 md:p-10">
+      <div class="flex items-center gap-6 bg-black/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/5">
+        <a href={lang === 'en' ? '/en' : '/ja'} class="text-[10px] tracking-[0.3em] uppercase hover:text-gold-accent transition-colors">
+          {lang === 'en' ? 'Home' : 'ホーム'}
+        </a>
+        <div class="w-px h-3 bg-zinc-800"></div>
+        <a href={switchTarget} class="text-[10px] tracking-[0.3em] uppercase font-bold text-gold-accent hover:text-white transition-colors">
+          {lang === 'en' ? '日本語' : 'ENGLISH'}
+        </a>
+      </div>
+    </nav>
+
+    <slot /> <ConnectHub lang={lang} />
+    
+    <footer class:list={[
+      "min-h-[40vh] flex flex-col items-center justify-center bg-dark-bg border-t border-zinc-900 py-20",
+      { "snap-start": isSnap }
+    ]}>
+      <img src="/ywamsendailogo.png" class="h-10 opacity-30 grayscale mb-6" alt="Logo" />
+      <div class="text-center space-y-2">
+        <div class="flex items-center justify-center gap-4">
+          <span class="text-[10px] tracking-[0.5em] font-bold text-zinc-500">Y W A M</span>
+          <div class="h-3 w-px bg-zinc-800"></div>
+          <span class="text-[10px] tracking-[0.5em] font-bold text-zinc-500">S E N D A I</span>
+        </div>
+        <p class="text-[9px] text-zinc-700 tracking-[0.2em] uppercase">
+          {lang === 'ja' ? '2018年設立 • 宮城県仙台市' : 'Established 2018 • Sendai, Japan'}
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
-
-<style is:global>
-  h1, h2 { font-family: 'Cinzel', serif; }
-  body { font-family: 'Inter', sans-serif; }
-  
-  /* Smooth scroll for that "Insta-swipe" feel */
-  html { scroll-behavior: smooth; }
-  
-  /* Custom scrollbar - subtle and dark */
-  ::-webkit-scrollbar { width: 5px; }
-  ::-webkit-scrollbar-track { background: #050505; }
-  ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
-</style>
