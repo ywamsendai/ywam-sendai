@@ -1,5 +1,36 @@
 ---
 /* src/pages/index.astro */
-/* This file only exists to send people to the beautiful localized 'vibe' page */
 ---
-<meta http-equiv="refresh" content={`0;url=/en/`} />
+<!DOCTYPE html>
+<html lang="en" style="background: #050505;">
+<head>
+    <meta charset="UTF-8">
+    <title>YWAM Sendai</title>
+    <script is:inline>
+        (function() {
+            // 1. Check if they've manually toggled a language before
+            const savedLang = localStorage.getItem('preferred-lang');
+            
+            // 2. If not, check their browser's default setting
+            const browserLang = navigator.language.toLowerCase();
+            
+            if (savedLang === 'ja') {
+                window.location.pathname = '/ja/';
+            } else if (savedLang === 'en') {
+                window.location.pathname = '/en/';
+            } else if (browserLang.startsWith('ja')) {
+                // First-time visitor with a Japanese browser
+                window.location.pathname = '/ja/';
+            } else {
+                // Everyone else
+                window.location.pathname = '/en/';
+            }
+        })();
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=/en/" />
+    </noscript>
+</head>
+<body style="background: #050505;">
+    </body>
+</html>

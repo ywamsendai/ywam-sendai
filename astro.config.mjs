@@ -29,13 +29,13 @@ export default defineConfig({
       defaultLocale: 'en',
       // This is the key fix: Starlight needs to know about the 'guide' prefix
       locales: {
-        en: { label: 'English', lang: 'en', dir: 'ltr' },
-        ja: { label: '日本語', lang: 'ja', dir: 'ltr' },
+        en: { label: 'English', lang: 'en' },
+        ja: { label: '日本語', lang: 'ja' },
       },
       // We explicitly tell Starlight which folder to look in for the sidebar
       sidebar: [
         {
-          label: 'The Vision',
+          label: 'Vision',
           autogenerate: { directory: 'guide/en/vision' },
         },
         {

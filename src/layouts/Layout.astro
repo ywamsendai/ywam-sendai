@@ -20,20 +20,37 @@ const switchTarget = lang === 'en'
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <script is:inline>
+  function saveLanguagePreference(lang) {
+    localStorage.setItem('preferred-lang', lang);
+  }
+</script>
   </head>
   <body class="bg-dark-bg m-0 p-0 text-white font-sans">
     
-    <nav class="fixed top-0 right-0 z-50 p-6 md:p-10">
-      <div class="flex items-center gap-6 bg-black/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/5">
-        <a href={lang === 'en' ? '/en' : '/ja'} class="text-[10px] tracking-[0.3em] uppercase hover:text-gold-accent transition-colors">
-          {lang === 'en' ? 'Home' : 'ホーム'}
-        </a>
-        <div class="w-px h-3 bg-zinc-800"></div>
-        <a href={switchTarget} class="text-[10px] tracking-[0.3em] uppercase font-bold text-gold-accent hover:text-white transition-colors">
-          {lang === 'en' ? '日本語' : 'ENGLISH'}
-        </a>
-      </div>
-    </nav>
+      <nav class="fixed top-0 right-0 z-50 p-6 md:p-10">
+        <div class="flex items-center gap-6 bg-black/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/5">
+          
+          <a 
+            href={lang === 'en' ? '/en' : '/ja'} 
+            onclick={`saveLanguagePreference('${lang}')`}
+            class="text-[10px] tracking-[0.3em] uppercase hover:text-gold-accent transition-colors"
+          >
+            {lang === 'en' ? 'Home' : 'ホーム'}
+          </a>
+
+          <div class="w-px h-3 bg-zinc-800"></div>
+
+          <a 
+            href={switchTarget} 
+            onclick={`saveLanguagePreference('${lang === 'en' ? 'ja' : 'en'}')`}
+            class="text-[10px] tracking-[0.3em] uppercase font-bold text-gold-accent hover:text-white transition-colors"
+          >
+            {lang === 'en' ? '日本語' : 'ENGLISH'}
+          </a>
+
+        </div>
+      </nav>
 
     <slot /> <ConnectHub lang={lang} />
     
@@ -41,7 +58,17 @@ const switchTarget = lang === 'en'
       "min-h-[40vh] flex flex-col items-center justify-center bg-dark-bg border-t border-zinc-900 py-20",
       { "snap-start": isSnap }
     ]}>
-      <img src="/ywamsendailogo.png" class="h-10 opacity-30 grayscale mb-6" alt="Logo" />
+      <img src="/ywamsendailogo.png" class="h-10 opacity-30 grayscale mb-8" alt="Logo" />
+
+      <div class="mb-10">
+        <a 
+          href={lang === 'en' ? '/guide/en' : '/guide/ja'} 
+          class="text-[10px] tracking-[0.4em] uppercase text-zinc-500 hover:text-gold-accent transition-all duration-500 border-b border-zinc-900 hover:border-gold-accent/30 pb-2 px-4"
+        >
+          {lang === 'en' ? 'Community Guide' : 'コミュニティガイド'}
+        </a>
+      </div>
+
       <div class="text-center space-y-2">
         <div class="flex items-center justify-center gap-4">
           <span class="text-[10px] tracking-[0.5em] font-bold text-zinc-500">Y W A M</span>
