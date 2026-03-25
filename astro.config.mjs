@@ -23,6 +23,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'YWAM Sendai Guide',
+      customCss: [
+        './src/styles/global.css',
+      ],
       defaultLocale: 'en',
       // This is the key fix: Starlight needs to know about the 'guide' prefix
       locales: {
@@ -46,9 +49,6 @@ export default defineConfig({
       ],
       // This helps prevent Tailwind from stripping Starlight's styles
       disable404Route: false, 
-      customCss: [
-        './src/styles/starlight-fix.css',
-      ],
     }),
   ],
 

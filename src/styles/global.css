@@ -1,68 +1,51 @@
 @import "tailwindcss";
 
+/* 1. Define the Layer Order */
+/* This tells the browser: "Starlight UI takes priority over Tailwind's base resets" */
+@layer starlight, base, theme, components, utilities;
+
 @theme {
-  /* Colors */
   --color-gold-accent: #d4af37;
   --color-dark-bg: #050505;
-
-  /* Typography Stack */
   --font-serif: "Cinzel", "YuMincho", "Hiragino Mincho ProN", "MS PMincho", serif;
   --font-sans: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Microsoft YaHei", sans-serif;
 }
 
-/* 1. Global Resets (Safe for both Vibe and Guide) */
+/* 2. Your "Vibe" Styles (Fully Preserved) */
+@layer components {
+  .vibe-landing {
+    background-color: var(--color-dark-bg);
+    color: white;
+    font-family: var(--font-sans);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Specific tweak for Japanese characters */
+  .vibe-landing:lang(ja) {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* 3. Your Golden Scrollbar (Global, but inside a layer to prevent crashes) */
 @layer base {
   html {
     scrollbar-gutter: stable;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-/* 2. The "Vibe" Scope (Only applies to your landing page) 
-   Apply this class to the <main> or <body> tag of your landing page. */
-.vibe-landing {
-  background-color: var(--color-dark-bg);
-  color: white;
-  font-family: var(--font-sans);
-  line-height: 1.75;
-  min-height: 100vh;
-}
-
-.vibe-landing:lang(ja) {
-  word-break: keep-all;
-  overflow-wrap: break-word;
-  letter-spacing: 0.03em;
-}
-
-/* 3. Vibe-Specific Scrollbars */
-.vibe-landing::-webkit-scrollbar {
-  width: 8px;
-}
-
-.vibe-landing::-webkit-scrollbar-track {
-  background: #050505;
-}
-
-.vibe-landing::-webkit-scrollbar-thumb {
-  background-color: #d4af37;
-  border-radius: 20px;
-  border: 2px solid #050505;
-}
-
-/* 4. Starlight Protection 
-   This ensures Starlight keeps its default look regardless of Tailwind v4 global settings. */
-@layer starlight {
-  :root {
-    /* Prevents the 'white' text from landing page leaking into Guide light mode */
-    --sl-color-white: #ffffff;
-    --sl-color-black: #000000;
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #050505; }
+  ::-webkit-scrollbar-thumb {
+    background-color: #d4af37;
+    border-radius: 20px;
+    border: 2px solid #050505;
   }
-}
 
-/* 5. Sticky Scroll Engine (Vibe Landing Page only) */
-.vibe-landing-scroll-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #050505;
+  }
 }
