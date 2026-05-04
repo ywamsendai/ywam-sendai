@@ -1,7 +1,0 @@
-/* src/styles/starlight-fix.css */
-@layer starlight {
-  :root {
-    /* This ensures Starlight's theme colors are protected */
-    color-scheme: light dark;
-  }
-}

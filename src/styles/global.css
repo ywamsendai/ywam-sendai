@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/* 1. Define the Layer Order */
-/* This tells the browser: "Starlight UI takes priority over Tailwind's base resets" */
-@layer starlight, base, theme, components, utilities;
-
 @theme {
   --color-gold-accent: #d4af37;
   --color-dark-bg: #050505;
@@ -11,7 +7,6 @@
   --font-sans: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Microsoft YaHei", sans-serif;
 }
 
-/* 2. Your "Vibe" Styles (Fully Preserved) */
 @layer components {
   .vibe-landing {
     background-color: var(--color-dark-bg);

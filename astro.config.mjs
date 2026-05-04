@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
 import tailwindv4 from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   // site: 'https://www.ywamsendai.org',
+  base: '/',
   output: 'server',
   image: {
     service: {
@@ -20,49 +20,10 @@ export default defineConfig({
     prerenderEnvironment: 'node',
   }),
 
-  integrations: [
-    starlight({
-      title: 'YWAM Sendai Guide',
-      customCss: [
-        './src/styles/global.css',
-      ],
-      defaultLocale: 'en',
-      // This is the key fix: Starlight needs to know about the 'guide' prefix
-      locales: {
-        en: { label: 'English', lang: 'en' },
-        ja: { label: '日本語', lang: 'ja' },
-      },
-      // We explicitly tell Starlight which folder to look in for the sidebar
-      sidebar: [
-        {
-          label: 'Vision',
-          autogenerate: { directory: 'guide/en/vision' },
-        },
-        {
-          label: 'Staff Journey',
-          autogenerate: { directory: 'guide/en/staff' },
-        },
-        {
-          label: 'Schools',
-          autogenerate: { directory: 'guide/en/students' },
-        },
-      ],
-      // This helps prevent Tailwind from stripping Starlight's styles
-      disable404Route: false, 
-    }),
-  ],
-
   vite: {
     plugins: [tailwindv4()],
     css: {
-      // This helps on Windows/Cloudflare dev environments
       devSourcemap: true,
     },
-    ssr: {
-      // This tells Vite: "Don't try to optimize these, just load them normally"
-      noExternal: ['@astrojs/starlight', 'astro-expressive-code', '@expressive-code/core'],
-    },
-    // If Tailwind v4 still causes issues, we can add a 'css' block here 
-    // to make sure it doesn't process Starlight's internal virtual CSS.
   },
 });
