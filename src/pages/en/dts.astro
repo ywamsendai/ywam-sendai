@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 export const metadata = {
   school: "Discipleship Training School",
   location: "Sendai, Japan",
-  method: "Live Learn Environment",
+  method: "Live-Learn Environment",
   curriculum: "Bible, God, Salvation, Mission, Identity",
 };
 ---
@@ -12,11 +12,11 @@ export const metadata = {
 <Layout title="Discipleship Training School | YWAM Sendai">
   <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20">
     
-    <div class="h-[40vh] relative flex items-center justify-center overflow-hidden">
+    <div class="h-[45vh] relative flex items-center justify-center overflow-hidden">
       <img src="/hero-sendai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="relative z-10 text-center">
-        <a href="/en" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← Back to Vision</a>
-        <h1 class="text-5xl md:text-7xl font-serif text-white">DTS</h1>
+        <a href="/en" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← Back to Home</a>
+        <h1 class="text-6xl md:text-8xl font-serif text-white">DTS</h1>
         <p class="tracking-[.2em] uppercase text-xs mt-2">Discipleship Training School</p>
       </div>
     </div>
@@ -26,41 +26,58 @@ export const metadata = {
       <section class="prose prose-invert max-w-none">
         <h2 class="text-3xl font-serif text-white italic">To Know God and Make Him Known.</h2>
         <p class="text-lg leading-relaxed text-zinc-400">
-          The DTS is more than a course; it is a five-month journey of spiritual formation designed to help you encounter the presence of God and discover your place in His global mission. In Sendai, we focus on <span class="text-gold-accent italic">Theosis</span>—the process of being transformed into the likeness of Christ through intimacy and obedience.
+          The DTS is our foundational <span class="text-white">“Live-Learn”</span> experience. It is a five-month journey of spiritual formation designed to help you encounter the presence of God and join His mission in the world. In Sendai, we embrace the <span class="text-gold-accent italic">Modern Monastic</span> rhythm—where deep study, common prayer, and radical mission become one unified life.
         </p>
       </section>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4">Lecture Phase</h3>
-          <p class="text-sm leading-relaxed">12 weeks of immersive teaching. Topics include the Nature and Character of God, Hearing God's Voice, Biblical Worldview, and Spiritual Warfare. Set in the quiet, focused environment of our Sendai community.</p>
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem] flex flex-col">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">Phase 01: Lecture</h3>
+          <h4 class="text-xl text-white font-serif mb-4 italic">Deep Roots</h4>
+          <p class="text-sm leading-relaxed text-zinc-400 flex-grow">
+            12 weeks focused on hearing God’s voice and character transformation. Based on the UofN curriculum, you will explore the Nature of God, the Holy Spirit, and our role in the Great Commission through bilingual lectures and personal mentorship.
+          </p>
         </div>
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4">Outreach Phase</h3>
-          <p class="text-sm leading-relaxed">8-12 weeks of cross-cultural mission. Take what you have learned and apply it in the field, serving local churches and communities in Japan and beyond.</p>
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem] flex flex-col">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">Phase 02: Field Assignment</h3>
+          <h4 class="text-xl text-white font-serif mb-4 italic">Fruitfulness</h4>
+          <p class="text-sm leading-relaxed text-zinc-400 flex-grow">
+            8-12 weeks in the harvest field. Apply the "Way of Jesus" in the cross-cultural context of Japan and beyond. A time of active service, relational evangelism, and witnessing the power of the Gospel in community.
+          </p>
         </div>
       </div>
 
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
-          <span class="block text-[10px] uppercase text-zinc-500 mb-2">Next Date</span>
-          <span class="text-zinc-200 font-bold">Sept 2026</span>
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Next Start</span>
+          <span class="text-zinc-200 font-bold text-sm">24 Sept 2026</span>
         </div>
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
-          <span class="block text-[10px] uppercase text-zinc-500 mb-2">Location</span>
-          <span class="text-zinc-200 font-bold">Sendai, Japan</span>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Duration</span>
+          <span class="text-zinc-200 font-bold text-sm">5 Months</span>
         </div>
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
-          <span class="block text-[10px] uppercase text-zinc-500 mb-2">Tuition</span>
-          <span class="text-zinc-200 font-bold">¥XXX,XXX</span>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Lecture Fees</span>
+          <span class="text-zinc-200 font-bold text-sm">¥420,000*</span>
+        </div>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Outreach Est.</span>
+          <span class="text-zinc-200 font-bold text-sm">¥400,000</span>
         </div>
       </section>
 
-      <div class="text-center py-10 border-t border-zinc-800">
-        <h3 class="text-2xl font-serif mb-6">Ready to take the step?</h3>
-        <a href="/en/apply" class="inline-block px-12 py-4 bg-gold-accent text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-transform">
-          Start Application
-        </a>
+      <div class="bg-gold-accent/5 border border-gold-accent/20 p-6 rounded-3xl text-center">
+        <p class="text-[11px] text-zinc-400 leading-relaxed italic">
+          *Lecture fees include tuition and accommodation. <br/>
+          For a full breakdown of costs, including food and travel budgets, <a href="https://guide.ywamsendai.org/en/roles/students/fees-and-finances/" class="text-gold-accent underline">visit the Guide</a>.
+        </p>
+      </div>
+
+      <div class="text-center py-10 border-t border-zinc-900">
+        <h3 class="text-2xl font-serif text-white mb-8 italic">Begin your formation.</h3>
+        <button class="open-hub-trigger inline-block px-12 py-5 bg-gold-accent text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-gold-accent/10">
+          Connect & Apply
+        </button>
       </div>
 
     </div>

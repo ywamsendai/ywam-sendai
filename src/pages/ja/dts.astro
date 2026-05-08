@@ -1,42 +1,85 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+export const metadata = {
+  school: "弟子訓練学校（DTS）",
+  location: "宮城県仙台市",
+  method: "共に住み、共に学ぶ（ライブ・ラーン）",
+  curriculum: "聖書, 神の性質, 救済, 宣教, アイデンティティ",
+};
 ---
-<Layout title="弟子訓練学校 (DTS) | YWAM 仙台" lang="ja">
-  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20 font-sans">
-    <div class="h-[40vh] relative flex items-center justify-center overflow-hidden">
+
+<Layout title="弟子訓練学校 (DTS) | YWAM仙台" lang="ja">
+  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20">
+    
+    <div class="h-[45vh] relative flex items-center justify-center overflow-hidden">
       <img src="/hero-sendai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="relative z-10 text-center">
-        <a href="/ja" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← ビジョンに戻る</a>
-        <h1 class="text-5xl md:text-7xl font-serif text-white">DTS</h1>
-        <p class="tracking-[.2em] uppercase text-xs mt-2">弟子訓練学校</p>
+        <a href="/ja" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← ホームに戻る</a>
+        <h1 class="text-6xl md:text-8xl font-serif text-white">DTS</h1>
+        <p class="tracking-[.2em] uppercase text-xs mt-2">Discipleship Training School</p>
       </div>
     </div>
 
     <div class="max-w-4xl mx-auto px-6 mt-12 space-y-20">
+      
       <section class="prose prose-invert max-w-none">
         <h2 class="text-3xl font-serif text-white italic">神を知り、神を知らせる。</h2>
         <p class="text-lg leading-relaxed text-zinc-400">
-          DTSは単なるコースではなく、神の臨在に触れ、世界宣教における自分の役割を発見するための5ヶ月間の旅です。仙台では、親密な交わりと従順を通してキリストの似姿へと変えられていく「<span class="text-gold-accent italic">神化（テオシス）</span>」に焦点を当てています。
+          DTSは単なる講義ではありません。それは、神の臨在に触れ、世界における神の宣教（ミッシオ・デイ）の中に自分の居場所を見出すための、5ヶ月間の霊的形成の旅です。仙台において私たちは、深い学び、共に捧げる祈り、そして大胆な宣教がひとつの人生として統合される<span class="text-gold-accent italic">「現代の修道会的リズム」</span>を大切にしています。
         </p>
       </section>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4">講義フェーズ (12週間)</h3>
-          <p class="text-sm leading-relaxed">神の性質、御声を聞くこと、聖書的世界観など、多岐にわたる学びを深めます。仙台の静かな環境で、霊的な土台を築きます。</p>
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem] flex flex-col">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">フェーズ 01: 講義期間</h3>
+          <h4 class="text-xl text-white font-serif mb-4 italic">深い根（Deep Roots）</h4>
+          <p class="text-sm leading-relaxed text-zinc-400 flex-grow">
+            神の声を聞くこと、そして品性の変革に焦点を当てる12週間。UofN（諸国民大学）のカリキュラムに基づき、神の性質、聖霊、そして大宣教命令における私たちの役割を、日英バイリンガルの講義と個人的なメンターシップを通して深く探求します。
+          </p>
         </div>
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4">伝道フェーズ (8-12週間)</h3>
-          <p class="text-sm leading-relaxed">学んだことを実践に移します。日本国内、あるいは海外の宣教地で、地域教会と共に人々に仕えます。</p>
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem] flex flex-col">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">フェーズ 02: アウトリーチ</h3>
+          <h4 class="text-xl text-white font-serif mb-4 italic">実を結ぶ（Fruitfulness）</h4>
+          <p class="text-sm leading-relaxed text-zinc-400 flex-grow">
+            収穫の場へと遣わされる8〜12週間。日本、そして世界の異文化コンテキストの中で「イエスの道」を実践します。地域教会への奉仕、関係性を重視した伝道、そしてコミュニティの中で福音の力を目撃する時となります。
+          </p>
         </div>
       </div>
 
-      <div class="text-center py-10 border-t border-zinc-800">
-        <h3 class="text-2xl font-serif mb-6 text-white">新しい一歩を踏み出しませんか？</h3>
-        <a href="/ja/apply" class="inline-block px-12 py-4 bg-gold-accent text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-transform">
-          申し込む
-        </a>
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">次回の開始日</span>
+          <span class="text-zinc-200 font-bold text-sm">2026年9月24日</span>
+        </div>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">期間</span>
+          <span class="text-zinc-200 font-bold text-sm">約5ヶ月間</span>
+        </div>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">講義費</span>
+          <span class="text-zinc-200 font-bold text-sm">¥420,000*</span>
+        </div>
+        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">伝道旅行費（概算）</span>
+          <span class="text-zinc-200 font-bold text-sm">約¥400,000</span>
+        </div>
+      </section>
+
+      <div class="bg-gold-accent/5 border border-gold-accent/20 p-6 rounded-3xl text-center">
+        <p class="text-[11px] text-zinc-400 leading-relaxed italic">
+        *講義費には授業料と宿泊費が含まれます。<br/>
+        食費や交通費を含む費用の詳細は、<a href="https://guide.ywamsendai.org/ja/roles/students/fees-and-finances/" class="text-gold-accent underline">ハンドブック</a>をご確認ください。
+        </p>
       </div>
+
+      <div class="text-center py-10 border-t border-zinc-900">
+        <h3 class="text-2xl font-serif text-white mb-8 italic">形成の旅を始めましょう。</h3>
+        <button class="open-hub-trigger inline-block px-12 py-5 bg-gold-accent text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-gold-accent/10">
+          つながる・出願する
+        </button>
+      </div>
+
     </div>
   </main>
 </Layout>

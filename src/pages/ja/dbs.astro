@@ -1,58 +1,106 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+export const metadata = {
+  school: "聖書弟子訓練学校（DBS）",
+  location: "宮城県仙台市",
+  method: "帰納的聖書研究（インダクティブ）",
+  curriculum: "創世記から黙示録まで, 歴史的背景, 世界観",
+};
 ---
-<Layout title="聖書弟子訓練学校 (DBS) | YWAM 仙台" lang="ja">
-  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20 font-sans">
+
+<Layout title="聖書弟子訓練学校 (DBS) | YWAM仙台" lang="ja">
+  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20">
     
-    <div class="h-[40vh] relative flex items-center justify-center overflow-hidden border-b border-zinc-900">
+    <div class="h-[45vh] relative flex items-center justify-center overflow-hidden">
       <img src="/hero-sendai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="relative z-10 text-center">
-        <a href="/ja" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← ビジョンに戻る</a>
-        <h1 class="text-5xl md:text-7xl font-serif text-white uppercase">DBS</h1>
-        <p class="tracking-[.2em] uppercase text-xs mt-2 font-sans">聖書弟子訓練学校</p>
+        <a href="/ja" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← ホームに戻る</a>
+        <h1 class="text-6xl md:text-8xl font-serif text-white">DBS</h1>
+        <p class="tracking-[.2em] uppercase text-xs mt-2">Discipleship Bible School</p>
       </div>
     </div>
 
     <div class="max-w-4xl mx-auto px-6 mt-12 space-y-20">
       
       <section class="prose prose-invert max-w-none">
-        <h2 class="text-3xl font-serif text-white italic">物語が私たちを形作る。</h2>
+        <h2 class="text-3xl font-serif text-white italic">一つの物語、66巻の書物、12週間の旅。</h2>
         <p class="text-lg leading-relaxed text-zinc-400">
-          聖書弟子訓練学校（DBS）は、12週間かけて聖書の壮大な物語に浸る旅です。聖書を単なる知識として学ぶのではなく、「<span class="text-gold-accent font-semibold">生きた御言葉</span>」として体験します。仙台では、創世記から黙示録までを年代順に読み進め、神の救いの物語がどのようにキリストに結実し、現代の教会へと続いているのかを紐解きます。
+          DBSは、3ヶ月間にわたる聖書への没入体験です。創世記から黙示録までを年代順に辿り、聖書を断片的な言葉の集まりではなく、神の救済の働きという<span class="text-white">一つの統合された物語</span>として解き明かします。仙台のコミュニティにおいて、私たちは沈黙を愛する修道士の心と、真理を追究する学者の知性をもって御言葉に向き合います。
         </p>
       </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4 font-sans">帰納的研究法 (Inductive Study)</h3>
-          <p class="text-sm leading-relaxed">観察、解釈、適用というステップを通し、自分の力で御言葉を読み解く方法を学びます。自分の先入観を横に置き、テキストが本来語っている真理に耳を傾けます。</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
+          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">01. 観察 (Observation)</h4>
+          <p class="text-[11px] text-zinc-500 italic">「何と書いてあるか？」</p>
         </div>
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-sm mb-4 font-sans">共同体での通読</h3>
-          <p class="text-sm leading-relaxed">初期教会のクリスチャンのように、共に集まり、御言葉を朗読し、分かち合います。コミュニティの中での気づきが、より深い啓示へと導きます。</p>
+        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
+          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">02. 解釈 (Interpretation)</h4>
+          <p class="text-[11px] text-zinc-500 italic">「当時はどういう意味だったか？」</p>
+        </div>
+        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
+          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">03. 適用 (Application)</h4>
+          <p class="text-[11px] text-zinc-500 italic">「今、どう歩むべきか？」</p>
         </div>
       </div>
 
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-4 font-sans">
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
-          <span class="block text-[10px] uppercase text-zinc-500 mb-2">開講時期</span>
-          <span class="text-zinc-200 font-bold">2026年 4月</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem]">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">聖書の旅</h3>
+          <h4 class="text-xl text-white font-serif mb-4 italic">年代順の通読</h4>
+          <p class="text-sm leading-relaxed text-zinc-400">
+            全66巻を、出来事が起こった順序に従って読み進めます。預言者たちの歴史的背景、律法の文化的重み、そして初期教会の爆発的な誕生の物語を深く理解します。
+          </p>
         </div>
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
-          <span class="block text-[10px] uppercase text-zinc-500 mb-2">期間</span>
-          <span class="text-zinc-200 font-bold">12週間</span>
+        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem]">
+          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">対話のコンテクスト</h3>
+          <h4 class="text-xl text-white font-serif mb-4 italic">スモールグループ（テーブル）</h4>
+          <p class="text-sm leading-relaxed text-zinc-400">
+            聖書は本来、共同体で読まれるものです。「テーブル」の文化の中で、その週に読んだ箇所を共に分かち合い、聖書的な世界観がいかに私たちの価値観を形作るかを探求します。
+          </p>
         </div>
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl text-center">
-          <span class="block text-[10px] uppercase text-zinc-500 mb-2">学費</span>
-          <span class="text-zinc-200 font-bold">¥XXX,XXX</span>
+      </div>
+
+      <section class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">次回開始日</span>
+            <span class="text-zinc-200 font-bold text-sm">2027年4月</span>
+          </div>
+          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">期間</span>
+            <span class="text-zinc-200 font-bold text-sm">12週間</span>
+          </div>
+          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
+            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">基本費用</span>
+            <span class="text-zinc-200 font-bold text-sm">¥420,000*</span>
+          </div>
+          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center border-gold-accent/30">
+            <span class="block text-[9px] uppercase text-gold-accent mb-2 tracking-widest">セット割引</span>
+            <span class="text-gold-accent font-bold text-sm">-¥50,000</span>
+          </div>
         </div>
       </section>
+        
+      <div class="bg-gold-accent/5 border border-gold-accent/20 p-6 rounded-3xl text-center">
+        <p class="text-[11px] text-zinc-400 leading-relaxed italic">
+          *授業料と宿泊費が含まれています。<br/>
+          食費や交通費を含む費用の詳細は、<a href="https://guide.ywamsendai.org/ja/roles/students/fees-and-finances/" class="text-gold-accent underline">ハンドブック</a>をご確認ください。<br/>
+          同年内に仙台DTSを修了し、引き続きDBSを受講される方は、授業料から5万円の「セット割引」が適用されます。
+        </p>
+      </div>
 
-      <div class="text-center py-10 border-t border-zinc-800">
-        <h3 class="text-2xl font-serif mb-6 text-white italic">御言葉による変革を。</h3>
-        <a href="/ja/apply" class="inline-block px-12 py-4 bg-gold-accent text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-transform font-sans">
-          申し込む
-        </a>
+      <div class="text-center py-10 border-t border-zinc-900">
+        <h3 class="text-2xl font-serif text-white mb-8 italic">御言葉の中に、さらに深く。</h3>
+        <div class="flex flex-col items-center gap-6">
+          <button class="open-hub-trigger inline-block px-12 py-5 bg-zinc-100 text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-white/5">
+            つながる・出願する
+          </button>
+          <p class="text-[10px] text-zinc-600 uppercase tracking-[0.2em]">
+            ※受講資格：DTS（弟子訓練学校）の修了
+          </p>
+        </div>
       </div>
 
     </div>
