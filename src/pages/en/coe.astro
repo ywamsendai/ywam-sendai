@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="CoE Application Information | YWAM Sendai">
+  <main class="min-h-screen bg-dark-bg flex flex-col items-center p-4 md:p-10">
+    
+    <div class="w-full max-w-5xl flex justify-between items-center mb-8 px-4">
+      <a href="/en" class="text-[10px] tracking-[0.3em] text-zinc-500 hover:text-gold-accent transition-colors uppercase">
+        ← Back to Home
+      </a>
+      <span class="text-[10px] tracking-[0.3em] text-zinc-700 uppercase">Sendai Candidate Portal</span>
+    </div>
+
+    <div class="w-full max-w-5xl bg-zinc-900/30 border border-zinc-800/50 rounded-[2rem] overflow-hidden shadow-2xl">
+      <div 
+        style="width:100%; min-height: 600px;" 
+        data-fillout-id="pqMYHzQHUBus" 
+        data-fillout-embed-type="standard" 
+        data-fillout-inherit-parameters 
+        data-fillout-dynamic-resize
+      ></div>
+    </div>
+
+    <footer class="mt-10 mb-6 text-[9px] text-zinc-600 tracking-widest uppercase text-center">
+      Secure Application Environment • YWAM Sendai
+    </footer>
+  </main>
+</Layout>
+
+<script src="https://server.fillout.com/embed/v1/"></script>
+
+<style is:global>
+  /* Fillout injects an iframe. To ensure it feels native, 
+     we can target it to make sure it respects the container's rounded corners.
+  */
+  [data-fillout-id] iframe {
+    border-radius: 2rem;
+  }
+</style>
