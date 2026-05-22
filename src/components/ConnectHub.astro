@@ -1,263 +1,438 @@
 ---
 const { lang = 'en' } = Astro.props;
 
-const content = {
+const copy = {
   en: {
-    title: "Let's Connect.",
-    subtitle: "Choose the path that fits your journey.",
-    path0Tag: "Ready to Join?",
-    path0Title: "Start Application",
-    path0Desc: "For students, staff, visitors, and teams ready to begin their journey in Sendai.",
-    path1Tag: "Instant Knowledge",
-    path1Title: "Talk with our AI Guide (Beta)",
-    path1Desc: "Ask about who we are, costs, or dates. Our handbook is at your fingertips.",
-    path2Tag: "Relational Step",
-    path2Title: "Message on Instagram",
-    path2Desc: "Send us a DM. We'd love to hear your story personally.",
-    path3Tag: "Self-Guided",
-    path3Title: "Browse the Handbook",
-    path3Desc: "Read the full documentation at your own pace.",
-    emailLabel: "Or send us an Email",
-    close: "Close ✕",
-    back: "← Back to Options",
-    chatGreeting: "Greetings. I am the YWAM Sendai Guide (Beta). How can I assist you?",
-    chatPlaceholder: "Ask about costs, dates...",
-    send: "Send"
+    title: 'Connect',
+    subtitle: 'How would you like to continue?',
+    chatTitle: 'Ask the Guide',
+    chatGreeting: 'Greetings. I am the YWAM Sendai Guide (Beta). How can I assist you?',
+    chatPlaceholder: 'Ask a question...',
+    startChat: 'Ask the Guide',
+    back: 'Back',
+    close: 'Close ✕',
+    send: 'Send',
+    handbook: 'Handbook',
+    handbookDesc: 'Browse the full guide directly.',
+    apply: 'Application',
+    applyDesc: 'Start your application here.',
+    contact: 'Contact',
+    contactDesc: 'Reach out directly.',
+    footer: 'Every connection is an invitation to participate in the life of God together.',
+    thinking: 'Thinking...',
+    you: 'You',
+    guide: 'Guide',
+    fallback: "I'm sorry, I couldn't find an answer in the guide.",
+    connectionError: 'Connection error.',
+    relatedPages: 'Related pages',
   },
   ja: {
-    title: "つながる。",
-    subtitle: "あなたに合った方法で、一歩を踏み出してください。",
-    path0Tag: "準備はできましたか？",
-    path0Title: "出願・参加申し込み",
-    path0Desc: "生徒、スタッフ、個人訪問者、チームとして参加を希望される方はこちらから。",
-    path1Tag: "即座に回答",
-    path1Title: "AIガイドに質問する（ベータ）",
-    path1Desc: "ビジョン、費用、日程について。ハンドブックがあなたをサポートします。",
-    path2Tag: "関係を築く",
-    path2Title: "公式LINEで相談する",
-    path2Desc: "メッセージをお送りください。個別にお返事させていただきます。",
-    path3Tag: "自分で探す",
-    path3Title: "ハンドブックを読む",
-    path3Desc: "仙台ガイドの全ドキュメントを、自分のペースで確認できます。",
-    emailLabel: "またはメールで問い合わせる",
-    close: "閉じる ✕",
-    back: "← 戻る",
-    chatGreeting: "こんにちは。仙台ガイドです（ベータ）。あなたの質問にお答えします。",
-    chatPlaceholder: "費用や日程について聞く...",
-    send: "送信"
-  }
+    title: 'Connect',
+    subtitle: 'どのように進みますか？',
+    chatTitle: 'ガイドに質問する',
+    chatGreeting: 'こんにちは。仙台ガイドです（ベータ）。あなたの質問にお答えします。',
+    chatPlaceholder: '質問を入力してください...',
+    startChat: 'ガイドに質問する',
+    back: '戻る',
+    close: '閉じる ✕',
+    send: '送信',
+    handbook: 'ハンドブック',
+    handbookDesc: 'ガイド全体を直接読むことができます。',
+    apply: '申し込み',
+    applyDesc: 'こちらから申し込みを開始できます。',
+    contact: 'お問い合わせ',
+    contactDesc: '直接ご連絡ください。',
+    footer: '「私たちは、あなたが神様から受けている召しを共に分かち合えることを楽しみにしています。」',
+    thinking: '考えています...',
+    you: 'あなた',
+    guide: 'ガイド',
+    fallback: '申し訳ありません。ガイド内で答えが見つかりませんでした。',
+    connectionError: '接続エラーが発生しました。',
+    relatedPages: '関連ページ',
+  },
 };
 
-const t = lang === 'ja' ? content.ja : content.en;
+const t = lang === 'ja' ? copy.ja : copy.en;
+
+const handbookUrl = lang === 'ja'
+  ? 'https://guide.ywamsendai.org/ja'
+  : 'https://guide.ywamsendai.org/en';
+
+const applyUrl = lang === 'ja' ? '/ja/apply' : '/en/apply';
+
+// Keep this simple for now; you can replace with /ja/contact or /en/contact later.
+const contactUrl = lang === 'ja'
+  ? 'https://lin.ee/LD2Nf4b'
+  : 'https://ig.me/m/ywamsendai';
 ---
 
-<div id="hub-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-500"></div>
+<div
+  id="hub-overlay"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-500"
+></div>
 
-<div id="connect-hub" class="fixed inset-y-0 right-0 w-full md:w-[450px] bg-zinc-950 border-l border-zinc-900 z-[100] translate-x-full transition-transform duration-500 ease-in-out p-10 flex flex-col font-sans overflow-y-auto max-h-screen">  
-  <button id="close-hub" class="absolute top-6 right-6 text-zinc-500 hover:text-white uppercase text-[10px] tracking-widest">{t.close}</button>
+<div
+  id="connect-hub"
+  class="fixed inset-y-0 right-0 w-full md:w-[460px] bg-zinc-950 border-l border-zinc-900 z-[100] translate-x-full transition-transform duration-500 ease-in-out p-8 md:p-10 flex flex-col font-sans overflow-y-auto max-h-screen"
+  data-lang={lang}
+  data-chat-greeting={t.chatGreeting}
+  data-thinking={t.thinking}
+  data-you={t.you}
+  data-guide={t.guide}
+  data-fallback={t.fallback}
+  data-connection-error={t.connectionError}
+  data-related-pages={t.relatedPages}
+>
+  <button
+    id="close-hub"
+    class="absolute top-6 right-6 text-zinc-500 hover:text-white uppercase text-[10px] tracking-widest"
+  >
+    {t.close}
+  </button>
 
-  <div id="hub-main-content" class="mt-12 flex-grow transition-opacity duration-300">
-    <h2 class="font-serif text-3xl italic text-white mb-2">{t.title}</h2>
-    <p class="text-xs text-zinc-500 mb-12">{t.subtitle}</p>
-    
-    <div class="space-y-4">
-      <a 
-        href={`/${lang}/apply`} 
-        class="group block p-6 bg-gold-accent text-black rounded-3xl hover:scale-[1.02] transition-all mb-8 shadow-lg shadow-gold-accent/10"
+  <div id="hub-main-content" class="transition-opacity duration-300">
+    <div class="mt-12 mb-8">
+      <h2 class="font-serif text-3xl italic text-white mb-2">{t.title}</h2>
+      <p class="text-xs text-zinc-500">{t.subtitle}</p>
+    </div>
+
+    <div class="space-y-3">
+      <button
+        id="start-chat"
+        class="w-full text-left p-5 bg-gold-accent text-black rounded-3xl hover:scale-[1.01] transition-all shadow-lg shadow-gold-accent/10"
       >
-        <span class="text-black/60 text-[9px] uppercase tracking-[0.3em] font-black block mb-1">{t.path0Tag}</span>
-        <h3 class="text-lg font-black uppercase tracking-tight">{t.path0Title}</h3>
-        <p class="text-[11px] text-black/70 mt-1 leading-relaxed font-medium">{t.path0Desc}</p>
-      </a>
-
-      <button id="start-chat" class="w-full text-left group p-6 bg-zinc-900/50 border border-zinc-800 rounded-3xl hover:border-gold-accent/50 transition-all cursor-pointer">
-        <span class="text-gold-accent text-[9px] uppercase tracking-[0.3em] block mb-1">{t.path1Tag}</span>
-        <h3 class="text-lg font-bold text-zinc-200">{t.path1Title}</h3>
-        <p class="text-[11px] text-zinc-500 mt-2 leading-relaxed">{t.path1Desc}</p>
+        <h3 class="text-base font-black uppercase tracking-tight">{t.chatTitle}</h3>
+        <p class="text-[11px] text-black/70 mt-1 leading-relaxed font-medium">{t.chatGreeting}</p>
       </button>
 
-      <a 
-        href={lang === 'ja' ? "https://lin.ee/LD2Nf4b" : "https://ig.me/m/ywamsendai"} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="group block p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-3xl hover:border-zinc-600 transition-all"
+      <a
+        href={applyUrl}
+        class="block p-5 bg-zinc-900/40 border border-zinc-800 rounded-3xl hover:border-zinc-600 transition-all"
       >
-        <span class="text-zinc-500 text-[9px] uppercase tracking-[0.3em] block mb-1">{t.path2Tag}</span>
-        <h3 class="text-lg font-bold text-white">{t.path2Title}</h3>
-        <p class="text-[11px] text-zinc-500 mt-2 leading-relaxed">{t.path2Desc}</p>
+        <h3 class="text-base font-bold text-white">{t.apply}</h3>
+        <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">{t.applyDesc}</p>
       </a>
 
-      <a 
-        href={lang === 'ja' ? "https://guide.ywamsendai.org/ja" : "https://guide.ywamsendai.org/en"} 
-        target="_blank" 
+      <a
+        href={contactUrl}
+        target="_blank"
         rel="noopener noreferrer"
-        class="group block p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-3xl hover:border-zinc-600 transition-all"
+        class="block p-5 bg-zinc-900/40 border border-zinc-800 rounded-3xl hover:border-zinc-600 transition-all"
       >
-        <span class="text-zinc-500 text-[9px] uppercase tracking-[0.3em] block mb-1">{t.path3Tag}</span>
-        <h3 class="text-lg font-bold text-white">{t.path3Title}</h3>
-        <p class="text-[11px] text-zinc-500 mt-2 leading-relaxed">{t.path3Desc}</p>
+        <h3 class="text-base font-bold text-white">{t.contact}</h3>
+        <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">{t.contactDesc}</p>
       </a>
 
-      <div class="pt-4 text-center">
-        <a href="mailto:hello@ywamsendai.org" class="text-[10px] text-zinc-600 hover:text-gold-accent transition-colors uppercase tracking-[0.2em] font-bold">
-          {t.emailLabel}
-        </a>
+      <a
+        href={handbookUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block p-5 bg-zinc-900/30 border border-zinc-800/50 rounded-3xl hover:border-zinc-600 transition-all"
+      >
+        <h3 class="text-base font-bold text-white">{t.handbook}</h3>
+        <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">{t.handbookDesc}</p>
+      </a>
+    </div>
+  </div>
+
+  <div id="hub-chat-ui" class="hidden opacity-0 transition-opacity duration-300 mt-12 flex flex-col min-h-0 flex-grow">
+    <div class="flex items-center justify-between mb-6">
+      <button
+        id="back-to-hub"
+        class="text-zinc-500 hover:text-white uppercase text-[10px] tracking-widest"
+      >
+        {t.back}
+      </button>
+    </div>
+
+    <div id="chat-messages" class="flex-grow overflow-y-auto text-[13px] space-y-4 pr-2 min-h-[220px]">
+      <div class="text-gold-accent font-serif italic mb-6">{t.chatGreeting}</div>
+    </div>
+
+    <div class="mt-6 border-t border-zinc-900 pt-5">
+      <div class="flex items-center gap-2">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder={t.chatPlaceholder}
+          class="bg-transparent w-full outline-none text-white text-sm placeholder:text-zinc-700"
+        />
+        <button
+          id="send-chat"
+          class="text-gold-accent text-[10px] font-bold uppercase tracking-widest ml-2 shrink-0"
+        >
+          {t.send}
+        </button>
       </div>
     </div>
   </div>
 
-<div id="hub-chat-ui" class="mt-12 flex-grow hidden opacity-0 transition-opacity duration-300 flex flex-col overflow-hidden h-[calc(100vh-250px)] md:h-auto">    <button id="back-to-hub" class="text-[9px] text-zinc-500 uppercase tracking-widest mb-6 hover:text-gold-accent text-left">{t.back}</button>
-    <div id="chat-messages" class="flex-grow overflow-y-auto text-[13px] space-y-4 pr-2 scrollbar-hide">
-       <div class="text-gold-accent font-serif italic mb-6">{t.chatGreeting}</div>
-    </div>
-    <div class="mt-4 flex border-t border-zinc-900 pt-6">
-      <input id="chat-input" type="text" placeholder={t.chatPlaceholder} class="bg-transparent w-full outline-none text-white text-sm placeholder:text-zinc-700">
-      <button id="send-chat" class="text-gold-accent text-[10px] font-bold uppercase tracking-widest ml-2">{t.send}</button>
-    </div>
-  </div>
-
-  <div id="hub-footer" class="mt-auto pt-10 border-t border-zinc-900">
+  <div id="hub-footer" class="mt-8 pt-8 border-t border-zinc-900">
     <p class="text-[10px] text-zinc-700 leading-relaxed italic">
-      {lang === 'ja' 
-        ? "「私たちは、あなたが神様から受けている召しを共に分かち合えることを楽しみにしています。」" 
-        : "Every connection is an invitation to participate in the life of God together."}
+      {t.footer}
     </p>
   </div>
 </div>
 
 <style>
-  #chat-messages::-webkit-scrollbar { width: 2px; }
-  #chat-messages::-webkit-scrollbar-track { background: transparent; }
-  #chat-messages::-webkit-scrollbar-thumb { background: #c5a05933; }
+  #chat-messages::-webkit-scrollbar {
+    width: 2px;
+  }
+  #chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #chat-messages::-webkit-scrollbar-thumb {
+    background: #c5a05933;
+  }
 </style>
 
 <script>
-  const hub = document.getElementById('connect-hub')!;
-  const overlay = document.getElementById('hub-overlay')!;
-  const closeBtn = document.getElementById('close-hub')!;
-  const mainContent = document.getElementById('hub-main-content')!;
-  const chatUI = document.getElementById('hub-chat-ui')!;
-  const startChatBtn = document.getElementById('start-chat')!;
-  const backBtn = document.getElementById('back-to-hub')!;
-  const hubFooter = document.getElementById('hub-footer')!;
-  const chatMessages = document.getElementById('chat-messages')!;
-  const chatInput = document.getElementById('chat-input') as HTMLInputElement;
-  const sendBtn = document.getElementById('send-chat')!;
-  
-  // 1. Define the type to satisfy TypeScript
-  let chatHistory: { role: string; content: string }[] = [];
+  type ChatHistoryItem = { role: string; content: string };
+  type SourceItem = { title?: string; url?: string; path?: string; type?: string };
+  type AskResponse = { answer?: string; sources?: SourceItem[] };
 
-  function openHub() {
+  const hub = document.getElementById('connect-hub');
+  const overlay = document.getElementById('hub-overlay');
+  const closeBtn = document.getElementById('close-hub');
+  const mainContent = document.getElementById('hub-main-content');
+  const chatUI = document.getElementById('hub-chat-ui');
+  const startChatBtn = document.getElementById('start-chat');
+  const backBtn = document.getElementById('back-to-hub');
+  const hubFooter = document.getElementById('hub-footer');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInput = document.getElementById('chat-input') as HTMLInputElement | null;
+  const sendBtn = document.getElementById('send-chat');
+
+  let chatHistory: ChatHistoryItem[] = [];
+
+  function escapeHtml(str: string): string {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function getHubText(name: string, fallback: string): string {
+    if (!hub) return fallback;
+    return hub.getAttribute(name) || fallback;
+  }
+
+  function openHub(): void {
+    if (!hub || !overlay) return;
     hub.classList.remove('translate-x-full');
     overlay.classList.remove('hidden');
     setTimeout(() => overlay.classList.add('opacity-100'), 10);
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'hidden';
   }
 
-  function closeHub() {
+  function closeHub(): void {
+    if (!hub || !overlay) return;
     hub.classList.add('translate-x-full');
     overlay.classList.remove('opacity-100');
     setTimeout(() => {
       overlay.classList.add('hidden');
-      document.body.style.overflow = ''; 
+      document.body.style.overflow = '';
       resetToMenu();
     }, 500);
   }
 
-  // 2. Only one instance of resetToMenu
-  function resetToMenu() {
+  function resetToMenu(): void {
+    if (!chatUI || !mainContent || !hubFooter || !chatMessages) return;
+
     chatUI.classList.add('hidden', 'opacity-0');
     mainContent.classList.remove('hidden', 'opacity-0');
     hubFooter.classList.remove('hidden');
-    chatHistory = []; 
-    // We get the greeting from the data attribute to avoid TS errors with {t.chatGreeting}
-    const greeting = mainContent.parentElement?.querySelector('.text-gold-accent.font-serif')?.innerHTML;
-    chatMessages.innerHTML = `<div class="text-gold-accent font-serif italic mb-6">${greeting || ''}</div>`;
+    chatHistory = [];
+
+    const greeting = getHubText('data-chat-greeting', '');
+    chatMessages.innerHTML = `<div class="text-gold-accent font-serif italic mb-6">${escapeHtml(greeting)}</div>`;
   }
 
-  startChatBtn.addEventListener('click', () => {
-    mainContent.classList.add('opacity-0');
-    setTimeout(() => {
-      mainContent.classList.add('hidden');
-      hubFooter.classList.add('hidden');
-      chatUI.classList.remove('hidden');
-      setTimeout(() => chatUI.classList.add('opacity-100'), 10);
-    }, 300);
-  });
+function renderApprovedMarkdown(answer: string): string {
+  const escaped = escapeHtml(answer);
+  
+  const rendered = escaped
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-bold">$1</strong>')
+    .replace(
+      /^\s*[\-\*]\s+(.*)/gm, 
+      '<div class="flex gap-2"><span class="text-gold-accent">•</span><span>$1</span></div>'
+    )
+    .replace(
+      /\[(.*?)\]\((https:\/\/ywamsendai\.org\/[^)\s]+)\)/g, 
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-gold-accent underline hover:text-white transition-colors">$1</a>'
+    )
+    .replace(/\n\n/g, '</div><div class="mt-3">')
+    .replace(/\n/g, '<br>');
 
-  backBtn.addEventListener('click', () => {
-    chatUI.classList.remove('opacity-100');
-    setTimeout(() => {
-      chatUI.classList.add('hidden');
-      mainContent.classList.remove('hidden');
-      hubFooter.classList.remove('hidden');
-      setTimeout(() => mainContent.classList.remove('opacity-0'), 10);
-    }, 300);
-  });
+  return `<div class="mt-3">${rendered}</div>`;
+}
 
-  async function sendMessage() {
+  function renderSources(sources: SourceItem[] | undefined, currentLang: string): string {
+    if (!sources || !Array.isArray(sources) || sources.length === 0) return '';
+
+    const relatedLabel = getHubText(
+      'data-related-pages',
+      currentLang === 'ja' ? '関連ページ' : 'Related pages'
+    );
+
+    const links = sources
+      .filter((source) => source && source.url)
+      .map((source) => {
+        const title = escapeHtml(source.title || source.url || '');
+        const url = escapeHtml(source.url || '');
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-gold-accent underline hover:text-white transition-colors text-sm">${title}</a>`;
+      })
+      .join('');
+
+    if (!links) return '';
+
+    return `
+      <div class="mt-4 pt-4 border-t border-zinc-800">
+        <div class="text-[9px] text-zinc-500 uppercase tracking-widest mb-2">${escapeHtml(relatedLabel)}</div>
+        <div class="flex flex-col gap-2">${links}</div>
+      </div>
+    `;
+  }
+
+  async function sendMessage(): Promise<void> {
+    if (!chatInput || !chatMessages) return;
+
     const query = chatInput.value.trim();
     if (!query) return;
 
-    chatMessages.innerHTML += `<div class="text-right mt-6"><div class="text-[9px] text-zinc-600 uppercase tracking-widest mb-2">You</div><div class="text-zinc-200 leading-relaxed inline-block bg-zinc-900/50 px-4 py-2 rounded-2xl rounded-tr-none">${query}</div></div>`;
+    const youLabel = getHubText('data-you', 'You');
+    const guideLabel = getHubText('data-guide', 'Guide');
+    const thinking = getHubText('data-thinking', 'Thinking...');
+
+    chatMessages.innerHTML += `
+      <div class="text-right mt-6">
+        <div class="text-[9px] text-zinc-600 uppercase tracking-widest mb-2">${escapeHtml(youLabel)}</div>
+        <div class="text-zinc-200 leading-relaxed inline-block bg-zinc-900/50 px-4 py-2 rounded-2xl rounded-tr-none">${escapeHtml(query)}</div>
+      </div>
+    `;
+
     chatInput.value = '';
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     const botId = `bot-${Date.now()}`;
-    chatMessages.innerHTML += `<div class="text-left mt-6"><div class="text-[9px] text-gold-accent uppercase tracking-widest mb-2">Guide</div><div id="${botId}" class="text-zinc-400 italic bg-gold-accent/5 px-4 py-2 rounded-2xl rounded-tl-none">Thinking...</div></div>`;
+    chatMessages.innerHTML += `
+      <div class="text-left mt-6">
+        <div class="text-[9px] text-gold-accent uppercase tracking-widest mb-2">${escapeHtml(guideLabel)}</div>
+        <div id="${botId}" class="text-zinc-400 italic bg-gold-accent/5 px-4 py-2 rounded-2xl rounded-tl-none">${escapeHtml(thinking)}</div>
+      </div>
+    `;
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     try {
-      const currentLang = document.documentElement.lang || 'en';
-      const response = await fetch('https://ywam-guide-api.ywamsendai.workers.dev/ask', { 
+      const currentLang = document.documentElement.lang || getHubText('data-lang', 'en');
+
+      const response = await fetch('https://ywam-guide-api.ywamsendai.workers.dev/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          question: query, 
-          lang: currentLang, 
-          history: chatHistory 
-        })
+        body: JSON.stringify({
+          question: query,
+          lang: currentLang,
+          history: chatHistory,
+        }),
       });
 
       if (!response.ok) throw new Error('API unreachable');
-      const data = await response.json();
-      const botEl = document.getElementById(botId)!;
-      
+
+      const data = (await response.json()) as AskResponse;
+      const botEl = document.getElementById(botId);
+
+      if (!botEl) return;
+
       botEl.classList.remove('italic', 'text-zinc-400');
       botEl.classList.add('text-zinc-300');
 
       if (data.answer) {
-        // Update history
         chatHistory.push({ role: 'user', content: query });
         chatHistory.push({ role: 'assistant', content: data.answer });
-        
-        // Trim history
-        if (chatHistory.length > 12) chatHistory = chatHistory.slice(-12);
 
-        const formatted = data.answer
-          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-bold">$1</strong>')
-          .replace(/^\s*[\-\*]\s+(.*)/gm, '<div class="flex gap-2"><span class="text-gold-accent">•</span><span>$1</span></div>')
-          .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-gold-accent underline hover:text-white transition-colors">$1</a>')
-          .replace(/\n\n/g, '</div><div class="mt-3">')
-          .replace(/\n/g, '<br>');
-        botEl.innerHTML = `<div class="leading-relaxed">${formatted}</div>`;
+        if (chatHistory.length > 12) {
+          chatHistory = chatHistory.slice(-12);
+        }
+
+        const formatted = renderApprovedMarkdown(data.answer);
+        const sourcesHtml = renderSources(data.sources, currentLang);
+
+        botEl.innerHTML = `<div class="leading-relaxed"><div>${formatted}</div>${sourcesHtml}</div>`;
       } else {
-        botEl.innerText = currentLang === 'ja' ? "申し訳ありません。答えが見つかりませんでした。" : "I'm sorry, I couldn't find an answer in the guide.";
+        botEl.textContent = getHubText(
+          'data-fallback',
+          currentLang === 'ja'
+            ? '申し訳ありません。ガイド内で答えが見つかりませんでした。'
+            : "I'm sorry, I couldn't find an answer in the guide."
+        );
       }
-    } catch (e) {
-      const currentLang = document.documentElement.lang || 'en';
+    } catch (_error) {
+      const currentLang = document.documentElement.lang || getHubText('data-lang', 'en');
       const botEl = document.getElementById(botId);
-      if (botEl) botEl.innerText = currentLang === 'ja' ? "接続エラーが発生しました。" : "Connection error.";
+
+      if (botEl) {
+        botEl.textContent = getHubText(
+          'data-connection-error',
+          currentLang === 'ja' ? '接続エラーが発生しました。' : 'Connection error.'
+        );
+      }
     }
+
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
-  sendBtn.addEventListener('click', sendMessage);
-  chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
-  document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    if (target.closest('.open-hub-trigger')) openHub();
+  if (startChatBtn && mainContent && hubFooter && chatUI) {
+    startChatBtn.addEventListener('click', () => {
+      mainContent.classList.add('opacity-0');
+      setTimeout(() => {
+        mainContent.classList.add('hidden');
+        hubFooter.classList.add('hidden');
+        chatUI.classList.remove('hidden');
+        setTimeout(() => chatUI.classList.add('opacity-100'), 10);
+      }, 300);
+    });
+  }
+
+  if (backBtn && chatUI && mainContent && hubFooter) {
+    backBtn.addEventListener('click', () => {
+      chatUI.classList.remove('opacity-100');
+      setTimeout(() => {
+        chatUI.classList.add('hidden');
+        mainContent.classList.remove('hidden');
+        hubFooter.classList.remove('hidden');
+        setTimeout(() => mainContent.classList.remove('opacity-0'), 10);
+      }, 300);
+    });
+  }
+
+  if (sendBtn) {
+    sendBtn.addEventListener('click', () => {
+      void sendMessage();
+    });
+  }
+
+  if (chatInput) {
+    chatInput.addEventListener('keypress', (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        void sendMessage();
+      }
+    });
+  }
+
+  document.addEventListener('click', (e: MouseEvent) => {
+    const target = e.target;
+    if (target instanceof HTMLElement && target.closest('.open-hub-trigger')) {
+      openHub();
+    }
   });
-  closeBtn.addEventListener('click', closeHub);
-  overlay.addEventListener('click', closeHub);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeHub);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeHub);
+  }
 </script>
