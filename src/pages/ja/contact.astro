@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="お問い合わせ | YWAM Sendai" lang="ja">
+  <main class="bg-dark-bg text-white">
+    <section class="px-6 pt-28 pb-16 md:pt-36 md:pb-24">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-5">はじめに</span>
+        <h1 class="text-4xl md:text-6xl font-serif italic text-white mb-6">お問い合わせ</h1>
+        <p class="max-w-2xl mx-auto text-zinc-400 leading-relaxed text-base md:text-lg">
+          ご質問のある方も、次のステップを考えている方も、まずはこちらからお気軽にどうぞ。
+        </p>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
+          <button
+            class="open-hub-trigger px-6 py-5 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs cursor-pointer"
+          >
+            AIに相談する
+          </button>
+
+          <a
+            href="#message-us"
+            class="px-6 py-5 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs flex items-center justify-center"
+          >
+            メッセージで連絡
+          </a>
+
+          <a
+            href="/ja/apply"
+            class="px-6 py-5 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs flex items-center justify-center"
+          >
+            申込み
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-12 md:pb-16">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
+          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">AIに相談する</h2>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            DTS・DBS・申込み・連絡方法・ハンドブックについて、まず気軽に質問したい方におすすめです。
+          </p>
+        </div>
+
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
+          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">メッセージで連絡</h2>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            最初のコンタクトや個人的な質問、継続的につながりたい方におすすめです。
+          </p>
+        </div>
+
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
+          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">申込み</h2>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            学生・スタッフ・アウトリーチチーム・ゲスト滞在など、具体的な次のステップを考えている方におすすめです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="message-us" class="px-6 py-12 md:py-16 bg-zinc-950">
+      <div class="max-w-5xl mx-auto">
+        <div class="max-w-2xl mb-10">
+          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">メッセージで連絡</span>
+          <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-4">つながりやすい方法を選んでください</h2>
+          <p class="text-zinc-400 leading-relaxed text-sm md:text-base">
+            特に若い世代の方にとっては、メッセージアプリが最も気軽で自然な最初の連絡手段になることが多いです。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
+            <h3 class="text-white text-xl font-serif italic mb-2">Discord</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
+              コミュニティとのつながりや、最初のコンタクト、継続的な交流におすすめです。
+            </p>
+            <a
+              href="https://discord.gg/djmCF4DBaV"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
+            >
+              Discordに参加する
+            </a>
+          </div>
+
+          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
+            <h3 class="text-white text-xl font-serif italic mb-2">LINE</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
+              日本語でのお問い合わせに特におすすめです。
+            </p>
+            <a
+              href="https://lin.ee/LD2Nf4b"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
+            >
+              LINEで連絡する
+            </a>
+          </div>
+
+          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
+            <h3 class="text-white text-xl font-serif italic mb-2">Instagram</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
+              気軽な質問や、まず一度連絡してみたい方に向いています。
+            </p>
+            <a
+              href="https://ig.me/m/ywamsendai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
+            >
+              Instagramで連絡する
+            </a>
+          </div>
+
+          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
+            <h3 class="text-white text-xl font-serif italic mb-2">Email</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
+              メールをご希望の方は、hello@ywamsendai.org までご連絡ください。
+            </p>
+            <a
+              href="mailto:hello@ywamsendai.org"
+              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
+            >
+              メールを送る
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-12 md:py-16">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-7">
+          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">次のステップ</span>
+          <h2 class="text-2xl md:text-3xl font-serif italic text-white mb-4">申込みを考えている方へ</h2>
+          <p class="text-zinc-400 leading-relaxed text-sm md:text-base mb-5">
+            学生・スタッフとしての申込み、アウトリーチチームについての相談、ゲスト滞在の問い合わせなど、具体的な次のステップを考えている場合は、まず申込みフォームをご利用いただくのがおすすめです。
+          </p>
+          <a
+            href="/ja/apply"
+            class="inline-flex items-center justify-center px-6 py-4 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs"
+          >
+            申込みフォームへ
+          </a>
+        </div>
+
+        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-7">
+          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">ご連絡の前に</span>
+          <h2 class="text-2xl md:text-3xl font-serif italic text-white mb-4">連絡の際にあると助かる内容</h2>
+          <ul class="space-y-3 text-sm md:text-base text-zinc-400 leading-relaxed">
+            <li>• お名前</li>
+            <li>• ご連絡の目的</li>
+            <li>• 関連する日程や時期</li>
+            <li>• 主な質問</li>
+            <li>• 必要な背景情報</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-20 md:pb-28">
+      <div class="max-w-4xl mx-auto text-center border border-zinc-800 rounded-[2.5rem] p-8 md:p-10 bg-zinc-950">
+        <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">さらに詳しく</span>
+        <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-4">まずは情報を見たい方へ</h2>
+        <p class="text-zinc-400 leading-relaxed max-w-2xl mx-auto text-sm md:text-base mb-8">
+          すぐに連絡する前に、AIに質問したり、オンラインハンドブックで詳しい情報を確認することもできます。
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button
+            class="open-hub-trigger px-6 py-4 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs cursor-pointer"
+          >
+            AIに相談する
+          </button>
+          <a
+            href="https://guide.ywamsendai.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-4 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs"
+          >
+            ハンドブックを見る
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
