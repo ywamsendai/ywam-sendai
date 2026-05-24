@@ -1,85 +1,357 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-
-export const metadata = {
-  school: "Discipleship Training School",
-  location: "Sendai, Japan",
-  method: "Live-Learn Environment",
-  curriculum: "Bible, God, Salvation, Mission, Identity",
-};
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Discipleship Training School | YWAM Sendai">
-  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20">
-    
-    <div class="h-[45vh] relative flex items-center justify-center overflow-hidden">
-      <img src="/hero-sendai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-      <div class="relative z-10 text-center">
-        <a href="/en" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← Back to Home</a>
-        <h1 class="text-6xl md:text-8xl font-serif text-white">DTS</h1>
-        <p class="tracking-[.2em] uppercase text-xs mt-2">Discipleship Training School</p>
-      </div>
-    </div>
+<Layout
+  lang="en"
+  title="DTS | YWAM Sendai"
+  description="Discipleship Training School (DTS) at YWAM Sendai is a foundational season of discipleship, community life, and mission in Sendai, Japan."
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="stack">
+        <div>
+          <p class="eyebrow">Discipleship Training School</p>
+          <h1 class="hero-title max-w-title">
+            A foundational season of discipleship, formation, and mission.
+          </h1>
+        </div>
 
-    <div class="max-w-4xl mx-auto px-6 mt-12 space-y-20">
-      
-      <section class="prose prose-invert max-w-none">
-        <h2 class="text-3xl font-serif text-white italic">To Know God and Make Him Known.</h2>
-        <p class="text-lg leading-relaxed text-zinc-400">
-          The DTS is our foundational <span class="text-white">“Live-Learn”</span> experience. It is a five-month journey of spiritual formation designed to help you encounter the presence of God and join His mission in the world. In Sendai, we embrace the <span class="text-gold-accent italic">Modern Monastic</span> rhythm—where deep study, common prayer, and radical mission become one unified life.
+        <p class="lead">
+          DTS at YWAM Sendai is a full-time school designed to help students know
+          God more deeply, grow in Christian character, and respond to His call
+          through teaching, prayer, community life, and outreach.
         </p>
-      </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem] flex flex-col">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">Phase 01: Lecture</h3>
-          <h4 class="text-xl text-white font-serif mb-4 italic">Deep Roots</h4>
-          <p class="text-sm leading-relaxed text-zinc-400 flex-grow">
-            12 weeks focused on hearing God’s voice and character transformation. Based on the UofN curriculum, you will explore the Nature of God, the Holy Spirit, and our role in the Great Commission through bilingual lectures and personal mentorship.
-          </p>
+        <div class="btn-group">
+          <button type="button" class="btn-primary open-hub-trigger">Ask AI</button>
+          <a href="/en/apply" class="btn-secondary-dark">Apply</a>
+          <a
+            href="https://guide.ywamsendai.org/en"
+            class="btn-secondary-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Handbook
+          </a>
         </div>
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem] flex flex-col">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">Phase 02: Field Assignment</h3>
-          <h4 class="text-xl text-white font-serif mb-4 italic">Fruitfulness</h4>
-          <p class="text-sm leading-relaxed text-zinc-400 flex-grow">
-            8-12 weeks in the harvest field. Apply the "Way of Jesus" in the cross-cultural context of Japan and beyond. A time of active service, relational evangelism, and witnessing the power of the Gospel in community.
-          </p>
-        </div>
-      </div>
 
-      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Next Start</span>
-          <span class="text-zinc-200 font-bold text-sm">24 Sept 2026</span>
-        </div>
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Duration</span>
-          <span class="text-zinc-200 font-bold text-sm">5 Months</span>
-        </div>
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Lecture Fees</span>
-          <span class="text-zinc-200 font-bold text-sm">¥420,000*</span>
-        </div>
-        <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-          <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Outreach Est.</span>
-          <span class="text-zinc-200 font-bold text-sm">¥400,000</span>
-        </div>
-      </section>
-
-      <div class="bg-gold-accent/5 border border-gold-accent/20 p-6 rounded-3xl text-center">
-        <p class="text-[11px] text-zinc-400 leading-relaxed italic">
-          *Lecture fees include tuition and accommodation. <br/>
-          For a full breakdown of costs, including food and travel budgets, <a href="https://guide.ywamsendai.org/en/roles/students/school-costs/" class="text-gold-accent underline">visit the Guide</a>.
+        <p class="text-inverse-soft mb-0">
+          Ask about DTS, dates, costs, expectations, or whether this school may be a good fit.
         </p>
       </div>
 
-      <div class="text-center py-10 border-t border-zinc-900">
-        <h3 class="text-2xl font-serif text-white mb-8 italic">Begin your formation.</h3>
-        <button class="open-hub-trigger inline-block px-12 py-5 bg-gold-accent text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-gold-accent/10">
-          Connect & Apply
-        </button>
+      <div class="card hero-feature-card stack-sm">
+        <p class="eyebrow">Quick Overview</p>
+        <h2 class="card-title">What DTS is</h2>
+        <p>
+          DTS is the foundational training school of YWAM and a prerequisite for
+          many future YWAM pathways, including long-term staff service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-4">
+        <article class="card">
+          <h2 class="card-title">Length</h2>
+          <p>About 5 to 6 months</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Structure</h2>
+          <p>Lecture phase + outreach phase</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Focus</h2>
+          <p>Discipleship, community life, and mission</p>
+        </article>
+
+        <article class="card surface-accent-soft">
+          <h2 class="card-title">Role in YWAM</h2>
+          <p>Foundational school and prerequisite for staff</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">What is DTS?</p>
+        <h2 class="section-title">
+          More than a course. A live-learn environment for discipleship.
+        </h2>
+        <p class="lead">
+          DTS stands for Discipleship Training School. It is the entry-level school
+          of YWAM and is designed to help students build a foundation for life with God,
+          Christian character, and participation in mission.
+        </p>
       </div>
 
+      <div class="grid-3">
+        <article class="card card-interactive">
+          <h3 class="card-title">Know God</h3>
+          <p>Grow in relationship with God through Scripture, prayer, worship, and obedience.</p>
+        </article>
+
+        <article class="card card-interactive">
+          <h3 class="card-title">Be formed in community</h3>
+          <p>Learn through shared life, mentoring, practical service, and discipleship.</p>
+        </article>
+
+        <article class="card card-interactive">
+          <h3 class="card-title">Participate in mission</h3>
+          <p>Put learning into practice through outreach, service, and team-based ministry.</p>
+        </article>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div class="stack-sm">
+          <p class="eyebrow">DTS at YWAM Sendai</p>
+          <h2 class="section-title">Shaped by life in Sendai and the wider Tohoku region</h2>
+          <p class="lead">
+            DTS at YWAM Sendai includes the core YWAM framework, but it is also shaped
+            by the local context of Japan, community-based mission, and long-term faithful presence.
+          </p>
+          <p class="text-soft">
+            Students should expect not only biblical teaching and discipleship, but also
+            formation connected to cultural humility, prayerful presence, relationships,
+            and service rooted in place.
+          </p>
+        </div>
+
+        <div class="grid stack-sm">
+          <article class="card card-interactive">
+            <h3 class="card-title">Life in Japan</h3>
+            <p>Formation shaped by real life in a Japanese context.</p>
+          </article>
+
+          <article class="card card-interactive">
+            <h3 class="card-title">Cultural humility</h3>
+            <p>Learning to listen, adapt, and serve with respect.</p>
+          </article>
+
+          <article class="card card-interactive">
+            <h3 class="card-title">Prayerful presence</h3>
+            <p>Mission rooted in faithfulness, relationship, and place.</p>
+          </article>
+
+          <article class="card card-interactive">
+            <h3 class="card-title">Bilingual environment</h3>
+            <p>Participation shaped by both English and Japanese learning rhythms.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Structure</p>
+        <h2 class="section-title">Two phases that work together</h2>
+        <p class="lead">
+          DTS includes a lecture phase and an outreach phase. The first builds foundations;
+          the second puts learning into practice.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <span class="chip-accent">Phase 1</span>
+          <h3 class="card-title">Lecture Phase</h3>
+          <p>
+            The lecture phase focuses on biblical teaching, discipleship, worship,
+            prayer, community life, and personal formation.
+          </p>
+          <ul class="list-clean">
+            <li>Classroom teaching</li>
+            <li>Small-group processing</li>
+            <li>Personal reflection</li>
+            <li>Worship and intercession</li>
+            <li>One-on-one mentoring</li>
+            <li>Practical service and shared responsibilities</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="chip-accent">Phase 2</span>
+          <h3 class="card-title">Outreach Phase</h3>
+          <p>
+            The outreach phase gives students the opportunity to live out what they
+            have been learning through team-based ministry in real contexts.
+          </p>
+          <ul class="list-clean">
+            <li>Evangelism and discipleship</li>
+            <li>Mercy ministry and practical service</li>
+            <li>Church partnership</li>
+            <li>Cross-cultural ministry</li>
+            <li>Team life, prayer, and debriefing</li>
+            <li>Flexibility and dependence on God</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">What students can expect</p>
+        <h2 class="section-title">A season that is both stretching and deeply formative</h2>
+        <p class="lead">
+          DTS is not only about receiving information. It is a full-time season of participation,
+          responsibility, growth, and discipleship.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card card-interactive">
+          <h3 class="card-title">Shared rhythms</h3>
+          <p>Community life, worship, intercession, mentoring, and practical responsibilities.</p>
+        </article>
+
+        <article class="card card-interactive">
+          <h3 class="card-title">Personal growth</h3>
+          <p>Challenge, maturity, correction, surrender, and growth in Christian character.</p>
+        </article>
+
+        <article class="card card-interactive">
+          <h3 class="card-title">Mission readiness</h3>
+          <p>Preparation for outreach, teamwork, service, and practical obedience.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Who is DTS for?</p>
+        <h2 class="section-title">For those seeking a foundation in discipleship and mission</h2>
+        <p class="lead">
+          DTS is often a good fit for people who want focused time to grow in their relationship
+          with God, be discipled in Christian community, and discern their next step.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card-dark">
+          <h3 class="card-title">Grow with God</h3>
+          <p>For those who want to know God more deeply and hear His voice more clearly.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Be discipled</h3>
+          <p>For those who want formation in community, character, and obedience.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Prepare for what’s next</h3>
+          <p>For those exploring future ministry, training, or long-term service in YWAM.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper border-top">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Dates and Costs</p>
+        <h2 class="section-title">Practical information for the upcoming DTS</h2>
+        <p class="lead">
+          Specific schedules and outreach details may vary, but the following dates and current estimates
+          provide a general picture for planning.
+        </p>
+      </div>
+
+      <div class="grid-2" style="align-items: start;">
+        <article class="card">
+          <h3 class="card-title">Dates</h3>
+          <div class="stack-sm">
+            <div>
+              <p class="eyebrow">Arrival Day</p>
+              <p>24 September 2026</p>
+            </div>
+            <div>
+              <p class="eyebrow">Graduation Day</p>
+              <p>5 March 2027</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Estimated Costs</h3>
+          <div class="stack-sm">
+            <div>
+              <p class="eyebrow">Tuition</p>
+              <p>¥300,000</p>
+            </div>
+            <div>
+              <p class="eyebrow">Accommodation</p>
+              <p>¥120,000</p>
+            </div>
+            <div>
+              <p class="eyebrow">Food and local transportation</p>
+              <p>¥150,000 estimated</p>
+            </div>
+            <div>
+              <p class="eyebrow">Outreach phase</p>
+              <p>¥400,000 estimated</p>
+            </div>
+            <div class="surface-accent rounded-md p-lg">
+              <p class="eyebrow">Estimated total</p>
+              <p><strong>¥970,000</strong></p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="container-narrow" style="margin-top: 2rem;">
+        <p class="text-soft">
+          Tuition includes lectures, speaker and teacher-related transport, speaker and teacher-related
+          food and accommodation, and administrative costs. Accommodation includes wifi, utilities,
+          and shared household consumables. Outreach costs vary depending on destination and travel expenses.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container container-narrow center stack">
+      <div>
+        <p class="eyebrow">Next Step</p>
+        <h2 class="section-title">Interested in DTS?</h2>
+        <p class="lead mx-auto">
+          If you are exploring DTS, discerning your next season, or wondering whether this school may be a good fit,
+          we would love to help you take the next step.
+        </p>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <button type="button" class="btn-primary open-hub-trigger">Ask AI</button>
+        <a href="/en/apply" class="btn-secondary">Apply</a>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <a href="/en/contact" class="btn-text">Contact</a>
+        <a
+          href="https://guide.ywamsendai.org/en"
+          class="btn-text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Handbook
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

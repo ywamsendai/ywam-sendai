@@ -1,40 +1,142 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="出願・参加申し込み | | YWAM仙台" lang="ja">
-  <main class="min-h-screen bg-dark-bg flex flex-col items-center p-4 md:p-10">
-    
-    <div class="w-full max-w-5xl flex justify-between items-center mb-8 px-4">
-      <a href="/ja" class="text-[10px] tracking-[0.3em] text-zinc-500 hover:text-gold-accent transition-colors uppercase">
-        ← ホームに戻る
-      </a>
-      <span class="text-[10px] tracking-[0.3em] text-zinc-700 uppercase">Sendai Candidate Portal</span>
-    </div>
+<Layout
+  lang="ja"
+  title="申込み | YWAM仙台"
+  description="学生、スタッフ、チーム、個人訪問者のための共通申込みフォームからYWAM仙台に申込みできます。"
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="stack">
+        <div>
+          <p class="eyebrow">YWAM仙台への申込み</p>
+          <h1 class="hero-title max-w-title">
+            学生、スタッフ、チーム、訪問者のための共通申込みフォームです。
+          </h1>
+        </div>
 
-    <div class="w-full max-w-5xl bg-zinc-900/30 border border-zinc-800/50 rounded-[2rem] overflow-hidden shadow-2xl">
-      <div 
-        style="width:100%; min-height: 600px;" 
-        data-fillout-id="2SNM7DhHQKus" 
-        data-fillout-embed-type="standard" 
-        data-fillout-inherit-parameters 
-        data-fillout-dynamic-resize
-      ></div>
-    </div>
+        <p class="lead">
+          YWAM仙台では、複数の申込み区分に対応した一つの申込みフォームを使用しています。
+          フォーム内で該当するカテゴリーを選ぶと、その内容に応じて必要な流れへ進めるようになっています。
+        </p>
 
-    <footer class="mt-10 mb-6 text-[9px] text-zinc-600 tracking-widest uppercase text-center">
-      Secure Application Environment • YWAM仙台
-    </footer>
-  </main>
+        <div class="btn-group">
+          <a href="#application-form" class="btn-primary">申込みを始める</a>
+          <button type="button" class="btn-secondary-dark open-hub-trigger">AIに相談</button>
+          <a href="/ja/contact" class="btn-secondary-dark">お問い合わせ</a>
+        </div>
+
+        <p class="text-inverse-soft mb-0">
+          申込みは、単なる事務手続きではなく、見極めと準備、そして対話のプロセスでもあります。
+        </p>
+      </div>
+
+      <div class="card-dark stack-sm">
+        <p class="eyebrow">簡単ガイド</p>
+        <h2 class="card-title">このフォームの対象</h2>
+        <p>
+          このフォームは、スクール申込み、長期スタッフ申請、
+          短期チーム、個人の訪問や短期参加のために使われます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-4">
+        <article class="card">
+          <h3 class="card-title">学生</h3>
+          <p>DTSやDBSなど、YWAMのスクールに申込む方のためのフォームです。</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">長期スタッフ</h3>
+          <p>YWAM仙台のスタッフとして加わることを希望する方のためのフォームです。</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">チーム</h3>
+          <p>短期チームとしてつながりたい方、訪問を希望する方のためのフォームです。</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">訪問者</h3>
+          <p>個人での訪問や短期参加を希望する方のためのフォームです。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">申込みの前に</p>
+        <h2 class="section-title">あらかじめ知っておきたいこと</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3 class="card-title">一般的な条件</h3>
+          <p>
+            通常は18歳以上が必要です。ただしDTSについては、
+            滞在期間中に18歳になる場合は17歳でも申込み可能です。
+            また、英語または日本語での実用的なコミュニケーション力が必要です。
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">区分によって条件が異なる場合があります</h3>
+          <p>
+            申込み内容によっては追加条件があります。たとえば長期スタッフ申請には、
+            YWAMのDTS修了が必要です。
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">迷っている場合</h3>
+          <p>
+            学生、スタッフ、チーム、訪問者のどれに当てはまるか分からない場合は、
+            先にYWAM仙台へ相談して進む道を確認することをおすすめします。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="application-form" class="section bg-paper border-top">
+    <div class="container">
+      <div class="section-intro container-narrow center">
+        <p class="eyebrow">申込みフォーム</p>
+        <h2 class="section-title">ここから始めてください</h2>
+        <p class="lead mx-auto">
+          ご自身の状況に最も近いカテゴリーを選ぶと、フォームがその先の流れを案内します。
+        </p>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <div
+          style="width:100%;min-height:640px;"
+          data-fillout-id="2SNM7DhHQKus"
+          data-fillout-embed-type="standard"
+          data-fillout-inherit-parameters
+          data-fillout-dynamic-resize
+        ></div>
+      </div>
+
+      <div class="container-narrow center" style="margin-top: 1.5rem;">
+        <p class="text-soft">
+          埋め込みフォームが正しく表示されない場合は、お問い合わせください。別の方法でご案内できます。
+        </p>
+        <div class="btn-group" style="justify-content: center;">
+          <button type="button" class="btn-secondary open-hub-trigger">AIに相談</button>
+          <a href="/ja/contact" class="btn-text">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://server.fillout.com/embed/v1/" defer></script>
 </Layout>
-
-<script src="https://server.fillout.com/embed/v1/"></script>
-
-<style is:global>
-  /* Fillout injects an iframe. To ensure it feels native, 
-     we can target it to make sure it respects the container's rounded corners.
-  */
-  [data-fillout-id] iframe {
-    border-radius: 2rem;
-  }
-</style>

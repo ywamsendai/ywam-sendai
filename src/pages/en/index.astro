@@ -1,130 +1,218 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="YWAM Sendai | Modern Monastic-Missional Community" lang="en" isSnap={true}>
-  <main>
-    
-    <section class="h-screen w-full snap-start relative flex flex-col items-center justify-center p-6 text-center">
-      <div class="absolute inset-0 z-0">
-        <img src="/hero-sendai.jpg" alt="Sendai Landscape" class="w-full h-full object-cover opacity-40 grayscale-[0.2]" />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-dark-bg"></div>
-      </div>
-      
-      <div class="relative z-10">
-        <h1 class="text-6xl md:text-9xl font-serif tracking-tighter mb-4">Sendai.</h1>
-        <p class="text-gold-accent tracking-[0.4em] uppercase text-xs md:text-sm font-light italic">A Modern Monastic-Missional Community</p>
-      </div>
-      <div class="absolute bottom-10 animate-bounce opacity-30 text-[10px] tracking-[0.5em]">SCROLL</div>
-    </section>
+<Layout
+  lang="en"
+  title="YWAM Sendai | Christian Community in Sendai, Japan"
+  description="YWAM Sendai is a Christian missional community in Sendai, serving the wider Tohoku region through prayer, hospitality, discipleship, training, and faithful presence."
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="stack">
+        <div>
+          <p class="eyebrow">Christian Community in Sendai, Japan</p>
+          <h1 class="hero-title max-w-title">
+            A warm, rooted community for discipleship, mission, and long-term
+            service in Tohoku.
+          </h1>
+        </div>
 
-    <section class="min-h-screen w-full snap-start bg-dark-bg p-8 flex flex-col justify-center">
-      <div class="max-w-4xl mx-auto">
-        <span class="text-gold-accent text-xs uppercase tracking-widest block mb-6 text-center">Our Primary Calling</span>
-        <h2 class="text-4xl md:text-6xl font-serif text-center mb-12 italic">Deeply Hidden in Christ.</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6 text-zinc-400 leading-relaxed text-lg">
-            <p>
-              We believe that the most effective way to reach Japan is through a life <span class="text-zinc-100">transformed</span>. Our transformation becomes the light that draws others to Him.
-            </p>
-            <p>
-              Since 2018, YWAM Sendai has served as a <span class="italic text-gold-accent">Mission Hub</span> for the Tohoku region—seeking expansion of the Kingdom across North Japan.
-            </p>
-          </div>
-          <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem]">
-            <h3 class="text-zinc-100 font-bold mb-4 uppercase text-xs tracking-widest">The Heart of the Mission Hub</h3>
-            <ul class="space-y-4 text-sm">
-              <li class="flex gap-3"><span class="text-gold-accent">†</span> Intimacy as Mission</li>
-              <li class="flex gap-3"><span class="text-gold-accent">†</span> Deep Contextualization</li>
-              <li class="flex gap-3"><span class="text-gold-accent">†</span> Faithful Longevity</li>
-            </ul>
-          </div>
+        <p class="lead">
+          YWAM Sendai is a Christian community in Sendai, serving the wider
+          Tohoku region through prayer, hospitality, training, and faithful presence.
+        </p>
+
+        <div class="btn-group">
+          <button type="button" class="btn-primary open-hub-trigger">Ask AI</button>
+          <a href="/en/dts" class="btn-secondary-dark">Explore DTS</a>
+          <a href="/en/dbs" class="btn-secondary-dark">Explore DBS</a>
+        </div>
+
+        <p class="text-inverse-soft mb-0">
+          Ask questions, explore programs, or find your next step.
+        </p>
+
+        <div class="btn-group">
+          <a href="/en/apply" class="btn-text">Apply</a>
+          <a href="/en/contact" class="btn-text">Contact</a>
         </div>
       </div>
-    </section>
 
-    <section class="min-h-screen w-full snap-start bg-zinc-950 p-6 flex flex-col justify-center">
-      <div class="max-w-6xl mx-auto w-full">
-        <span class="text-gold-accent text-xs uppercase tracking-widest block mb-6 text-center">University of the Nations</span>
-        <h2 class="text-3xl md:text-5xl font-serif mb-12 text-center italic text-white">Formation of the Missionary</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <div class="group relative overflow-hidden bg-zinc-900 border border-zinc-800 p-10 rounded-[3rem] hover:border-gold-accent/50 transition-all flex flex-col">
-            <h3 class="text-gold-accent text-xs uppercase tracking-widest mb-2">The Foundation</h3>
-            <h4 class="text-4xl font-serif mb-4 italic text-white">DTS</h4>
-            <p class="text-zinc-400 mb-8 flex-grow leading-relaxed">
-              A foundational "Live-Learn" experience. More than a course, it is an invitation to be transformed by the character of God and join His mission through a 5-month lecture and field assignment.
-            </p>
-            <div class="flex justify-between items-end border-t border-zinc-800 pt-6">
-              <div class="flex flex-col">
-                <span class="text-[10px] text-zinc-500 uppercase tracking-widest">Next School</span>
-                <span class="text-xs text-zinc-300 font-bold">24 Sept 2026</span>
-              </div>
-              <a href="/en/dts" class="text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors">LEARN MORE</a>
-            </div>
-          </div>
+      <div class="card hero-feature-card stack-sm">
+        <p class="eyebrow">Our Heart</p>
+        <h2 class="card-title">Faithful presence in Sendai and Tohoku</h2>
+        <p>
+          We want to know God and make Him known through prayer, shared life,
+          discipleship, hospitality, and long-term service in this region.
+        </p>
+      </div>
+    </div>
+  </section>
 
-          <div class="group relative overflow-hidden bg-zinc-900 border border-zinc-800 p-10 rounded-[3rem] hover:border-gold-accent/50 transition-all flex flex-col">
-            <h3 class="text-gold-accent text-xs uppercase tracking-widest mb-2">Bible Immersion</h3>
-            <h4 class="text-4xl font-serif mb-4 italic text-white">DBS</h4>
-            <p class="text-zinc-400 mb-8 flex-grow leading-relaxed">
-              12 weeks. 66 books. One unified story. Discover God's redemptive work through an inductive study of the Word, from Genesis to Revelation. 
-              <span class="block mt-2 text-[10px] italic opacity-60">*Prerequisite: DTS</span>
-            </p>
-            <div class="flex justify-between items-end border-t border-zinc-800 pt-6">
-              <div class="flex flex-col">
-                <span class="text-[10px] text-zinc-500 uppercase tracking-widest">Next School</span>
-                <span class="text-xs text-zinc-300 font-bold">Apr 2027</span>
-              </div>
-              <a href="/en/dbs" class="text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors">LEARN MORE</a>
-            </div>
-          </div>
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Who We Are</p>
+        <h2 class="section-title">
+          More than a program. A community rooted in prayer and mission.
+        </h2>
+        <p class="lead">
+          We seek to know God and make Him known through shared life, discipleship, and service.
+        </p>
+      </div>
 
+      <div class="grid-3">
+        <article class="card">
+          <h3 class="card-title">Prayer and worship</h3>
+          <p>Mission begins with devotion to Jesus.</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Discipleship and formation</h3>
+          <p>We care about character, calling, and faithfulness.</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Hospitality and shared life</h3>
+          <p>Community is something we live together.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div class="stack-sm">
+          <p class="eyebrow">Rooted in Place</p>
+          <h2 class="section-title">Rooted in Sendai. Serving Tohoku.</h2>
+          <p class="lead">
+            We believe mission is most faithful when it is rooted in real people and real places.
+          </p>
+          <p class="text-soft">
+            From Sendai, we seek to serve the wider Tohoku region through long-term presence,
+            local relationships, and partnership with the church.
+          </p>
+        </div>
+
+        <div class="grid stack-sm">
+          <article class="card card-interactive">
+            <h3 class="card-title">Long-term presence</h3>
+            <p>Choosing faithfulness over speed.</p>
+          </article>
+
+          <article class="card card-interactive">
+            <h3 class="card-title">Cultural humility</h3>
+            <p>Learning language, listening well, and serving with respect.</p>
+          </article>
+
+          <article class="card card-interactive">
+            <h3 class="card-title">Regional partnership</h3>
+            <p>Walking with churches and communities across Tohoku.</p>
+          </article>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="min-h-screen w-full snap-start bg-dark-bg p-8 flex flex-col justify-center">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-4xl font-serif mb-16 italic text-zinc-400">The Tohoku Mandate</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-          
-          <div class="space-y-4">
-            <div class="h-px w-12 bg-gold-accent mb-6"></div>
-            <h3 class="text-xl font-bold tracking-widest uppercase">The Mission Hub</h3>
-            <p class="text-sm text-zinc-500 leading-relaxed">Sendai provides the resources, training, and spiritual oversight necessary to pioneer new teams across every prefecture.</p>
-          </div>
-
-          <div class="space-y-4">
-            <div class="h-px w-12 bg-gold-accent mb-6"></div>
-            <h3 class="text-xl font-bold tracking-widest uppercase">Slow Mission</h3>
-            <p class="text-sm text-zinc-500 leading-relaxed">We value the aesthetic of beauty and presenting Christianity as an ancient "Way" that belongs in the Japanese story.</p>
-          </div>
-
-          <div class="space-y-4">
-            <div class="h-px w-12 bg-gold-accent mb-6"></div>
-            <h3 class="text-xl font-bold tracking-widest uppercase">The Movement</h3>
-            <p class="text-sm text-zinc-500 leading-relaxed">We labour to see a vibrant YWAM presence established in every one of the six prefectures of North Japan.</p>
-          </div>
-
-        </div>
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Next Steps</p>
+        <h2 class="section-title">Explore your next step</h2>
+        <p class="lead">
+          Whether you are just beginning to explore or ready to move forward, here are a few ways to connect.
+        </p>
       </div>
-    </section>
 
-    <section class="h-screen w-full snap-start flex flex-col items-center justify-center p-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-serif mb-6 text-white italic">An Invitation to the Way.</h2>
-      <p class="text-zinc-500 mb-12 max-w-sm text-sm font-sans">
-        We invite the pioneers, the contemplatives, the artists, and the scholars. Join us as we labour for the hearts of Tohoku.
-      </p>
-      
-      <div class="flex flex-col gap-4 w-full max-w-xs font-sans">
-        <button class="open-hub-trigger w-full py-5 bg-gold-accent text-black font-black rounded-full hover:scale-105 transition-transform uppercase tracking-widest text-xs cursor-pointer">
-          Connect
-        </button>
+      <div class="grid-4">
+        <article class="card card-interactive">
+          <span class="chip-accent">School</span>
+          <h3 class="card-title">DTS</h3>
+          <p>A season of discipleship, spiritual formation, and mission training.</p>
+          <a href="/en/dts" class="btn-text">Explore DTS</a>
+        </article>
+
+        <article class="card card-interactive">
+          <span class="chip-accent">School</span>
+          <h3 class="card-title">DBS</h3>
+          <p>A deeper journey into Scripture, formation, and life with God’s Word.</p>
+          <a href="/en/dbs" class="btn-text">Explore DBS</a>
+        </article>
+
+        <article class="card surface-accent card-interactive">
+          <span class="chip-accent">Guide</span>
+          <h3 class="card-title">Not sure where to begin?</h3>
+          <p>Ask the AI assistant about programs, applying, the handbook, or your next step.</p>
+          <button type="button" class="btn-text open-hub-trigger">Ask AI</button>
+        </article>
+
+        <article class="card card-interactive">
+          <span class="chip-accent">Partner</span>
+          <h3 class="card-title">Support the Mission</h3>
+          <p>Partner with long-term ministry and community life in Tohoku.</p>
+          <a href="/en/give" class="btn-text">Donate</a>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Our Life Together</p>
+        <h2 class="section-title">Formed for faithful presence</h2>
+        <p class="lead">
+          We care not only about what we do, but about who we are becoming.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card-dark">
+          <h3 class="card-title">Prayer and worship</h3>
+          <p>A life centered on Jesus.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Scripture and discipleship</h3>
+          <p>Formation for both inner life and outward service.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Hospitality and community</h3>
+          <p>Shared life, generosity, and welcome.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Long-term service</h3>
+          <p>Sustainable rhythms of work, rest, and mission.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper border-top">
+    <div class="container container-narrow center stack">
+      <div>
+        <p class="eyebrow">Start Here</p>
+        <h2 class="section-title">Start where you are</h2>
+        <p class="lead mx-auto">
+          Whether you are exploring YWAM Sendai, considering a school, or looking for the right page,
+          we would love to help you take the next step.
+        </p>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <button type="button" class="btn-primary open-hub-trigger">Ask AI</button>
+        <a href="/en/apply" class="btn-secondary">Apply</a>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <a href="/en/contact" class="btn-text">Contact</a>
+        <a href="/en/give" class="btn-text">Donate</a>
+        <a href="https://guide.ywamsendai.org/en" class="btn-text" target="_blank" rel="noopener noreferrer">Visit Handbook</a>
+      </div>
+    </div>
+  </section>
 </Layout>

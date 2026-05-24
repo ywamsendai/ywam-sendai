@@ -1,74 +1,239 @@
 ---
-import '../styles/global.css';
-import ConnectHub from '../components/ConnectHub.astro';
-const { title, lang = 'en', isSnap = false } = Astro.props;
+import "../styles/global.css";
+import ConnectHub from "../components/ConnectHub.astro";
 
-// Logic to determine the "opposite" link
-// This assumes your structure is /en/... and /ja/...
+const {
+  title = "YWAM Sendai",
+  description = "YWAM Sendai is a Christian missional community in Sendai, serving the wider Tohoku region through prayer, hospitality, discipleship, training, and faithful presence.",
+  lang = "en",
+  isSnap = false
+} = Astro.props;
+
 const currentPath = Astro.url.pathname;
-const switchTarget = lang === 'en' 
-  ? currentPath.replace('/en', '/ja') 
-  : currentPath.replace('/ja', '/en');
+
+const isEnglish = lang === "en";
+const homeUrl = isEnglish ? "/en" : "/ja";
+const dtsUrl = isEnglish ? "/en/dts" : "/ja/dts";
+const dbsUrl = isEnglish ? "/en/dbs" : "/ja/dbs";
+const applyUrl = isEnglish ? "/en/apply" : "/ja/apply";
+const contactUrl = isEnglish ? "/en/contact" : "/ja/contact";
+const giveUrl = isEnglish ? "/en/give" : "/ja/give";
+
+const switchTarget = isEnglish
+  ? currentPath.replace(/^\/en(?=\/|$)/, "/ja")
+  : currentPath.replace(/^\/ja(?=\/|$)/, "/en");
+
+const switchLabel = isEnglish ? "日本語" : "English";
+const navAria = isEnglish ? "Site navigation" : "サイトナビゲーション";
+
+const applyLabel = isEnglish ? "Apply" : "申込み";
+const askAiLabel = isEnglish ? "Ask AI" : "AIに相談";
+
+const footerExploreLabel = isEnglish ? "Explore" : "ページ";
+const footerConnectLabel = isEnglish ? "Connect" : "つながる";
+
+const homeLabel = isEnglish ? "Home" : "ホーム";
+const contactLabel = isEnglish ? "Contact" : "お問い合わせ";
+const giveLabel = isEnglish ? "Giving & Payments" : "献金とお支払い";
+const handbookLabel = isEnglish ? "Handbook" : "ハンドブック";
+const emailLabel = isEnglish ? "Email" : "メール";
+
+const footerDescription = isEnglish
+  ? "A Christian missional community in Sendai, Japan, committed to prayer, discipleship, hospitality, and long-term service in Tohoku."
+  : "祈り、弟子訓練、ホスピタリティ、そして東北での長期的な働きを大切にする、仙台のクリスチャン・ミッショナルコミュニティです。";
+
+const footerMeta = isEnglish
+  ? "Established 2018 • Sendai, Miyagi, Japan"
+  : "2018年設立 • 宮城県仙台市";
+
+const handbookUrl = isEnglish
+  ? "https://guide.ywamsendai.org/en"
+  : "https://guide.ywamsendai.org/ja";
+
+const discordUrl = "https://discord.gg/djmCF4DBaV";
+const lineUrl = "https://lin.ee/LD2Nf4b";
+const instagramUrl = "https://ig.me/m/ywamsendai";
+const emailUrl = "mailto:hello@ywamsendai.org";
 ---
+
 <!DOCTYPE html>
-<html lang={lang} class:list={[
-  "bg-dark-bg antialiased scroll-smooth selection:bg-gold-accent/30",
-  { "snap-y snap-mandatory": isSnap }
-]}>
+<html lang={lang} class:list={[{ "snap-y snap-mandatory": isSnap }]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter:wght@300;600&display=swap" rel="stylesheet">
-  <script is:inline>
-  function saveLanguagePreference(lang) {
-    localStorage.setItem('preferred-lang', lang);
-  }
-</script>
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script is:inline>
+      function saveLanguagePreference(lang) {
+        try {
+          localStorage.setItem("preferred-lang", lang);
+        } catch (e) {}
+      }
+    </script>
   </head>
-  <body class="bg-dark-bg m-0 p-0 text-white font-sans">
-    
-      <nav class="fixed top-0 right-0 z-50 p-6 md:p-10">
-        <div class="flex items-center gap-6 bg-black/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/5">
-          
-          <a 
-            href={lang === 'en' ? '/en' : '/ja'} 
+
+  <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a
+          href={homeUrl}
+          onclick={`saveLanguagePreference('${lang}')`}
+          class="site-brand"
+        >
+          <span class="site-brand-mark">YWAM Sendai</span>
+        </a>
+
+        <nav class="site-nav" aria-label={navAria}>
+          <button
+            type="button"
+            class="site-nav-link open-hub-trigger"
+          >
+            {askAiLabel}
+          </button>
+
+          <a
+            href={applyUrl}
             onclick={`saveLanguagePreference('${lang}')`}
-            class="text-[10px] tracking-[0.3em] uppercase hover:text-gold-accent transition-colors"
+            class="site-nav-link"
           >
-            {lang === 'en' ? 'Home' : 'ホーム'}
+            {applyLabel}
           </a>
 
-          <div class="w-px h-3 bg-zinc-800"></div>
-
-          <a 
-            href={switchTarget} 
-            onclick={`saveLanguagePreference('${lang === 'en' ? 'ja' : 'en'}')`}
-            class="text-[10px] tracking-[0.3em] uppercase font-bold text-gold-accent hover:text-white transition-colors"
+          <a
+            href={switchTarget}
+            onclick={`saveLanguagePreference('${isEnglish ? "ja" : "en"}')`}
+            class="site-nav-link site-nav-link-accent"
           >
-            {lang === 'en' ? '日本語' : 'ENGLISH'}
+            {switchLabel}
           </a>
+        </nav>
+      </div>
+    </header>
 
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <ConnectHub lang={lang} />
+
+    <footer class:list={["site-footer", { "snap-start": isSnap }]}>
+      <div class="container">
+        <div class="site-footer-grid">
+          <div class="site-footer-column site-footer-column-brand">
+            <div class="site-footer-brand">
+              <img
+                src="/ywamsendailogo.png"
+                class="site-footer-logo"
+                alt="YWAM Sendai logo"
+              />
+              <div>
+                <p class="site-footer-title">YWAM Sendai</p>
+                <p class="site-footer-meta">{footerMeta}</p>
+              </div>
+            </div>
+
+            <p class="site-footer-description">
+              {footerDescription}
+            </p>
+          </div>
+
+          <div class="site-footer-column">
+            <p class="site-footer-heading">{footerExploreLabel}</p>
+            <ul class="site-footer-links">
+              <li>
+                <a
+                  href={homeUrl}
+                  onclick={`saveLanguagePreference('${lang}')`}
+                >
+                  {homeLabel}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={dtsUrl}
+                  onclick={`saveLanguagePreference('${lang}')`}
+                >
+                  DTS
+                </a>
+              </li>
+              <li>
+                <a
+                  href={dbsUrl}
+                  onclick={`saveLanguagePreference('${lang}')`}
+                >
+                  DBS
+                </a>
+              </li>
+              <li>
+                <a
+                  href={applyUrl}
+                  onclick={`saveLanguagePreference('${lang}')`}
+                >
+                  {applyLabel}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={contactUrl}
+                  onclick={`saveLanguagePreference('${lang}')`}
+                >
+                  {contactLabel}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={giveUrl}
+                  onclick={`saveLanguagePreference('${lang}')`}
+                >
+                  {giveLabel}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="site-footer-column">
+            <p class="site-footer-heading">{footerConnectLabel}</p>
+            <ul class="site-footer-links">
+              <li>
+                <button type="button" class="site-footer-button open-hub-trigger">
+                  {askAiLabel}
+                </button>
+              </li>
+              <li>
+                <a href={handbookUrl} target="_blank" rel="noopener noreferrer">
+                  {handbookLabel}
+                </a>
+              </li>
+              <li>
+                <a href={discordUrl} target="_blank" rel="noopener noreferrer">
+                  Discord
+                </a>
+              </li>
+              <li>
+                {isEnglish ? (
+                  <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                    Instagram
+                  </a>
+                ) : (
+                  <a href={lineUrl} target="_blank" rel="noopener noreferrer">
+                    LINE
+                  </a>
+                )}
+              </li>
+              <li>
+                <a href={emailUrl}>{emailLabel}</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </nav>
-
-    <slot /> <ConnectHub lang={lang} />
-    
-    <footer class:list={[
-      "min-h-[40vh] flex flex-col items-center justify-center bg-dark-bg border-t border-zinc-900 py-20",
-      { "snap-start": isSnap }
-    ]}>
-      <img src="/ywamsendailogo.png" class="h-10 opacity-30 grayscale mb-8" alt="Logo" />
-
-      <div class="text-center space-y-2">
-        <div class="flex items-center justify-center gap-4">
-          <span class="text-[10px] tracking-[0.5em] font-bold text-zinc-500">Y W A M</span>
-          <div class="h-3 w-px bg-zinc-800"></div>
-          <span class="text-[10px] tracking-[0.5em] font-bold text-zinc-500">S E N D A I</span>
-        </div>
-        <p class="text-[9px] text-zinc-700 tracking-[0.2em] uppercase">
-          {lang === 'ja' ? '2018年設立 • 宮城県仙台市' : 'Established 2018 • Sendai, Japan'}
-        </p>
       </div>
     </footer>
   </body>

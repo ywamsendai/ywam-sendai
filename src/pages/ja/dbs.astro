@@ -1,108 +1,375 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-
-export const metadata = {
-  school: "聖書弟子訓練学校（DBS）",
-  location: "宮城県仙台市",
-  method: "帰納的聖書研究（インダクティブ）",
-  curriculum: "創世記から黙示録まで, 歴史的背景, 世界観",
-};
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="聖書弟子訓練学校 (DBS) | YWAM仙台" lang="ja">
-  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20">
-    
-    <div class="h-[45vh] relative flex items-center justify-center overflow-hidden">
-      <img src="/hero-sendai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-      <div class="relative z-10 text-center">
-        <a href="/ja" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← ホームに戻る</a>
-        <h1 class="text-6xl md:text-8xl font-serif text-white">DBS</h1>
-        <p class="tracking-[.2em] uppercase text-xs mt-2">Discipleship Bible School</p>
-      </div>
-    </div>
+<Layout
+  lang="ja"
+  title="DBS | YWAM仙台"
+  description="YWAM仙台のDBS（弟子訓練聖書学校）は、聖書全体を年代順に読み進めながら、神のことばを深く学び、忠実に解釈し、人生とミニストリーに適用していく12週間のスクールです。"
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="stack">
+        <div>
+          <p class="eyebrow">弟子訓練聖書学校</p>
+          <h1 class="hero-title max-w-title">
+            神のことばに深く向き合う、集中的な12週間。
+          </h1>
+        </div>
 
-    <div class="max-w-4xl mx-auto px-6 mt-12 space-y-20">
-      
-      <section class="prose prose-invert max-w-none">
-        <h2 class="text-3xl font-serif text-white italic">一つの物語、66巻の書物、12週間の旅。</h2>
-        <p class="text-lg leading-relaxed text-zinc-400">
-          DBSは、3ヶ月間にわたる聖書への没入体験です。創世記から黙示録までを年代順に辿り、聖書を断片的な言葉の集まりではなく、神の救済の働きという<span class="text-white">一つの統合された物語</span>として解き明かします。仙台のコミュニティにおいて、私たちは沈黙を愛する修道士の心と、真理を追究する学者の知性をもって御言葉に向き合います。
+        <p class="lead">
+          YWAM仙台のDBSは、神のことばを通して神をより深く知り、
+          聖書の土台を強め、聖書を忠実に解釈し適用する歩みを育てるためのスクールです。
         </p>
-      </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
-          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">01. 観察 (Observation)</h4>
-          <p class="text-[11px] text-zinc-500 italic">「何と書いてあるか？」</p>
+        <div class="btn-group">
+          <button type="button" class="btn-primary open-hub-trigger">AIに相談</button>
+          <a href="/ja/apply" class="btn-secondary-dark">申し込む</a>
+          <a
+            href="https://guide.ywamsendai.org/ja"
+            class="btn-secondary-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ハンドブックを見る
+          </a>
         </div>
-        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
-          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">02. 解釈 (Interpretation)</h4>
-          <p class="text-[11px] text-zinc-500 italic">「当時はどういう意味だったか？」</p>
-        </div>
-        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
-          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">03. 適用 (Application)</h4>
-          <p class="text-[11px] text-zinc-500 italic">「今、どう歩むべきか？」</p>
-        </div>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem]">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">聖書の旅</h3>
-          <h4 class="text-xl text-white font-serif mb-4 italic">年代順の通読</h4>
-          <p class="text-sm leading-relaxed text-zinc-400">
-            全66巻を、出来事が起こった順序に従って読み進めます。預言者たちの歴史的背景、律法の文化的重み、そして初期教会の爆発的な誕生の物語を深く理解します。
-          </p>
-        </div>
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem]">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">対話のコンテクスト</h3>
-          <h4 class="text-xl text-white font-serif mb-4 italic">スモールグループ（テーブル）</h4>
-          <p class="text-sm leading-relaxed text-zinc-400">
-            聖書は本来、共同体で読まれるものです。「テーブル」の文化の中で、その週に読んだ箇所を共に分かち合い、聖書的な世界観がいかに私たちの価値観を形作るかを探求します。
-          </p>
-        </div>
-      </div>
-
-      <section class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">次回開始日</span>
-            <span class="text-zinc-200 font-bold text-sm">2027年4月</span>
-          </div>
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">期間</span>
-            <span class="text-zinc-200 font-bold text-sm">12週間</span>
-          </div>
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">基本費用</span>
-            <span class="text-zinc-200 font-bold text-sm">¥420,000*</span>
-          </div>
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center border-gold-accent/30">
-            <span class="block text-[9px] uppercase text-gold-accent mb-2 tracking-widest">セット割引</span>
-            <span class="text-gold-accent font-bold text-sm">-¥50,000</span>
-          </div>
-        </div>
-      </section>
-        
-      <div class="bg-gold-accent/5 border border-gold-accent/20 p-6 rounded-3xl text-center">
-        <p class="text-[11px] text-zinc-400 leading-relaxed italic">
-          *授業料と宿泊費が含まれています。<br/>
-          食費や交通費を含む費用の詳細は、<a href="https://guide.ywamsendai.org/ja/roles/students/school-costs/" class="text-gold-accent underline">ハンドブック</a>をご確認ください。<br/>
-          同年内に仙台DTSを修了し、引き続きDBSを受講される方は、授業料から5万円の「セット割引」が適用されます。
+        <p class="text-inverse-soft mb-0">
+          DBSの内容、前提条件、学び方、日程、このスクールが自分に合うかどうかなどを相談できます。
         </p>
       </div>
 
-      <div class="text-center py-10 border-t border-zinc-900">
-        <h3 class="text-2xl font-serif text-white mb-8 italic">御言葉の中に、さらに深く。</h3>
-        <div class="flex flex-col items-center gap-6">
-          <button class="open-hub-trigger inline-block px-12 py-5 bg-zinc-100 text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-white/5">
-            つながる・出願する
-          </button>
-          <p class="text-[10px] text-zinc-600 uppercase tracking-[0.2em]">
-            ※受講資格：DTS（弟子訓練学校）の修了
-          </p>
-        </div>
+      <div class="card-dark stack-sm">
+        <p class="eyebrow">概要</p>
+        <h2 class="card-title">DBSとは</h2>
+        <p>
+          DBSは、聖書全体を年代順に読み進めながら、
+          神の贖いのご計画を一つの物語として学んでいく、聖書に焦点を当てたYWAMのスクールです。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-4">
+        <article class="card">
+          <h2 class="card-title">期間</h2>
+          <p>12週間</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">中心テーマ</h2>
+          <p>聖書全体の読解と聖書解釈</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">学び方</h2>
+          <p>年代順・集中的・対話的な学び</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">前提条件</h2>
+          <p>DTS修了が必要です</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">DBSとは？</p>
+        <h2 class="section-title">
+          聖書全体の物語を読みながら学ぶ、聖書中心のスクールです。
+        </h2>
+        <p class="lead">
+          DBSはDiscipleship Bible Schoolの略です。継続的な読書、学び、解釈、振り返りを通して、
+          聖書理解を深め、神のことばをより忠実に扱うための土台を築いていきます。
+        </p>
       </div>
 
+      <div class="grid-3">
+        <article class="card">
+          <h3 class="card-title">聖書全体を読む</h3>
+          <p>スクール期間中に聖書全体を読み進めます。</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">聖書の流れをたどる</h3>
+          <p>創世記から黙示録まで、聖書の物語の流れに沿って学びます。</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">忠実に適用する</h3>
+          <p>丁寧に解釈し、聖書の真理を人生とミニストリーに結びつけていきます。</p>
+        </article>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div class="stack-sm">
+          <p class="eyebrow">YWAM仙台のDBS</p>
+          <h2 class="section-title">弟子訓練と宣教の文脈の中で行われる、真剣な聖書の学び</h2>
+          <p class="lead">
+            YWAM仙台のDBSは、単なる学問的な学びではありません。
+            礼拝、祈り、へりくだり、従順、共同体への参加を大切にするベースの生活の中で行われます。
+          </p>
+          <p class="text-soft">
+            学生は、聖書を深く学びながら、弟子訓練、宣教への意識、
+            そして仙台・東北という地域の中での生活に形づくられる環境の中で学びます。
+          </p>
+        </div>
+
+        <div class="grid stack-sm">
+          <article class="card">
+            <h3 class="card-title">礼拝と祈り</h3>
+            <p>聖書の学びは、神への献身と祈りのリズムの中で行われます。</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">へりくだりと従順</h3>
+            <p>注意深さと誠実さをもって聖書に向き合うことが求められます。</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">共同体への参加</h3>
+            <p>対話、共同生活、互いに磨き合う関係の中で学びます。</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">宣教への意識</h3>
+            <p>知識のためだけでなく、忠実な生き方と奉仕のために聖書を学びます。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">学びのアプローチ</p>
+        <h2 class="section-title">DBSでどのように聖書を学ぶか</h2>
+        <p class="lead">
+          YWAM仙台のDBSでは、年代順に聖書をたどる集中的な学びを通して、
+          聖書全体の読書、クラスでの学び、対話、振り返りを組み合わせていきます。
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3 class="card-title">中心となる学びの実践</h3>
+          <ul class="list-clean">
+            <li>聖書の物語の流れに沿った年代順の学び</li>
+            <li>聖書全体を読み通すこと</li>
+            <li>帰納的な学びと丁寧な観察</li>
+            <li>歴史的背景や文学ジャンルへの注意</li>
+            <li>少人数での分かち合いと対話</li>
+            <li>課題と個人的な振り返り</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">学生に期待されること</h3>
+          <ul class="list-clean">
+            <li>聖書への真剣な取り組み</li>
+            <li>継続的な読書と学習上の責任</li>
+            <li>クラスや対話への主体的な参加</li>
+            <li>共同生活と共有されたリズム</li>
+            <li>学びと並行する霊的形成</li>
+            <li>規律、注意深さ、忍耐</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">週間カリキュラム</p>
+        <h2 class="section-title">聖書全体をたどる12週間の旅</h2>
+        <p class="lead">
+          DBSでは、聖書の歴史の流れと神の贖いのご計画の一貫性を理解するために、
+          固定された週間カリキュラムに沿って学びます。
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3 class="card-title">1〜4週</h3>
+          <ul class="list-clean">
+            <li><strong>第1週:</strong> 世界観と起源</li>
+            <li><strong>第2週:</strong> モーセ五書</li>
+            <li><strong>第3週:</strong> 部族時代の歴史</li>
+            <li><strong>第4週:</strong> ダビデ王国</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">5〜8週</h3>
+          <ul class="list-clean">
+            <li><strong>第5週:</strong> イスラエルとユダの王たち</li>
+            <li><strong>第6週:</strong> 初期の預言者たち</li>
+            <li><strong>第7週:</strong> 後期の預言者と捕囚</li>
+            <li><strong>第8週:</strong> 捕囚後と中間時代</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">9〜10週</h3>
+          <ul class="list-clean">
+            <li><strong>第9週:</strong> イエスの生涯</li>
+            <li><strong>第10週:</strong> 初代教会</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">11〜12週</h3>
+          <ul class="list-clean">
+            <li><strong>第11週:</strong> パウロ書簡</li>
+            <li><strong>第12週:</strong> ヨハネ文書</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="container-narrow" style="margin-top: 2rem;">
+        <p class="text-soft">
+          各週の中では、この固定された流れに沿って、具体的な書巻、テーマ、教えの重点が組まれます。
+          詳細なカリキュラムは、計画が確定し次第、別途案内されます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">DBSはどんな人のため？</p>
+        <h2 class="section-title">神のことばに、より深く根ざしたい人のために</h2>
+        <p class="lead">
+          DBSは、聖書理解を深め、聖書の土台を強め、
+          神のことばによって形づくられたいと願う学生のためのスクールです。
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card-dark">
+          <h3 class="card-title">聖書理解を深めたい人</h3>
+          <p>聖書全体とその一つの物語を、よりしっかり理解したい人のために。</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">規律ある学びに取り組みたい人</h3>
+          <p>継続的な読書、振り返り、丁寧な解釈に真剣に向き合いたい人のために。</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">次の備えをしたい人</h3>
+          <p>ミニストリー、リーダーシップ、さらなる学びを聖書に根ざして進みたい人のために。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper border-top">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">日程と費用</p>
+        <h2 class="section-title">現在の計画情報</h2>
+        <p class="lead">
+          DBSは現在計画段階にあります。具体的な日程は今後確定されますが、
+          以下の情報は準備のための目安となります。
+        </p>
+      </div>
+
+      <div class="grid-2" style="align-items: start;">
+        <article class="card">
+          <h3 class="card-title">日程</h3>
+          <div class="stack-sm">
+            <div>
+              <p class="eyebrow">開始予定</p>
+              <p>2027年4月</p>
+            </div>
+            <div>
+              <p class="eyebrow">ステータス</p>
+              <p>計画段階</p>
+            </div>
+            <div>
+              <p class="eyebrow">期間</p>
+              <p>12週間</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">費用の目安</h3>
+          <div class="stack-sm">
+            <div>
+              <p class="eyebrow">学費</p>
+              <p>¥300,000</p>
+            </div>
+            <div>
+              <p class="eyebrow">宿泊費</p>
+              <p>¥120,000</p>
+            </div>
+            <div>
+              <p class="eyebrow">食費・近距離交通費</p>
+              <p>約¥150,000</p>
+            </div>
+            <div>
+              <p class="eyebrow">アウトリーチ</p>
+              <p>該当なし</p>
+            </div>
+            <div>
+              <p class="eyebrow">合計目安</p>
+              <p><strong>¥570,000</strong></p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="container-narrow" style="margin-top: 2rem;">
+        <p class="text-soft">
+          学費には、講義、講師・教師に関わる交通費、講師・教師に関わる食費・宿泊費、
+          事務費が含まれます。宿泊費には、wifi、光熱費、共有の日用品が含まれます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container container-narrow center stack">
+      <div>
+        <p class="eyebrow">次の一歩</p>
+        <h2 class="section-title">DBSに関心がありますか？</h2>
+        <p class="lead mx-auto">
+          DBSを検討している方も、DTSの次の一歩として考えている方も、
+          神のことばにより深く根ざしたいと願っている方も、さらに知るお手伝いができれば嬉しいです。
+        </p>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <button type="button" class="btn-primary open-hub-trigger">AIに相談</button>
+        <a href="/ja/apply" class="btn-secondary">申し込む</a>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <a href="/ja/contact" class="btn-text">お問い合わせ</a>
+        <a
+          href="https://guide.ywamsendai.org/ja"
+          class="btn-text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ハンドブックを見る
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

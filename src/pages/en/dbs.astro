@@ -1,108 +1,380 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-
-export const metadata = {
-  school: "Discipleship Bible School",
-  location: "Sendai, Japan",
-  method: "Inductive Bible Study",
-  curriculum: "Genesis to Revelation, Historical Context, Worldview",
-};
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Discipleship Bible School | YWAM Sendai">
-  <main class="bg-dark-bg min-h-screen text-zinc-300 pb-20">
-    
-    <div class="h-[45vh] relative flex items-center justify-center overflow-hidden">
-      <img src="/hero-sendai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-      <div class="relative z-10 text-center">
-        <a href="/en" class="text-[10px] tracking-[0.4em] text-gold-accent hover:opacity-70 transition-opacity uppercase mb-4 block">← Back to Home</a>
-        <h1 class="text-6xl md:text-8xl font-serif text-white">DBS</h1>
-        <p class="tracking-[.2em] uppercase text-xs mt-2">Discipleship Bible School</p>
-      </div>
-    </div>
+<Layout
+  lang="en"
+  title="DBS | YWAM Sendai"
+  description="Discipleship Bible School (DBS) at YWAM Sendai is a 12-week YWAM school focused on deep engagement with Scripture through whole-Bible reading, chronological study, and faithful interpretation."
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="stack">
+        <div>
+          <p class="eyebrow">Discipleship Bible School</p>
+          <h1 class="hero-title max-w-title">
+            A focused season of deep engagement with Scripture.
+          </h1>
+        </div>
 
-    <div class="max-w-4xl mx-auto px-6 mt-12 space-y-20">
-      
-      <section class="prose prose-invert max-w-none">
-        <h2 class="text-3xl font-serif text-white italic">One Story. 66 Books. 12 Weeks.</h2>
-        <p class="text-lg leading-relaxed text-zinc-400">
-          The DBS is a three-month immersion into the sacred scriptures. Moving chronologically from Genesis to Revelation, you will discover the Bible not as a collection of fragmented verses, but as a <span class="text-white">unified narrative</span> of God’s redemptive work. In our Sendai community, we approach the Word with both the heart of a contemplative and the mind of a scholar.
+        <p class="lead">
+          DBS at YWAM Sendai is a 12-week school designed to help students know
+          God through His Word, strengthen their biblical foundation, and grow
+          in faithful interpretation and application of Scripture.
         </p>
-      </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
-          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">01. Observation</h4>
-          <p class="text-[11px] text-zinc-500 italic">"What does the text say?"</p>
+        <div class="btn-group">
+          <button type="button" class="btn-primary open-hub-trigger">Ask AI</button>
+          <a href="/en/apply" class="btn-secondary-dark">Apply</a>
+          <a
+            href="https://guide.ywamsendai.org/en"
+            class="btn-secondary-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Handbook
+          </a>
         </div>
-        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
-          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">02. Interpretation</h4>
-          <p class="text-[11px] text-zinc-500 italic">"What did it mean then?"</p>
-        </div>
-        <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-3xl">
-          <h4 class="text-gold-accent text-[10px] uppercase tracking-widest mb-3">03. Application</h4>
-          <p class="text-[11px] text-zinc-500 italic">"How do we walk it now?"</p>
-        </div>
+
+        <p class="text-inverse-soft mb-0">
+          Ask about DBS, prerequisites, study rhythm, dates, or whether this school may be a good fit.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem]">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">The Journey</h3>
-          <h4 class="text-xl text-white font-serif mb-4 italic">Chronological Reading</h4>
-          <p class="text-sm leading-relaxed text-zinc-400">
-            Read through all 66 books in the order they occurred. Understand the historical context of the prophets, the cultural weight of the Law, and the explosive birth of the early Church.
-          </p>
-        </div>
-        <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[2.5rem]">
-          <h3 class="text-gold-accent font-bold uppercase tracking-widest text-[10px] mb-4">The Context</h3>
-          <h4 class="text-xl text-white font-serif mb-4 italic">Small Group Tables</h4>
-          <p class="text-sm leading-relaxed text-zinc-400">
-            Scripture was meant to be read in community. Our "Table" culture allows you to process the week’s reading with others, identifying how the Biblical worldview challenges and aligns our own.
-          </p>
-        </div>
+      <div class="card-dark stack-sm">
+        <p class="eyebrow">Quick Overview</p>
+        <h2 class="card-title">What DBS is</h2>
+        <p>
+          DBS is a Bible-focused YWAM school in which students read through the
+          entire Bible chronologically and study Scripture as one unified story
+          of God’s redemptive purposes.
+        </p>
       </div>
-
-      <section class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Next Start</span>
-            <span class="text-zinc-200 font-bold text-sm">Apr 2027</span>
-          </div>
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Duration</span>
-            <span class="text-zinc-200 font-bold text-sm">12 Weeks</span>
-          </div>
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center">
-            <span class="block text-[9px] uppercase text-zinc-600 mb-2 tracking-widest">Base Cost</span>
-            <span class="text-zinc-200 font-bold text-sm">¥420,000*</span>
-          </div>
-          <div class="bg-zinc-900/20 border border-zinc-800 p-6 rounded-3xl text-center border-gold-accent/30">
-            <span class="block text-[9px] uppercase text-gold-accent mb-2 tracking-widest">Combo Discount</span>
-            <span class="text-gold-accent font-bold text-sm">-¥50,000</span>
-          </div>
-        </div>
-      </section>
-        
-        <div class="bg-gold-accent/5 border border-gold-accent/20 p-6 rounded-3xl text-center">
-          <p class="text-[11px] text-zinc-400 leading-relaxed italic">
-            *Includes tuition & accommodation.<br/>
-            For a full breakdown of costs, including food and travel budgets, <a href="https://guide.ywamsendai.org/en/roles/students/school-costs/" class="text-gold-accent underline">visit the Guide</a>.<br/>
-            Students who complete the Sendai DTS in the same year receive the ¥50,000 "Combo Discount" on their DBS tuition.
-          </p>
-        </div>
-
-      <div class="text-center py-10 border-t border-zinc-900">
-        <h3 class="text-2xl font-serif text-white mb-8 italic">Deepen your roots in the Word.</h3>
-        <div class="flex flex-col items-center gap-6">
-          <button class="open-hub-trigger inline-block px-12 py-5 bg-zinc-100 text-black font-black rounded-full uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-white/5">
-            Connect & Apply
-          </button>
-          <p class="text-[10px] text-zinc-600 uppercase tracking-[0.2em]">
-            Prerequisite: Successful completion of a DTS
-          </p>
-        </div>
-      </div>
-
     </div>
-  </main>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-4">
+        <article class="card">
+          <h2 class="card-title">Length</h2>
+          <p>12 weeks</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Focus</h2>
+          <p>Whole-Bible reading and biblical interpretation</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Study Method</h2>
+          <p>Chronological, immersive, and discussion-based</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Prerequisite</h2>
+          <p>Completion of DTS is required</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">What is DBS?</p>
+        <h2 class="section-title">
+          A Bible school shaped by reading the whole story of Scripture.
+        </h2>
+        <p class="lead">
+          DBS stands for Discipleship Bible School. It is a YWAM school focused
+          on sustained reading, study, interpretation, and reflection so that
+          students grow in biblical literacy, confidence, and faithfulness in handling the Word of God.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3 class="card-title">Read the whole Bible</h3>
+          <p>Students read through the entire Bible during the school.</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Follow the biblical storyline</h3>
+          <p>Scripture is studied in chronological flow from Genesis to Revelation.</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Apply Scripture faithfully</h3>
+          <p>Students learn to interpret carefully and connect biblical truth to life and ministry.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div class="stack-sm">
+          <p class="eyebrow">DBS at YWAM Sendai</p>
+          <h2 class="section-title">Serious study within a discipleship and mission context</h2>
+          <p class="lead">
+            DBS at YWAM Sendai is not only academic. It takes place within the wider
+            life of the base, where worship, prayer, humility, obedience, and community
+            participation remain part of the learning environment.
+          </p>
+          <p class="text-soft">
+            Students study Scripture deeply while also living in a context shaped by
+            discipleship, mission awareness, and life in Sendai and the wider Tohoku region.
+          </p>
+        </div>
+
+        <div class="grid stack-sm">
+          <article class="card">
+            <h3 class="card-title">Worship and prayer</h3>
+            <p>Bible study is held within rhythms of devotion and dependence on God.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Humility and obedience</h3>
+            <p>Students are encouraged to approach Scripture with attentiveness and integrity.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Community participation</h3>
+            <p>Learning happens through discussion, shared life, and mutual sharpening.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Mission awareness</h3>
+            <p>The Bible is studied not only for knowledge, but for faithful life and ministry.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Study Approach</p>
+        <h2 class="section-title">How Scripture is studied in DBS</h2>
+        <p class="lead">
+          DBS at YWAM Sendai follows a chronological and immersive approach to Scripture,
+          combining whole-Bible reading, classroom teaching, discussion, and reflection.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3 class="card-title">Core learning practices</h3>
+          <ul class="list-clean">
+            <li>Chronological study of the biblical storyline</li>
+            <li>Reading through the entire Bible</li>
+            <li>Inductive learning and careful observation</li>
+            <li>Attention to historical setting and literary genre</li>
+            <li>Small-group processing and discussion</li>
+            <li>Written work and personal reflection</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">What students should expect</h3>
+          <ul class="list-clean">
+            <li>Serious engagement with Scripture</li>
+            <li>Regular reading and academic responsibility</li>
+            <li>Thoughtful participation in class and discussion</li>
+            <li>Community life and shared rhythms</li>
+            <li>Spiritual formation alongside study</li>
+            <li>Discipline, attentiveness, and perseverance</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Weekly Curriculum</p>
+        <h2 class="section-title">A 12-week journey through the whole Bible</h2>
+        <p class="lead">
+          DBS follows a fixed weekly curriculum that helps students understand the flow
+          of biblical history and the unity of God’s redemptive plan.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3 class="card-title">Weeks 1–4</h3>
+          <ul class="list-clean">
+            <li><strong>Week 1:</strong> Worldview and Origins</li>
+            <li><strong>Week 2:</strong> Pentateuch</li>
+            <li><strong>Week 3:</strong> Tribal History</li>
+            <li><strong>Week 4:</strong> The Kingdom of David</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Weeks 5–8</h3>
+          <ul class="list-clean">
+            <li><strong>Week 5:</strong> The Kings of Israel and Judah</li>
+            <li><strong>Week 6:</strong> The Early Prophets</li>
+            <li><strong>Week 7:</strong> The Late Prophets and Exile</li>
+            <li><strong>Week 8:</strong> Post-Exilic and Inter-Testament</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Weeks 9–10</h3>
+          <ul class="list-clean">
+            <li><strong>Week 9:</strong> The Life of Jesus</li>
+            <li><strong>Week 10:</strong> The Early Church</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Weeks 11–12</h3>
+          <ul class="list-clean">
+            <li><strong>Week 11:</strong> The Pauline Epistles</li>
+            <li><strong>Week 12:</strong> The Johannine Writings</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="container-narrow" style="margin-top: 2rem;">
+        <p class="text-soft">
+          Specific books, themes, and teaching emphasis are organized within this fixed structure.
+          Full curriculum details can be provided separately as planning is finalized.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Who is DBS for?</p>
+        <h2 class="section-title">For those who want to be grounded more deeply in Scripture</h2>
+        <p class="lead">
+          DBS is for students who want to deepen their understanding of the Bible,
+          strengthen their biblical foundation, and be formed by God’s Word in a focused community setting.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card-dark">
+          <h3 class="card-title">Deepen biblical understanding</h3>
+          <p>For those who want a stronger grasp of the whole Bible and its unified story.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Grow in disciplined study</h3>
+          <p>For those ready for sustained reading, reflection, and careful interpretation.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Prepare for what’s next</h3>
+          <p>For those preparing for ministry, leadership, or further training rooted in Scripture.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper border-top">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Dates and Costs</p>
+        <h2 class="section-title">Current planning information for DBS</h2>
+        <p class="lead">
+          DBS is currently in the planning phase. Specific dates will be confirmed later,
+          but the following information provides a general picture for preparation.
+        </p>
+      </div>
+
+      <div class="grid-2" style="align-items: start;">
+        <article class="card">
+          <h3 class="card-title">Dates</h3>
+          <div class="stack-sm">
+            <div>
+              <p class="eyebrow">Anticipated Start</p>
+              <p>April 2027</p>
+            </div>
+            <div>
+              <p class="eyebrow">Status</p>
+              <p>Planning phase</p>
+            </div>
+            <div>
+              <p class="eyebrow">Duration</p>
+              <p>12 weeks</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Estimated Costs</h3>
+          <div class="stack-sm">
+            <div>
+              <p class="eyebrow">Tuition</p>
+              <p>¥300,000</p>
+            </div>
+            <div>
+              <p class="eyebrow">Accommodation</p>
+              <p>¥120,000</p>
+            </div>
+            <div>
+              <p class="eyebrow">Food and local transportation</p>
+              <p>¥150,000 estimated</p>
+            </div>
+            <div>
+              <p class="eyebrow">Outreach</p>
+              <p>Not applicable</p>
+            </div>
+            <div>
+              <p class="eyebrow">Estimated total</p>
+              <p><strong>¥570,000</strong></p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="container-narrow" style="margin-top: 2rem;">
+        <p class="text-soft">
+          Tuition includes lectures, speaker and teacher-related transport, speaker and teacher-related
+          food and accommodation, and administrative costs. Accommodation includes wifi, utilities,
+          and shared household consumables.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container container-narrow center stack">
+      <div>
+        <p class="eyebrow">Next Step</p>
+        <h2 class="section-title">Interested in DBS?</h2>
+        <p class="lead mx-auto">
+          If you are considering DBS, wondering whether it may be the right next step after DTS,
+          or wanting to grow more deeply in Scripture, we would love to help you explore further.
+        </p>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <button type="button" class="btn-primary open-hub-trigger">Ask AI</button>
+        <a href="/en/apply" class="btn-secondary">Apply</a>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <a href="/en/contact" class="btn-text">Contact</a>
+        <a
+          href="https://guide.ywamsendai.org/en"
+          class="btn-text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Handbook
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

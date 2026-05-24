@@ -1,192 +1,265 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="お問い合わせ | YWAM Sendai" lang="ja">
-  <main class="bg-dark-bg text-white">
-    <section class="px-6 pt-28 pb-16 md:pt-36 md:pb-24">
-      <div class="max-w-4xl mx-auto text-center">
-        <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-5">はじめに</span>
-        <h1 class="text-4xl md:text-6xl font-serif italic text-white mb-6">お問い合わせ</h1>
-        <p class="max-w-2xl mx-auto text-zinc-400 leading-relaxed text-base md:text-lg">
-          ご質問のある方も、次のステップを考えている方も、まずはこちらからお気軽にどうぞ。
+<Layout
+  lang="ja"
+  title="お問い合わせ | YWAM仙台"
+  description="Discord、LINE、Instagram、メール、申込みフォームを通してYWAM仙台に連絡できます。"
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="stack">
+        <div>
+          <p class="eyebrow">お問い合わせ</p>
+          <h1 class="hero-title max-w-title">
+            あなたに合った方法で、つながってください。
+          </h1>
+        </div>
+
+        <p class="lead">
+          YWAM仙台では、スクールを検討している方、スタッフを考えている方、
+          アウトリーチチーム、ゲスト、教会、サポーター、そのほかコミュニティや働きについて知りたい方からのご連絡を歓迎しています。
         </p>
 
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
-          <button
-            class="open-hub-trigger px-6 py-5 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs cursor-pointer"
-          >
-            AIに相談する
-          </button>
-
+        <div class="btn-group">
           <a
-            href="#message-us"
-            class="px-6 py-5 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs flex items-center justify-center"
-          >
-            メッセージで連絡
-          </a>
-
-          <a
-            href="/ja/apply"
-            class="px-6 py-5 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs flex items-center justify-center"
-          >
-            申込み
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 pb-12 md:pb-16">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
-          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">AIに相談する</h2>
-          <p class="text-sm text-zinc-400 leading-relaxed">
-            DTS・DBS・申込み・連絡方法・ハンドブックについて、まず気軽に質問したい方におすすめです。
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
-          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">メッセージで連絡</h2>
-          <p class="text-sm text-zinc-400 leading-relaxed">
-            最初のコンタクトや個人的な質問、継続的につながりたい方におすすめです。
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
-          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">申込み</h2>
-          <p class="text-sm text-zinc-400 leading-relaxed">
-            学生・スタッフ・アウトリーチチーム・ゲスト滞在など、具体的な次のステップを考えている方におすすめです。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="message-us" class="px-6 py-12 md:py-16 bg-zinc-950">
-      <div class="max-w-5xl mx-auto">
-        <div class="max-w-2xl mb-10">
-          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">メッセージで連絡</span>
-          <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-4">つながりやすい方法を選んでください</h2>
-          <p class="text-zinc-400 leading-relaxed text-sm md:text-base">
-            特に若い世代の方にとっては、メッセージアプリが最も気軽で自然な最初の連絡手段になることが多いです。
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">Discord</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              コミュニティとのつながりや、最初のコンタクト、継続的な交流におすすめです。
-            </p>
-            <a
-              href="https://discord.gg/djmCF4DBaV"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              Discordに参加する
-            </a>
-          </div>
-
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">LINE</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              日本語でのお問い合わせに特におすすめです。
-            </p>
-            <a
-              href="https://lin.ee/LD2Nf4b"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              LINEで連絡する
-            </a>
-          </div>
-
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">Instagram</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              気軽な質問や、まず一度連絡してみたい方に向いています。
-            </p>
-            <a
-              href="https://ig.me/m/ywamsendai"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              Instagramで連絡する
-            </a>
-          </div>
-
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">Email</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              メールをご希望の方は、hello@ywamsendai.org までご連絡ください。
-            </p>
-            <a
-              href="mailto:hello@ywamsendai.org"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              メールを送る
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 py-12 md:py-16">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-7">
-          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">次のステップ</span>
-          <h2 class="text-2xl md:text-3xl font-serif italic text-white mb-4">申込みを考えている方へ</h2>
-          <p class="text-zinc-400 leading-relaxed text-sm md:text-base mb-5">
-            学生・スタッフとしての申込み、アウトリーチチームについての相談、ゲスト滞在の問い合わせなど、具体的な次のステップを考えている場合は、まず申込みフォームをご利用いただくのがおすすめです。
-          </p>
-          <a
-            href="/ja/apply"
-            class="inline-flex items-center justify-center px-6 py-4 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs"
-          >
-            申込みフォームへ
-          </a>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-7">
-          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">ご連絡の前に</span>
-          <h2 class="text-2xl md:text-3xl font-serif italic text-white mb-4">連絡の際にあると助かる内容</h2>
-          <ul class="space-y-3 text-sm md:text-base text-zinc-400 leading-relaxed">
-            <li>• お名前</li>
-            <li>• ご連絡の目的</li>
-            <li>• 関連する日程や時期</li>
-            <li>• 主な質問</li>
-            <li>• 必要な背景情報</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 pb-20 md:pb-28">
-      <div class="max-w-4xl mx-auto text-center border border-zinc-800 rounded-[2.5rem] p-8 md:p-10 bg-zinc-950">
-        <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">さらに詳しく</span>
-        <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-4">まずは情報を見たい方へ</h2>
-        <p class="text-zinc-400 leading-relaxed max-w-2xl mx-auto text-sm md:text-base mb-8">
-          すぐに連絡する前に、AIに質問したり、オンラインハンドブックで詳しい情報を確認することもできます。
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <button
-            class="open-hub-trigger px-6 py-4 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs cursor-pointer"
-          >
-            AIに相談する
-          </button>
-          <a
-            href="https://guide.ywamsendai.org"
+            href="https://discord.gg/djmCF4DBaV"
+            class="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-4 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs"
           >
-            ハンドブックを見る
+            Discordに参加
+          </a>
+          <a
+            href="https://lin.ee/LD2Nf4b"
+            class="btn-secondary-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LINEで連絡
+          </a>
+          <a
+            href="https://ig.me/m/ywamsendai"
+            class="btn-secondary-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagramで連絡
           </a>
         </div>
+
+        <p class="text-inverse-soft mb-0">
+          質問や最初の相談、どこから始めればよいか分からない場合は、AIに相談することもできます。
+        </p>
       </div>
-    </section>
-  </main>
+
+      <div class="card-dark stack-sm">
+        <p class="eyebrow">簡単ガイド</p>
+        <h2 class="card-title">多くの人の最初のつながり方</h2>
+        <p>
+          多くの方にとって、メッセージアプリは最も自然で始めやすい連絡方法です。
+          メールも利用できますが、最初の連絡手段としては主流ではありません。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">主な連絡方法</p>
+        <h2 class="section-title">状況に合った方法を選べます</h2>
+        <p class="lead">
+          内容や目的によって、使いやすい連絡方法が異なります。
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card">
+          <h3 class="card-title">Discord</h3>
+          <p>オープンなコミュニティスペースであり、YWAM仙台とつながる主な方法の一つです。</p>
+          <a
+            href="https://discord.gg/djmCF4DBaV"
+            class="btn-text"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Discordに参加
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">LINE</h3>
+          <p>気軽な質問や最初の連絡、簡単なやり取りに向いています。</p>
+          <a
+            href="https://lin.ee/LD2Nf4b"
+            class="btn-text"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LINEを開く
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Instagram</h3>
+          <p>メッセージを送って、気軽につながり始めることができます。</p>
+          <a
+            href="https://ig.me/m/ywamsendai"
+            class="btn-text"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagramで連絡
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">メール</h3>
+          <p>メールで連絡したい方は、こちらからご連絡ください。</p>
+          <a href="mailto:hello@ywamsendai.org" class="btn-text">
+            hello@ywamsendai.org
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">どの方法を使えばいいですか？</p>
+        <h2 class="section-title">目的に応じたシンプルな案内</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3 class="card-title">一般的な質問や最初の連絡</h3>
+          <p>Discord、LINE、Instagramが、最も始めやすい方法です。</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">メールを使いたい場合</h3>
+          <p>メールで直接連絡したい方のために、メールも利用できます。</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">具体的な次の一歩を取りたい場合</h3>
+          <p>
+            学生申込み、スタッフ申請、アウトリーチチームの問い合わせ、
+            ゲストや滞在希望に関する連絡は、申込みフォームの利用が最も適しています。
+          </p>
+        </article>
+      </div>
+
+      <div class="container-narrow center" style="margin-top: 2rem;">
+        <a href="/ja/apply" class="btn-secondary">申込みフォームへ</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div class="stack-sm">
+          <p class="eyebrow">Discord</p>
+          <h2 class="section-title">継続的につながるための場所</h2>
+          <p class="lead">
+            YWAM仙台のDiscordサーバーは、外部の方にも開かれており、
+            より広いコミュニティのための継続的なコミュニケーションの場となっています。
+          </p>
+          <p class="text-soft">
+            これまでのDTS卒業生、現在の参加者、クリスチャンコミュニティとしてつながっている人たち、
+            そして今後のDTS、DBS、そのほかのスクールに関心のある人たちも含まれます。
+          </p>
+        </div>
+
+        <div class="grid stack-sm">
+          <article class="card">
+            <h3 class="card-title">オープンなコミュニティ空間</h3>
+            <p>最初のつながりにも、その後の継続的な交流にも使える場所です。</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">今後のスクールにも役立つ</h3>
+            <p>DTS、DBS、そのほか今後の機会に関心のある方にも役立ちます。</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">継続的なつながりに向いている</h3>
+            <p>一度きりの質問だけでなく、コミュニティとつながり続けるための場です。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">ご連絡後について</p>
+        <h2 class="section-title">返信には時間がかかる場合があります</h2>
+        <p class="lead">
+          返信のタイミングは、スタッフの状況、ミニストリーの時期、移動予定、
+          祝日、問い合わせ内容などによって異なります。
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card-dark">
+          <h3 class="card-title">少しお待ちいただけると助かります</h3>
+          <p>特に忙しい時期には、少しお時間をいただくことがあります。</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">メッセージの方が始めやすいことが多いです</h3>
+          <p>多くの方にとって、メッセージアプリは最も自然で反応を得やすい最初の一歩です。</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">具体的な依頼は申込みフォームへ</h3>
+          <p>はっきりした次の一歩がある場合は、長い最初のメールより申込みフォームが適しています。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper border-top">
+    <div class="container container-narrow center stack">
+      <div>
+        <p class="eyebrow">ここから始める</p>
+        <h2 class="section-title">あなたに合った方法でご連絡ください</h2>
+        <p class="lead mx-auto">
+          気軽な質問でも、コミュニティとのつながりでも、
+          具体的な次の一歩でも、あなたに合った方法でご連絡いただければ嬉しいです。
+        </p>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <button type="button" class="btn-primary open-hub-trigger">AIに相談</button>
+        <a href="/ja/apply" class="btn-secondary">申込みフォーム</a>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <a
+          href="https://discord.gg/djmCF4DBaV"
+          class="btn-text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discord
+        </a>
+        <a
+          href="https://lin.ee/LD2Nf4b"
+          class="btn-text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LINE
+        </a>
+        <a href="mailto:hello@ywamsendai.org" class="btn-text">メール</a>
+      </div>
+    </div>
+  </section>
 </Layout>

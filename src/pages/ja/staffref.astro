@@ -1,40 +1,49 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="スタッフ人物照会 | | YWAM仙台" lang="ja">
-  <main class="min-h-screen bg-dark-bg flex flex-col items-center p-4 md:p-10">
-    
-    <div class="w-full max-w-5xl flex justify-between items-center mb-8 px-4">
-      <a href="/ja" class="text-[10px] tracking-[0.3em] text-zinc-500 hover:text-gold-accent transition-colors uppercase">
-        ← ホームに戻る
-      </a>
-      <span class="text-[10px] tracking-[0.3em] text-zinc-700 uppercase">Sendai Candidate Portal</span>
-    </div>
+<Layout
+  lang="ja"
+  title="スタッフ人物推薦フォーム | YWAM仙台"
+  description="YWAM仙台のスタッフ申請のための人物推薦フォームです。"
+>
+  <section class="section bg-paper">
+    <div class="container container-narrow">
+      <div class="stack center" style="text-align: center;">
+        <div>
+          <p class="eyebrow">推薦フォーム</p>
+          <h1 class="section-title">スタッフ人物推薦フォーム</h1>
+        </div>
 
-    <div class="w-full max-w-5xl bg-zinc-900/30 border border-zinc-800/50 rounded-[2rem] overflow-hidden shadow-2xl">
-      <div 
-        style="width:100%; min-height: 600px;" 
-        data-fillout-id="jWvtZ53xMRus" 
-        data-fillout-embed-type="standard" 
-        data-fillout-inherit-parameters 
-        data-fillout-dynamic-resize
-      ></div>
-    </div>
+        <p class="lead mx-auto">
+          このフォームは、YWAM仙台のスタッフ申請者のために
+          人物推薦を依頼された方にご記入いただくフォームです。
+        </p>
 
-    <footer class="mt-10 mb-6 text-[9px] text-zinc-600 tracking-widest uppercase text-center">
-      Secure Application Environment • YWAM仙台
-    </footer>
-  </main>
+        <p class="text-soft">
+          牧師、DTSリーダー、友人など、申請者をよく知る方にお願いすることがあります。
+          ご協力ありがとうございます。
+        </p>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden; margin-top: 2rem;">
+        <div
+          style="width:100%;min-height:640px;"
+          data-fillout-id="jWvtZ53xMRus"
+          data-fillout-embed-type="standard"
+          data-fillout-inherit-parameters
+          data-fillout-dynamic-resize
+        ></div>
+      </div>
+
+      <div class="center" style="margin-top: 1.5rem; text-align: center;">
+        <p class="text-soft">
+          このフォームについて不明な点がある場合は、YWAM仙台までご連絡ください。
+        </p>
+        <a href="/ja/contact" class="btn-text">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://server.fillout.com/embed/v1/" defer></script>
 </Layout>
-
-<script src="https://server.fillout.com/embed/v1/"></script>
-
-<style is:global>
-  /* Fillout injects an iframe. To ensure it feels native, 
-     we can target it to make sure it respects the container's rounded corners.
-  */
-  [data-fillout-id] iframe {
-    border-radius: 2rem;
-  }
-</style>

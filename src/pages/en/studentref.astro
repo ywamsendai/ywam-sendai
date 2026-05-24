@@ -1,40 +1,49 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Student Reference | YWAM Sendai">
-  <main class="min-h-screen bg-dark-bg flex flex-col items-center p-4 md:p-10">
-    
-    <div class="w-full max-w-5xl flex justify-between items-center mb-8 px-4">
-      <a href="/en" class="text-[10px] tracking-[0.3em] text-zinc-500 hover:text-gold-accent transition-colors uppercase">
-        ← Back to Home
-      </a>
-      <span class="text-[10px] tracking-[0.3em] text-zinc-700 uppercase">Sendai Candidate Portal</span>
-    </div>
+<Layout
+  lang="en"
+  title="Student Character Reference | YWAM Sendai"
+  description="Provide a character reference for someone applying as a student at YWAM Sendai."
+>
+  <section class="section bg-paper">
+    <div class="container container-narrow">
+      <div class="stack center" style="text-align: center;">
+        <div>
+          <p class="eyebrow">Reference Form</p>
+          <h1 class="section-title">Student Character Reference</h1>
+        </div>
 
-    <div class="w-full max-w-5xl bg-zinc-900/30 border border-zinc-800/50 rounded-[2rem] overflow-hidden shadow-2xl">
-      <div 
-        style="width:100%; min-height: 600px;" 
-        data-fillout-id="atFZcz8iPUus" 
-        data-fillout-embed-type="standard" 
-        data-fillout-inherit-parameters 
-        data-fillout-dynamic-resize
-      ></div>
-    </div>
+        <p class="lead mx-auto">
+          This form is for people who have been asked to provide a character reference
+          for someone applying as a student at YWAM Sendai.
+        </p>
 
-    <footer class="mt-10 mb-6 text-[9px] text-zinc-600 tracking-widest uppercase text-center">
-      Secure Application Environment • YWAM Sendai
-    </footer>
-  </main>
+        <p class="text-soft">
+          You may have received this form as a pastor, friend, or another person
+          who knows the applicant well. Thank you for taking the time to support this process.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden; margin-top: 2rem;">
+        <div
+          style="width:100%;min-height:640px;"
+          data-fillout-id="atFZcz8iPUus"
+          data-fillout-embed-type="standard"
+          data-fillout-inherit-parameters
+          data-fillout-dynamic-resize
+        ></div>
+      </div>
+
+      <div class="center" style="margin-top: 1.5rem; text-align: center;">
+        <p class="text-soft">
+          If you have questions about this form, please contact YWAM Sendai directly.
+        </p>
+        <a href="/en/contact" class="btn-text">Contact YWAM Sendai</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://server.fillout.com/embed/v1/" defer></script>
 </Layout>
-
-<script src="https://server.fillout.com/embed/v1/"></script>
-
-<style is:global>
-  /* Fillout injects an iframe. To ensure it feels native, 
-     we can target it to make sure it respects the container's rounded corners.
-  */
-  [data-fillout-id] iframe {
-    border-radius: 2rem;
-  }
-</style>

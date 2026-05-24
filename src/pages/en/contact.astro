@@ -1,192 +1,266 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Contact | YWAM Sendai" lang="en">
-  <main class="bg-dark-bg text-white">
-    <section class="px-6 pt-28 pb-16 md:pt-36 md:pb-24">
-      <div class="max-w-4xl mx-auto text-center">
-        <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-5">Start Here</span>
-        <h1 class="text-4xl md:text-6xl font-serif italic text-white mb-6">Contact</h1>
-        <p class="max-w-2xl mx-auto text-zinc-400 leading-relaxed text-base md:text-lg">
-          Questions, next steps, or just want to connect? Here are the simplest ways to begin.
+<Layout
+  lang="en"
+  title="Contact | YWAM Sendai"
+  description="Get in touch with YWAM Sendai through Discord, LINE, Instagram, email, or the application form."
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="stack">
+        <div>
+          <p class="eyebrow">Contact YWAM Sendai</p>
+          <h1 class="hero-title max-w-title">
+            Find the best way to connect.
+          </h1>
+        </div>
+
+        <p class="lead">
+          YWAM Sendai welcomes contact from prospective students, prospective staff,
+          outreach teams, guests, churches, supporters, and anyone who wants to learn
+          more about the community and its mission.
         </p>
 
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
-          <button
-            class="open-hub-trigger px-6 py-5 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs cursor-pointer"
-          >
-            Ask AI
-          </button>
-
+        <div class="btn-group">
           <a
-            href="#message-us"
-            class="px-6 py-5 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs flex items-center justify-center"
-          >
-            Message Us
-          </a>
-
-          <a
-            href="/en/apply"
-            class="px-6 py-5 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs flex items-center justify-center"
-          >
-            Apply
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 pb-12 md:pb-16">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
-          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">Ask AI</h2>
-          <p class="text-sm text-zinc-400 leading-relaxed">
-            Best for quick questions about DTS, DBS, applications, contact, or the handbook.
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
-          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">Message Us</h2>
-          <p class="text-sm text-zinc-400 leading-relaxed">
-            Best for first contact, personal questions, or ongoing connection with the community.
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-6">
-          <h2 class="text-lg font-bold uppercase tracking-widest mb-3 text-white">Apply</h2>
-          <p class="text-sm text-zinc-400 leading-relaxed">
-            Best for students, staff, outreach teams, guests, or visitors ready for a concrete next step.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="message-us" class="px-6 py-12 md:py-16 bg-zinc-950">
-      <div class="max-w-5xl mx-auto">
-        <div class="max-w-2xl mb-10">
-          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">Message Us</span>
-          <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-4">Choose the easiest way to connect</h2>
-          <p class="text-zinc-400 leading-relaxed text-sm md:text-base">
-            Messaging apps are often the easiest first step, especially for younger people and casual questions.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">Discord</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              Best for community, first connection, and staying in touch over time.
-            </p>
-            <a
-              href="https://discord.gg/djmCF4DBaV"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              Join Discord
-            </a>
-          </div>
-
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">LINE</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              Best for Japanese-language inquiries.
-            </p>
-            <a
-              href="https://lin.ee/LD2Nf4b"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              Message on LINE
-            </a>
-          </div>
-
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">Instagram</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              Best for informal questions and simple first contact.
-            </p>
-            <a
-              href="https://ig.me/m/ywamsendai"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              Message on Instagram
-            </a>
-          </div>
-
-          <div class="bg-dark-bg border border-zinc-800 rounded-[2rem] p-6 flex flex-col">
-            <h3 class="text-white text-xl font-serif italic mb-2">Email</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed mb-3">
-              If you prefer email, you can reach us at hello@ywamsendai.org.
-            </p>
-            <a
-              href="mailto:hello@ywamsendai.org"
-              class="mt-auto inline-block text-xs font-bold underline underline-offset-8 hover:text-gold-accent transition-colors uppercase tracking-widest"
-            >
-              Email Us
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 py-12 md:py-16">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-7">
-          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">Concrete Next Step</span>
-          <h2 class="text-2xl md:text-3xl font-serif italic text-white mb-4">Ready to apply?</h2>
-          <p class="text-zinc-400 leading-relaxed text-sm md:text-base mb-5">
-            If you want to apply as a student or staff member, ask about an outreach team, or inquire about a guest stay, the application form is usually the best place to begin.
-          </p>
-          <a
-            href="/en/apply"
-            class="inline-flex items-center justify-center px-6 py-4 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs"
-          >
-            Go to Application Form
-          </a>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-zinc-800 rounded-[2rem] p-7">
-          <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">Before You Message</span>
-          <h2 class="text-2xl md:text-3xl font-serif italic text-white mb-4">Helpful to include</h2>
-          <ul class="space-y-3 text-sm md:text-base text-zinc-400 leading-relaxed">
-            <li>• your name</li>
-            <li>• the reason for contacting</li>
-            <li>• any relevant dates or timing</li>
-            <li>• your main question</li>
-            <li>• any important background information</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 pb-20 md:pb-28">
-      <div class="max-w-4xl mx-auto text-center border border-zinc-800 rounded-[2.5rem] p-8 md:p-10 bg-zinc-950">
-        <span class="text-gold-accent text-xs uppercase tracking-[0.35em] block mb-4">Need More Detail?</span>
-        <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-4">Still exploring?</h2>
-        <p class="text-zinc-400 leading-relaxed max-w-2xl mx-auto text-sm md:text-base mb-8">
-          You can ask the AI a question or visit the online handbook for more detailed information.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <button
-            class="open-hub-trigger px-6 py-4 bg-gold-accent text-black font-black rounded-full hover:scale-[1.02] transition-transform uppercase tracking-widest text-xs cursor-pointer"
-          >
-            Ask AI
-          </button>
-          <a
-            href="https://guide.ywamsendai.org"
+            href="https://discord.gg/djmCF4DBaV"
+            class="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-4 border border-zinc-700 text-white rounded-full hover:border-gold-accent hover:text-gold-accent transition-colors uppercase tracking-widest text-xs"
           >
-            Visit Handbook
+            Join Discord
+          </a>
+          <a
+            href="https://lin.ee/LD2Nf4b"
+            class="btn-secondary-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Message on LINE
+          </a>
+          <a
+            href="https://ig.me/m/ywamsendai"
+            class="btn-secondary-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Message on Instagram
           </a>
         </div>
+
+        <p class="text-inverse-soft mb-0">
+          For questions, first contact, or help finding the right next step, you can also use Ask AI.
+        </p>
       </div>
-    </section>
-  </main>
+
+      <div class="card-dark stack-sm">
+        <p class="eyebrow">Quick Guide</p>
+        <h2 class="card-title">How most people connect</h2>
+        <p>
+          For many people, messaging platforms are the easiest way to begin.
+          Email is available, but it is not the main way most people first connect.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Best Ways to Connect</p>
+        <h2 class="section-title">Choose the contact method that fits your situation</h2>
+        <p class="lead">
+          Different contact methods work best for different kinds of questions and next steps.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card">
+          <h3 class="card-title">Discord</h3>
+          <p>An open community space and one of the main ways people connect with YWAM Sendai.</p>
+          <a
+            href="https://discord.gg/djmCF4DBaV"
+            class="btn-text"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join Discord
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">LINE</h3>
+          <p>Useful for informal questions, first contact, and simple conversation.</p>
+          <a
+            href="https://lin.ee/LD2Nf4b"
+            class="btn-text"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open LINE
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Instagram</h3>
+          <p>A simple way to send a message and begin connecting.</p>
+          <a
+            href="https://ig.me/m/ywamsendai"
+            class="btn-text"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Message on Instagram
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Email</h3>
+          <p>If you prefer email, you can contact us directly.</p>
+          <a href="mailto:hello@ywamsendai.org" class="btn-text">
+            hello@ywamsendai.org
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">Which method should I use?</p>
+        <h2 class="section-title">A simple guide for different kinds of contact</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3 class="card-title">General questions or first contact</h3>
+          <p>Discord, LINE, or Instagram are usually the easiest place to begin.</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">If you prefer email</h3>
+          <p>Email is available for those who would rather write directly.</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">If you want to take a concrete next step</h3>
+          <p>
+            For student applications, staff applications, outreach team inquiries,
+            and guest or visitor stay inquiries, the application form is usually the best route.
+          </p>
+        </article>
+      </div>
+
+      <div class="container-narrow center" style="margin-top: 2rem;">
+        <a href="/en/apply" class="btn-secondary">Go to Application Form</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div class="stack-sm">
+          <p class="eyebrow">Discord</p>
+          <h2 class="section-title">An ongoing space for connection</h2>
+          <p class="lead">
+            YWAM Sendai’s Discord server is open to external people and functions as
+            an ongoing communication space for the wider community.
+          </p>
+          <p class="text-soft">
+            It includes previous DTS graduates, current participants, people connected
+            for Christian community, and communication related to future DTS, DBS, and other schools.
+          </p>
+        </div>
+
+        <div class="grid stack-sm">
+          <article class="card">
+            <h3 class="card-title">Open community space</h3>
+            <p>A place where people can begin connecting and stay in touch over time.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Useful for future schools</h3>
+            <p>Helpful for people interested in DTS, DBS, and other upcoming opportunities.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Good for ongoing connection</h3>
+            <p>Not only for one question, but for staying connected with the wider community.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-intro container-narrow">
+        <p class="eyebrow">What to Expect</p>
+        <h2 class="section-title">Response times may vary</h2>
+        <p class="lead">
+          Response times depend on staff availability, ministry season, travel schedules,
+          holidays, and the nature of the inquiry.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card-dark">
+          <h3 class="card-title">Please be patient</h3>
+          <p>YWAM Sendai appreciates patience, especially during busy seasons.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Messaging is often fastest</h3>
+          <p>For many people, messaging platforms are the most natural and responsive first step.</p>
+        </article>
+
+        <article class="card-dark">
+          <h3 class="card-title">Application form for concrete requests</h3>
+          <p>For formal next steps, the application form is often better than a long first email.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper border-top">
+    <div class="container container-narrow center stack">
+      <div>
+        <p class="eyebrow">Start Here</p>
+        <h2 class="section-title">Reach out in the way that fits best</h2>
+        <p class="lead mx-auto">
+          Whether you have a simple question, want to connect with the community,
+          or are ready to take a more concrete next step, we would be glad to hear from you.
+        </p>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <button type="button" class="btn-primary open-hub-trigger">Ask AI</button>
+        <a href="/en/apply" class="btn-secondary">Application Form</a>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <a
+          href="https://discord.gg/djmCF4DBaV"
+          class="btn-text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discord
+        </a>
+        <a href="mailto:hello@ywamsendai.org" class="btn-text">Email</a>
+        <a
+          href="https://ig.me/m/ywamsendai"
+          class="btn-text"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
