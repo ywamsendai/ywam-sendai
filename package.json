@@ -1,26 +1,13 @@
 {
-  "name": "ywam-sendai",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "ywam-sendai-platform",
+  "private": true,
+  "packageManager": "pnpm@11.4.0",
+
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "^13.1.2",
-    "@astrojs/mdx": "^5.0.0",
-    "@astrojs/sitemap": "^3.7.1",
-    "astro": "^6.0.4",
-    "sharp": "^0.33.5",
-    "tailwindcss": "^4.2.1",
-    "typescript": "^5.7.3",
-    "zod": "^4.3.6"
-  },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.2.1"
+    "dev:web": "pnpm --filter web dev",
+    "build:web": "pnpm --filter web build",
+
+    "dev:api": "pnpm --filter guide-api dev",
+    "deploy:api": "pnpm --filter guide-api deploy"
   }
 }

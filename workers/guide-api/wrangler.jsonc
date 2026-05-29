@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ywam-guide-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-29",
+  "workers_dev": true,
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "ywam-guide-index",
+      "remote": true
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "INGEST_MANIFEST",
+      "id": "c8310d291ca8451d92377ce6962ecffd"
+    }
+  ],
+  "ai": {
+    "binding": "AI"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true,
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}

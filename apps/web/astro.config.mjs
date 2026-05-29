@@ -5,7 +5,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   // site: 'https://www.ywamsendai.org',
   base: '/',
-  output: 'server',
+  output: 'static',
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'

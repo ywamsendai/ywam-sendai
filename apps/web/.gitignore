@@ -1,10 +1,7 @@
 # build output
 dist/
 # generated types
-apps/web/.astro/
-apps/guide-api/.astro/
-apps/web/.wrangler/
-apps/guide-api/.wrangler/
+.astro/
 
 # dependencies
 node_modules/
