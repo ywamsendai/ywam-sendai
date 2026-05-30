@@ -1,13 +1,32 @@
----  
-title: 心と体の健康、そしてデジタルとの境界線 
-description: 自分の健康への責任、医療に関する基本方針、持続可能な休息のあり方、そしてテクノロジーとの健全な付き合い方。  
-sidebar:  
-  order: 5  
-metadata:  
-  audience: community  
-  category: wellbeing  
-  chunk-type: header-atomic  
----  
+---
+title: 健康管理とデジタル利用のガイドライン
+summary: 個人の健康管理、病気への対応方針、持続可能な休息習慣、およびコミュニティ生活における健全なテクノロジー利用の指針。
+language: ja
+tags:
+  - health
+  - wellbeing
+  - rest
+  - sabbath
+  - technology
+  - social-media
+  - community
+  - lifestyle
+category: community
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - YWAM仙台ではどのような健康管理が求められますか？
+  - 日本滞在中に病気になった場合はどうすればよいですか？
+  - YWAM仙台は医療サービスを提供していますか？
+  - テクノロジー利用に関するコミュニティガイドラインはありますか？
+  - デジタル機器の利用についてどのような境界線がありますか？
+  - YWAM仙台はどのように持続可能な奉仕と休息を推奨していますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🍎 自分の健康に責任を持つ  
 私たちの心と体の健康は、コミュニティ全体の健やかさにもつながっています。日々のエネルギー、感情の安定、そして人に仕える力は、毎日の生活習慣と深く結びついています。YWAM Sendaiはできる限りのサポートをしますが、水分補給、十分な睡眠、適度な運動、そしてバランスの取れた食事を大切にする責任は、まず一人ひとりにあります。  

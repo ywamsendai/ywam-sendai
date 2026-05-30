@@ -1,20 +1,30 @@
 ---
 title: History of YWAM Sendai
-summary: A milestone overview of our pioneering journey, seasons of preparation, and growth in the Tohoku region.
+summary: A milestone overview of YWAM Sendai's development from early vision and prayer through pioneering launch, pandemic preparation, and the establishment of bilingual training programs.
+language: en
 tags:
-  - ywamsendai
   - history
+  - founding
+  - ywam
+  - sendai
+  - tohoku
+  - dts
+  - milestones
 category: about
 audience:
   - public
   - staff
   - students
+  - prospective
 status: published
-priority: 1
-related:
+priority: 0
 chatSuggestions:
   - When was YWAM Sendai founded?
-lastReviewed: 2026-05-29
+  - How did YWAM Sendai begin?
+  - Who started YWAM Sendai?
+  - What happened during the early years of YWAM Sendai?
+  - When did YWAM Sendai start running DTS programs?
+lastReviewed: 2026-05-30
 ---
 
 ## ⏳ 2010–2018: Vision & Prayer

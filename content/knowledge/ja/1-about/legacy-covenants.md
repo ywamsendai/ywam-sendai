@@ -1,13 +1,32 @@
----  
-title: レガシーワードと誓約  
-description: YWAMのグローバルな歴史を形づくってきたビジョン、各地域で交わされてきた誓約、そして重要な節目。  
-sidebar:  
-  order: 8  
-metadata:  
-  audience: public  
-  category: historical-legacy  
-  chunk-type: header-atomic  
----  
+---
+title: 歴史的なビジョンと契約
+summary: YWAMの歴史を形作ってきた重要なビジョン、契約、そして使命上の節目について紹介します。
+language: ja
+tags:
+  - ywam
+  - history
+  - legacy
+  - covenants
+  - prophetic-history
+  - vision
+  - movement-history
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - YWAMの歴史における重要な節目は何ですか？
+  - 「波のビジョン」とは何ですか？
+  - YWAMにはどのような契約がありますか？
+  - クリスチャン・マグナカルタとは何ですか？
+  - ナニング契約とは何ですか？
+  - YWAMの歴史はYWAM仙台にどのような影響を与えていますか？
+lastReviewed: 2026-05-30
+---
   
 ## 📜 歴史を導いてきた道しるべ  
 YWAMのグローバルな歩みは、これまでいくつかの重要な「言葉（レガシーワード）」、共有されたビジョン、そして歴史的な誓約（カベナント）によって方向づけられてきました。これらは、私たちが大切にしてきた価値観を表すものであり、ムーブメント全体が進むべき方向を確かめるための道しるべでもあります。仙台ベースのローカルな運営を直接縛るものではありませんが、私たちにとって共通の土台となる言葉です。  

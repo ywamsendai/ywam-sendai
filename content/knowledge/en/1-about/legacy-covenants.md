@@ -1,12 +1,31 @@
 ---
 title: Legacy Words & Covenants
-description: Historical corporate visions, regional covenants, and strategic mission milestones shaping YWAM global history.
-sidebar:
-  order: 8
-metadata:
-  audience: public
-  category: historical-legacy
-  chunk-type: header-atomic
+summary: Historical corporate visions, regional covenants, and strategic mission milestones shaping YWAM global history.
+language: en
+tags:
+  - ywam
+  - history
+  - legacy
+  - covenants
+  - prophetic-history
+  - vision
+  - movement-history
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - What are the major historical milestones in YWAM?
+  - What is the Vision of the Waves?
+  - What are the YWAM covenants?
+  - What is the Christian Magna Carta?
+  - What is the Nanning Covenant?
+  - How has YWAM's history shaped YWAM Sendai?
+lastReviewed: 2026-05-30
 ---
 
 ## 📜 Historical Reference Points

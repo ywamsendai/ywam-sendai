@@ -1,12 +1,29 @@
 ---
 title: Visa & Immigration Compliance
-description: Mandatory protocols for Certificate of Eligibility (CoE) processing, document quality standards, and visa renewal compliance.
-sidebar:
-  order: 4
-metadata:
-  audience: incoming-current-staff
-  category: legal-compliance
-  chunk-type: header-atomic
+summary: Immigration requirements, Certificate of Eligibility processing, visa renewal procedures, required documentation, and legal residency responsibilities for staff in Japan.
+language: en
+tags:
+  - visa
+  - immigration
+  - compliance
+  - onboarding
+  - staff
+  - japan
+  - residence-card
+  - coe
+category: operations
+audience:
+  - staff
+status: published
+priority: 1
+chatSuggestions:
+  - How do I get a Religious Activities visa for Japan?
+  - What documents are required for a Certificate of Eligibility?
+  - When can I renew my Japanese visa?
+  - What documents are needed for visa renewal?
+  - Can I arrive in Japan before my visa is approved?
+  - What is the Certificate of Eligibility process?
+lastReviewed: 2026-05-30
 ---
 
 ## 🛃 Legal Stay Responsibility

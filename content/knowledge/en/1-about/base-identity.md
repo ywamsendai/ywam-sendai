@@ -1,12 +1,30 @@
 ---
 title: Base Identity & Vision
-description: Core identity, theological foundations, vision markers, and regional calling of YWAM Sendai.
-sidebar:
-  order: 1
-metadata:
-  audience: public-incoming-staff
-  category: core-identity
-  chunk-type: header-atomic
+summary: Core identity, theological foundations, vision markers, and regional calling of YWAM Sendai.
+language: en
+tags:
+  - ywamsendai
+  - identity
+  - vision
+  - theology
+  - mission
+  - tohoku
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - What is YWAM Sendai?
+  - What does YWAM Sendai believe?
+  - What is the vision of YWAM Sendai?
+  - Why is YWAM Sendai focused on Tohoku?
+  - What is the mission of YWAM Sendai?
+  - What makes YWAM Sendai unique?
+lastReviewed: 2026-05-30
 ---
 
 ## 🏔️ Core Identity

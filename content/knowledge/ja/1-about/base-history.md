@@ -1,13 +1,31 @@
----  
-title: YWAM Sendaiの歩み  
-description: 開拓までの道のり、備えの期間、そして東北の地で歩んできたこれまでのストーリー。  
-sidebar:  
-  order: 1  
-metadata:  
-  audience: public-incoming-staff  
-  category: core-identity  
-  chunk-type: header-atomic  
----  
+---
+title: YWAM仙台の歴史
+summary: 初期のビジョンと祈りの期間から開拓チームの派遣、コロナ禍での準備期間、そしてバイリンガル訓練プログラムの開始に至るまでのYWAM仙台の歩みを紹介します。
+language: ja
+tags:
+  - history
+  - founding
+  - ywam
+  - sendai
+  - tohoku
+  - dts
+  - milestones
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - YWAM仙台はいつ設立されましたか？
+  - YWAM仙台はどのように始まりましたか？
+  - YWAM仙台を始めたのは誰ですか？
+  - YWAM仙台の初期にはどのような歩みがありましたか？
+  - YWAM仙台がDTSを開始したのはいつですか？
+lastReviewed: 2026-05-30
+---
   
 ## ⏳ 2010–2018：ビジョンと祈りの種まき  
 今のベースができるずっと前から、YWAM Sendaiのストーリーは始まっていました。長い年月をかけて、祈り、リサーチを重ね、短期ボランティアチームを送り出しながら、この東北の地に少しずつ種をまいてきたのです。中心となって動いていたのは、YWAM Tokyoで活動していたゲリーとナオコ。約10年にわたる歩みの中で、仙台こそが私たちにとって長く仕えていくホームだという確信が、少しずつ形になっていきました。  

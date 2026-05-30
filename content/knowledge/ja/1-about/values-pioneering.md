@@ -1,13 +1,33 @@
----  
-title: 基本的な行動価値観 1-9  
-description: YWAMのグローバルなカルチャーと、開拓者としての姿勢を形づくる価値観（1〜9）。  
-sidebar:  
-  order: 6  
-metadata:  
-  audience: public  
-  category: global-values  
-  chunk-type: header-atomic  
----  
+---
+title: YWAMの基本的価値観 1〜9
+summary: 神との関係、宣教、祈り、リーダーシップ、そして組織文化に関するYWAMの価値観を解説します。
+language: ja
+tags:
+  - ywam
+  - foundational-values
+  - values
+  - culture
+  - mission
+  - prayer
+  - leadership
+  - discipleship
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 1
+chatSuggestions:
+  - YWAMの基本的価値観とは何ですか？
+  - YWAMにおける「神の声を聞く」とはどういう意味ですか？
+  - なぜYWAMは分散型の組織なのですか？
+  - なぜYWAMは若者を重視するのですか？
+  - YWAMにはどのような組織文化がありますか？
+  - YWAM仙台を形作る価値観にはどのようなものがありますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🛠️ グローバルな行動指針  
 YWAMの「基本的価値観（Foundational Values）」は、私たちのコミュニティのあり方、意思決定の土台、そして人との関わり方を形づくる大切な価値観です。一般的な組織運営とは異なる、柔軟で開拓的な宣教の文化が、ここに表れています。  

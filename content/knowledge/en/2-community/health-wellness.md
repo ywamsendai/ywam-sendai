@@ -1,12 +1,31 @@
 ---
 title: Holistic Health & Digital Boundaries
-description: Personal health ownership, medical expectations, sustainable rest protocols, and intentional technology guardrails.
-sidebar:
-  order: 4
-metadata:
-  audience: community
-  category: wellbeing
-  chunk-type: header-atomic
+summary: Personal health responsibilities, illness protocols, sustainable rest practices, and healthy technology boundaries for community life.
+language: en
+tags:
+  - health
+  - wellbeing
+  - rest
+  - sabbath
+  - technology
+  - social-media
+  - community
+  - lifestyle
+category: community
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - What health expectations exist at YWAM Sendai?
+  - What should I do if I become sick while in Japan?
+  - Does YWAM Sendai provide medical care?
+  - What are the community guidelines for technology use?
+  - What digital boundaries are expected in community life?
+  - How does YWAM Sendai encourage sustainable ministry and rest?
+lastReviewed: 2026-05-30
 ---
 
 ## 🍎 Taking Ownership of Your Health

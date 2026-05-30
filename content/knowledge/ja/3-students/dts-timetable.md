@@ -1,13 +1,28 @@
----  
-title: DTS 週間リズムとタイムテーブル  
-description: 標準的なスクールの週間スケジュール、講義時間、ミニストリーの時間、そして作業の流れ。  
-sidebar:  
-  order: 3  
-metadata:  
-  audience: current-students  
-  category: academic-tracks  
-  chunk-type: header-atomic  
----  
+---
+title: DTS週間スケジュール
+summary: DTS学生向けの標準的な週間スケジュール。祈り、講義、アウトリーチ、実務奉仕、コミュニティ活動、静粛時間を含みます。
+language: ja
+tags:
+  - dts
+  - schedule
+  - timetable
+  - student-life
+  - outreach
+  - prayer
+  - discipleship
+category: schools
+audience:
+  - students
+status: published
+priority: 0
+chatSuggestions:
+  - DTSの典型的な一週間について教えてください。
+  - DTSの一日のスケジュールはどのようになっていますか？
+  - DTSの講義はいつ行われますか？
+  - DTS学生はどのようなアウトリーチ活動に参加しますか？
+  - DTSの静粛時間はいつですか？
+lastReviewed: 2026-05-30
+---
   
 ## 🌅 朝のデボーションのリズム  
 コミュニティの朝は、神との時間を大切にすることから始まります。  

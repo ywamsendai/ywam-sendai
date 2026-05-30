@@ -1,12 +1,27 @@
 ---
 title: DTS Weekly Rhythms & Timetable
-description: Structural overview of the standard student weekly calendar, lecture blocks, ministry slots, and work duties.
-sidebar:
-  order: 3
-metadata:
-  audience: current-students
-  category: academic-tracks
-  chunk-type: header-atomic
+summary: Standard weekly schedule for DTS students, including prayer, lectures, outreach, work duties, community activities, and quiet hours.
+language: en
+tags:
+  - dts
+  - schedule
+  - timetable
+  - student-life
+  - outreach
+  - prayer
+  - discipleship
+category: schools
+audience:
+  - students
+status: published
+priority: 0
+chatSuggestions:
+  - What does a typical DTS week look like?
+  - What is the DTS daily schedule?
+  - When are DTS lectures held?
+  - What outreach activities do DTS students participate in?
+  - What are the DTS quiet hours?
+lastReviewed: 2026-05-30
 ---
 
 ## 🌅 Morning Devotional Rhythms

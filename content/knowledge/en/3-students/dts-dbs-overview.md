@@ -1,12 +1,29 @@
 ---
 title: DTS & DBS Course Overviews
-description: Core training postures, bilingual volume, track deep-dives, timelines, and application deadlines for prospective students.
-sidebar:
-  order: 5
-metadata:
-  audience: prospective-students
-  category: academic-tracks
-  chunk-type: header-atomic
+summary: Overview of DTS and DBS programs, training expectations, curriculum structure, timelines, prerequisites, and application deadlines.
+language: en
+tags:
+  - dts
+  - dbs
+  - schools
+  - training
+  - discipleship
+  - bible-study
+  - admissions
+category: schools
+audience:
+  - prospective
+  - students
+status: published
+priority: 2
+chatSuggestions:
+  - What is DTS?
+  - What is DBS?
+  - What is the difference between DTS and DBS?
+  - When does the next DTS start?
+  - When are DTS application deadlines?
+  - What do students study during DTS and DBS?
+lastReviewed: 2026-05-30
 ---
 
 ## 🎓 The Live-Learn Training Posture

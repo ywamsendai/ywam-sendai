@@ -1,12 +1,29 @@
 ---
 title: Student Admissions & Intake
-description: Application steps, entry requirements, packing lists, and pre-arrival rules for DTS and DBS students.
-sidebar:
-  order: 1
-metadata:
-  audience: incoming-students
-  category: admissions
-  chunk-type: header-atomic
+summary: Application process, eligibility requirements, onboarding steps, packing guidance, and arrival procedures for DTS and DBS students.
+language: en
+tags:
+  - students
+  - admissions
+  - application
+  - dts
+  - dbs
+  - onboarding
+  - travel
+  - packing
+category: schools
+audience:
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - How do I apply for DTS?
+  - How do I apply for DBS?
+  - What are the requirements for DTS students?
+  - Do I need a visa to attend DTS in Japan?
+  - What should I pack for DTS?
+  - What happens after I am accepted?
+lastReviewed: 2026-05-30
 ---
 
 ## 🚪 The Student Application Pipeline

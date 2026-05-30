@@ -1,12 +1,33 @@
 ---
 title: Community Standards & Conduct
-description: Spiritual grounding, interpersonal communication, housing discipline, safety boundaries, and relational alignment.
-sidebar:
-  order: 2
-metadata:
-  audience: community
-  category: operational-culture
-  chunk-type: header-atomic
+summary: Community expectations, spiritual commitments, behavioral standards, housing guidelines, and accountability processes at YWAM Sendai.
+language: en
+tags:
+  - community
+  - conduct
+  - standards
+  - discipleship
+  - accountability
+  - housing
+  - relationships
+  - culture
+  - expectations
+category: community
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - What are the community standards at YWAM Sendai?
+  - What behavior is expected of students and staff?
+  - What are the housing expectations at YWAM Sendai?
+  - What happens if someone violates community standards?
+  - What are YWAM Sendai's expectations regarding relationships and conduct?
+  - What values shape community life at YWAM Sendai?
+lastReviewed: 2026-05-30
 ---
 
 ## 🕊️ Our Shared Commitments

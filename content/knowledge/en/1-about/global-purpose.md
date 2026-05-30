@@ -1,12 +1,30 @@
 ---
 title: YWAM Statement of Purpose
-description: The official global mission calling, Kingdom identity, and doctrinal foundation of Youth With A Mission international.
-sidebar:
-  order: 4
-metadata:
-  audience: public
-  category: global-identity
-  chunk-type: header-atomic
+summary: The official global mission calling, Kingdom identity, and doctrinal foundation of Youth With A Mission international.
+language: en
+tags:
+  - ywam
+  - statement-of-purpose
+  - mission
+  - theology
+  - doctrine
+  - great-commission
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - What is the purpose of YWAM?
+  - What does YWAM believe?
+  - What is YWAM's mission?
+  - What is the YWAM Statement of Purpose?
+  - How does YWAM Sendai relate to YWAM globally?
+  - What are the doctrinal foundations of YWAM?
+lastReviewed: 2026-05-30
 ---
 
 ## 🌍 Global Movement Identity

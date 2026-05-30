@@ -1,13 +1,30 @@
----  
-title: 仙台での新生活セットアップ＆役所登録  
-description: 到着後の行政手続きワークフロー。区役所での住所登録、銀行、モバイル設定、およびアパート契約について。  
-sidebar:  
-  order: 2  
-metadata:  
-  audience: incoming-staff  
-  category: practical-onboarding  
-  chunk-type: header-atomic  
----  
+---
+title: 来日後の生活準備と各種登録手続き
+summary: 住民登録、健康保険、年金加入、銀行口座開設、携帯電話契約、住居準備など、来日後に必要となる各種手続きの案内。
+language: ja
+tags:
+  - onboarding
+  - registration
+  - housing
+  - banking
+  - insurance
+  - mynumber
+  - japan
+  - staff
+category: operations
+audience:
+  - staff
+status: published
+priority: 1
+chatSuggestions:
+  - 日本に到着した後、最初に何をすればよいですか？
+  - 仙台で住所登録をする方法を教えてください。
+  - 日本の健康保険にはどのように加入しますか？
+  - 日本で銀行口座を開設するにはどうすればよいですか？
+  - スタッフは仙台のどこに住むべきですか？
+  - マイナンバーとは何ですか？カードは必要ですか？
+lastReviewed: 2026-05-30
+---
   
 ## 🏛️ 到着後の手続きチェックリスト  
 仙台で長期的に生活しながらミニストリーを始めるためには、入国後すぐに必要な行政手続きや生活の準備を進めていく必要があります。現地のYWAMコミュニティのスタッフが書類の書き方などをサポートしますが、日本で安定して生活し、活動していく土台を整えるために、自分でも責任を持って主体的に動くことが求められます。  

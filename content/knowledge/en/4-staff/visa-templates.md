@@ -1,12 +1,28 @@
 ---
 title: Staff Visa Document Templates
-description: Official template prose for dispatch and continuity letters required by sending organizations for religious visa applications.
-sidebar:
-  order: 4
-metadata:
-  audience: incoming-current-staff-public
-  category: operational-templates
-  chunk-type: code-raw
+summary: Official dispatch and renewal letter templates required for Japanese Religious Activities visa applications, including COE and extension documentation.
+language: en
+tags:
+  - visa
+  - immigration
+  - templates
+  - coe
+  - staff
+  - legal
+  - documentation
+category: operations
+audience:
+  - staff
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - What documents are needed for a Japanese Religious Activities visa?
+  - What is the dispatch letter for a COE application?
+  - How do I write a sending church letter for Japan visa renewal?
+  - What does the immigration template letter need to include?
+  - Can I see the visa support letter template?
+lastReviewed: 2026-05-30
 ---
 
 ## 📝 Document Template Use

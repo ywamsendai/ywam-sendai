@@ -1,13 +1,31 @@
----  
-title: YWAMの存在意義と目的  
-description: ユース・ウィズ・ア・ミッション（YWAM）のグローバルな使命、神の国に属する者としてのアイデンティティ、そして信仰の土台。  
-sidebar:  
-  order: 4  
-metadata:  
-  audience: public  
-  category: global-identity  
-  chunk-type: header-atomic  
----  
+---
+title: YWAMの目的声明
+summary: Youth With A Mission（YWAM）の世界的な使命、神の国のアイデンティティ、そして教理的基盤について説明します。
+language: ja
+tags:
+  - ywam
+  - statement-of-purpose
+  - mission
+  - theology
+  - doctrine
+  - great-commission
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - YWAMの目的とは何ですか？
+  - YWAMは何を信じていますか？
+  - YWAMの使命とは何ですか？
+  - YWAMの目的声明とは何ですか？
+  - YWAM仙台は世界のYWAMとどのような関係がありますか？
+  - YWAMの教理的基盤にはどのようなものがありますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🌍 グローバルなムーブメントとして  
 ユース・ウィズ・ア・ミッション（YWAM）は、さまざまな教派のクリスチャンが集まる、国際的な宣教ムーブメントです。私たちの目的は、今の世代、そしてこれからの世代の一人ひとりに、イエス・キリストを伝えることです。そのために、できるだけ多くの若者が神を知り、それぞれに与えられた使命に歩めるよう、励まし、備え、訓練しています。  

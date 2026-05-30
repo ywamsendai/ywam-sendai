@@ -1,13 +1,27 @@
----  
-title: DTS アカデミック課題ガイド  
-description: DTSの必須課題、読書レポート、地域リサーチプロジェクトに関する具体的なガイドラインと提出方法。  
-sidebar:  
-  order: 2  
-metadata:  
-  audience: current-students  
-  category: academic-tracks  
-  chunk-type: header-atomic  
----  
+---
+title: DTS課題・学習要件
+summary: DTS学生向けの課題要件、ジャーナル提出、読書レポート、プレゼンテーション評価基準、および東北リサーチプロジェクトの概要。
+language: ja
+tags:
+  - dts
+  - assignments
+  - journals
+  - books
+  - academics
+  - students
+  - tohoku
+category: schools
+audience:
+  - students
+status: published
+priority: 0
+chatSuggestions:
+  - DTSではどのような課題がありますか？
+  - DTSのジャーナル提出要件を教えてください。
+  - DTS学生はどの本を読む必要がありますか？
+  - 東北インターセッション・プロジェクトとは何ですか？
+lastReviewed: 2026-05-30
+---
   
 ## 📅 ジャーナル提出について  
 DTSでの学びを継続的に振り返るために、毎週のパーソナルジャーナルの提出が必要です。これは、あなたの学びや内面的なプロセスをスタッフが理解し、必要なサポートを行うための大切な手段です。  

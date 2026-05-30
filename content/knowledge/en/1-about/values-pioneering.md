@@ -1,12 +1,32 @@
 ---
 title: Foundational Values 1-9
-description: Detailed operational values 1 through 9 defining YWAM's global culture and pioneering convictions.
-sidebar:
-  order: 6
-metadata:
-  audience: public
-  category: global-values
-  chunk-type: header-atomic
+summary: Detailed explanations of YWAM foundational values 1 through 9, covering God's nature, mission, prayer, leadership, and organizational culture.
+language: en
+tags:
+  - ywam
+  - foundational-values
+  - values
+  - culture
+  - mission
+  - prayer
+  - leadership
+  - discipleship
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 1
+chatSuggestions:
+  - What are the YWAM Foundational Values?
+  - What does YWAM mean by hearing God's voice?
+  - Why is YWAM decentralized?
+  - Why does YWAM emphasize young people?
+  - What is YWAM's organizational culture?
+  - What values shape YWAM Sendai?
+lastReviewed: 2026-05-30
 ---
 
 ## 🛠️ The Global Operating Culture

@@ -1,12 +1,28 @@
 ---
 title: School Costs, Fees, & Payments
-description: Complete tuition fee breakdowns, mandatory payment deadlines, cash policies, and refund principles for DTS and DBS students.
-sidebar:
-  order: 4
-metadata:
-  audience: accepted-students
-  category: finance
-  chunk-type: header-atomic
+summary: Tuition, housing, outreach costs, payment deadlines, refund policies, and financial responsibilities for DTS and DBS students.
+language: en
+tags:
+  - dts
+  - dbs
+  - tuition
+  - payments
+  - fees
+  - finances
+  - outreach
+category: schools
+audience:
+  - prospective
+  - students
+status: published
+priority: 2
+chatSuggestions:
+  - How much does DTS cost?
+  - How much does DBS cost?
+  - When are school fees due?
+  - What payment deadlines do students need to follow?
+  - What is the refund policy for DTS and DBS?
+lastReviewed: 2026-05-30
 ---
 
 ## 💰 Financial Responsibility

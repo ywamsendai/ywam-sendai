@@ -1,263 +1,301 @@
-import fs from 'fs';
-import { glob } from 'glob';
-import matter from 'gray-matter';
+import fs from "fs";
+import { glob } from "glob";
+import matter from "gray-matter";
+import crypto from "crypto";
 
 const WORKER_URL =
-  process.env.WORKER_URL || 'https://ywam-guide-api.ywamsendai.workers.dev';
+  process.env.WORKER_URL ||
+  "https://ywam-guide-api.ywamsendai.workers.dev";
 
 const MIN_CHUNK_LENGTH = 120;
 const MAX_CHUNK_LENGTH = 1800;
 
+/* ----------------------------------------
+   UTILITIES
+---------------------------------------- */
+
 function normalizeFilePath(file) {
-  return file.replace(/\\/g, '/');
+  return file.replace(/\\/g, "/");
 }
 
 function detectLang(file) {
   const normalized = normalizeFilePath(file);
-  return normalized.split('/').includes('ja') ? 'ja' : 'en';
+  return normalized.split("/").includes("ja") ? "ja" : "en";
 }
 
 function cleanPath(file) {
   const normalized = normalizeFilePath(file);
   return normalized
-    .replace(/^src\/content\/docs/, '')
-    .replace(/\.mdx?$/, '');
+    .replace(/^.*\/content\/knowledge/, "")
+    .replace(/\.mdx?$/, "");
 }
 
 function normalizeText(text) {
   return text
-    .replace(/\r\n/g, '\n')
-    .replace(/\n{3,}/g, '\n\n')
+    .replace(/\r\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
 
+/* ----------------------------------------
+   FRONTMATTER NORMALISATION
+---------------------------------------- */
+
+function normalizeFrontmatter(data, lang) {
+  return {
+    title: String(data.title || "Untitled").trim(),
+    summary: String(data.summary || "").trim(),
+
+    language: lang,
+
+    tags: Array.isArray(data.tags) ? data.tags : [],
+    category: data.category || "general",
+
+    audience: Array.isArray(data.audience) ? data.audience : [],
+
+    status: data.status || "published",
+
+    priority: Number(data.priority || 0),
+
+    chatSuggestions: Array.isArray(data.chatSuggestions)
+      ? data.chatSuggestions
+      : [],
+
+    lastReviewed: data.lastReviewed || null,
+  };
+}
+
+/* ----------------------------------------
+   CHUNKING
+---------------------------------------- */
+
 function splitByHeadings(content) {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   const sections = [];
+
   let currentHeading = null;
   let currentBody = [];
 
   for (const line of lines) {
-    const headingMatch = line.match(/^(#{2,4})\s+(.*)$/);
+    const match = line.match(/^(#{2,4})\s+(.*)$/);
 
-    if (headingMatch) {
-      if (currentHeading || currentBody.length) {
+    if (match) {
+      if (currentBody.length) {
         sections.push({
-          heading: currentHeading || 'Untitled Section',
-          text: currentBody.join('\n').trim(),
+          heading: currentHeading || "Introduction",
+          text: currentBody.join("\n").trim(),
         });
       }
 
-      currentHeading = headingMatch[2].trim();
+      currentHeading = match[2].trim();
       currentBody = [];
     } else {
       currentBody.push(line);
     }
   }
 
-  if (currentHeading || currentBody.length) {
+  if (currentBody.length) {
     sections.push({
-      heading: currentHeading || 'Untitled Section',
-      text: currentBody.join('\n').trim(),
+      heading: currentHeading || "Introduction",
+      text: currentBody.join("\n").trim(),
     });
   }
 
-  return sections.filter((section) => section.text.length > 0);
+  return sections.filter((s) => s.text.length > 0);
 }
 
-function splitLargeSection(text, maxLen = MAX_CHUNK_LENGTH) {
-  if (text.length <= maxLen) return [text];
+function splitLargeSection(text) {
+  if (text.length <= MAX_CHUNK_LENGTH) return [text];
 
   const paragraphs = text.split(/\n\s*\n/);
   const chunks = [];
-  let current = '';
 
-  for (const para of paragraphs) {
-    const candidate = current ? `${current}\n\n${para}` : para;
+  let current = "";
 
-    if (candidate.length > maxLen && current) {
+  for (const p of paragraphs) {
+    const candidate = current ? `${current}\n\n${p}` : p;
+
+    if (candidate.length > MAX_CHUNK_LENGTH && current) {
       chunks.push(current.trim());
-      current = para;
+      current = p;
     } else {
       current = candidate;
     }
   }
 
-  if (current.trim()) {
-    chunks.push(current.trim());
-  }
+  if (current.trim()) chunks.push(current.trim());
 
   return chunks;
 }
 
-function mergeTinySections(sections, minLen = MIN_CHUNK_LENGTH) {
+function mergeTinySections(sections) {
   const merged = [];
 
   for (const section of sections) {
-    if (merged.length > 0 && section.text.length < minLen) {
-      merged[merged.length - 1].text += `\n\n${section.heading}\n${section.text}`;
+    if (
+      merged.length > 0 &&
+      section.text.length < MIN_CHUNK_LENGTH
+    ) {
+      merged[merged.length - 1].text +=
+        `\n\n${section.heading}\n${section.text}`;
     } else {
-      merged.push({ ...section });
+      merged.push(section);
     }
   }
 
   return merged;
 }
 
-function shouldIncludeFile(file) {
-  const normalized = normalizeFilePath(file);
+/* ----------------------------------------
+   PIPELINE STEP: BUILD CHUNKS
+---------------------------------------- */
 
-  if (!/\.(md|mdx)$/.test(normalized)) return false;
-  if (!normalized.startsWith('/content/knowledge/')) return false;
-  if (normalized.endsWith('/index.mdx')) return false;
-
-  return true;
-}
-
-async function deleteExistingChunks(path, lang) {
-  const response = await fetch(`${WORKER_URL}/delete-by-path`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ path, lang }),
-  });
-
-  if (!response.ok) {
-    const errText = await response.text();
-    throw new Error(
-      `Delete failed for ${lang}:${path} -> ${response.status} - ${errText}`
-    );
-  }
-}
-
-async function ingestChunk(payload) {
-  const response = await fetch(`${WORKER_URL}/ingest`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  });
-
-  if (!response.ok) {
-    const errText = await response.text();
-    throw new Error(`Ingest failed -> ${response.status} - ${errText}`);
-  }
-}
-
-async function getFilesToProcess() {
-  const cliFiles = process.argv.slice(2).filter(Boolean);
-
-  if (cliFiles.length > 0) {
-    return cliFiles
-      .map(normalizeFilePath)
-      .filter(shouldIncludeFile);
-  }
-
-  const allFiles = await glob('../../../content/knowledge/**/*.{md,mdx}');
-  return allFiles
-    .map(normalizeFilePath)
-    .filter(shouldIncludeFile);
-}
-
-async function processFile(file) {
-  const normalizedFile = normalizeFilePath(file);
-  const rawContent = fs.readFileSync(normalizedFile, 'utf-8');
-  const { data, content } = matter(rawContent);
-
-  const lang = detectLang(normalizedFile);
-  const path = cleanPath(normalizedFile);
-
-  const title = String(data.title || 'General Info').trim();
-  const description = String(data.description || '').trim();
-  const audience = String(data.audience || 'mixed').trim();
-  const contentType = String(data.content_type || 'reference').trim();
-  const scope = String(data.scope || 'local').trim();
-  const status = String(data.status || 'active').trim();
-  const topic = String(data.topic || '').trim();
-  const priority = String(data.priority || 'normal').trim();
-  const lastReviewed = String(data.last_reviewed || '').trim();
-
-  const normalizedContent = normalizeText(content);
-  let sections = splitByHeadings(normalizedContent);
-  sections = mergeTinySections(sections);
-
-  console.log(
-    `📖 Syncing [${lang.toUpperCase()}]: ${title} (${sections.length} sections)`
+function buildChunks(filePath, frontmatter, content) {
+  const sections = mergeTinySections(
+    splitByHeadings(normalizeText(content))
   );
 
-  await deleteExistingChunks(path, lang);
+  const chunks = [];
 
-  let chunkIndex = 0;
+  let globalIndex = 0;
 
   for (const section of sections) {
     const subchunks = splitLargeSection(section.text);
 
-    for (let subIndex = 0; subIndex < subchunks.length; subIndex++) {
-      const chunkBody = subchunks[subIndex];
-      const sectionLabel =
-        subchunks.length > 1
-          ? `${section.heading} (Part ${subIndex + 1})`
-          : section.heading;
+    subchunks.forEach((chunkText, i) => {
+      const chunkId = crypto
+        .createHash("sha1")
+        .update(`${filePath}:${section.heading}:${i}`)
+        .digest("hex");
 
-      const contextualText = [
-        `Title: ${title}`,
-        description ? `Description: ${description}` : '',
-        `Path: ${path}`,
-        `Language: ${lang}`,
-        `Audience: ${audience}`,
-        `Content Type: ${contentType}`,
-        `Scope: ${scope}`,
-        `Status: ${status}`,
-        topic ? `Topic: ${topic}` : '',
-        `Priority: ${priority}`,
-        lastReviewed ? `Last Reviewed: ${lastReviewed}` : '',
-        `Section: ${sectionLabel}`,
-        '',
-        chunkBody,
-      ]
-        .filter(Boolean)
-        .join('\n');
-
-      const chunkId = `${lang}-${path.replace(/\//g, '-')}-chunk-${chunkIndex++}`;
-
-      await ingestChunk({
+      const chunk = {
         id: chunkId,
-        text: contextualText,
-        lang,
-        path,
-        title,
-        description,
-        audience,
-        content_type: contentType,
-        scope,
-        status,
-        topic,
-        priority,
-        last_reviewed: lastReviewed,
-        section: sectionLabel,
-      });
-    }
+
+        documentId: filePath,
+        language: frontmatter.language,
+
+        title: frontmatter.title,
+        summary: frontmatter.summary,
+
+        category: frontmatter.category,
+        tags: frontmatter.tags,
+        audience: frontmatter.audience,
+
+        section: section.heading,
+        chunkIndex: globalIndex++,
+
+        text: chunkText,
+      };
+
+      chunks.push(chunk);
+    });
+  }
+
+  return chunks;
+}
+
+/* ----------------------------------------
+   EMBEDDING + UPLOAD
+---------------------------------------- */
+
+async function embedAndSend(chunk) {
+  const response = await fetch(`${WORKER_URL}/ingest`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id: chunk.id,
+      text: chunk.text,
+
+      metadata: {
+        documentId: chunk.documentId,
+        title: chunk.title,
+        section: chunk.section,
+        language: chunk.language,
+        category: chunk.category,
+        tags: chunk.tags,
+        audience: chunk.audience,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Ingest failed: ${err}`);
   }
 }
 
-async function runIngestion() {
-  console.log('🚀 Starting ingestion...');
+/* ----------------------------------------
+   DELETE OLD CHUNKS
+---------------------------------------- */
 
-  const files = await getFilesToProcess();
+async function deleteExisting(path, lang) {
+  await fetch(`${WORKER_URL}/delete-by-path`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ path, lang }),
+  });
+}
 
-  if (!files.length) {
-    console.log('ℹ️ No eligible documentation files to process.');
-    return;
+/* ----------------------------------------
+   FILE PROCESSING
+---------------------------------------- */
+
+async function processFile(file) {
+  const filePath = normalizeFilePath(file);
+  const raw = fs.readFileSync(filePath, "utf-8");
+
+  const { data, content } = matter(raw);
+
+  const lang = detectLang(filePath);
+  const clean = cleanPath(filePath);
+
+  const frontmatter = normalizeFrontmatter(data, lang);
+
+  console.log(
+    `📖 Processing: ${frontmatter.title} (${lang})`
+  );
+
+  await deleteExisting(clean, lang);
+
+  const chunks = buildChunks(clean, frontmatter, content);
+
+  for (const chunk of chunks) {
+    await embedAndSend(chunk);
   }
+
+  console.log(
+    `✅ Done: ${frontmatter.title} (${chunks.length} chunks)`
+  );
+}
+
+/* ----------------------------------------
+   RUNNER
+---------------------------------------- */
+
+async function getFiles() {
+  const cli = process.argv.slice(2);
+
+  if (cli.length) return cli;
+
+  return await glob(
+    "../../../content/knowledge/**/*.{md,mdx}"
+  );
+}
+
+async function run() {
+  console.log("🚀 Starting ingestion pipeline...");
+
+  const files = await getFiles();
 
   for (const file of files) {
     try {
       await processFile(file);
-    } catch (err) {
-      console.error(`❌ Error processing ${file}: ${err.message}`);
-      process.exitCode = 1;
+    } catch (e) {
+      console.error(`❌ Error: ${file}`, e.message);
     }
   }
 
-  console.log('✨ Ingestion complete.');
+  console.log("✨ Pipeline complete");
 }
 
-runIngestion();
+run();

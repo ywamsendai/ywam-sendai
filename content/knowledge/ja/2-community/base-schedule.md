@@ -1,13 +1,34 @@
----  
-title: ベースのリズムとミニストリー  
-description: YWAM Sendaiの週間スケジュール、コミュニティの祈りの時間、そして地域での活動の土台。  
-sidebar:  
-  order: 1  
-metadata:  
-  audience: community  
-  category: operational-culture  
-  chunk-type: header-atomic  
----  
+---
+title: 拠点のリズムとミニストリー
+summary: YWAM仙台における週間コミュニティリズム、礼拝集会、アウトリーチ活動、祈りの働き、ボランティア活動の概要。
+language: ja
+tags:
+  - rhythms
+  - community
+  - worship
+  - prayer
+  - outreach
+  - ministry
+  - discipleship
+  - sendai
+  - tohoku
+category: community
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - YWAM仙台ではどのような週間スケジュールがありますか？
+  - YWAM仙台ではどのようなミニストリーを行っていますか？
+  - YWAM仙台の典型的な一週間について教えてください。
+  - YWAM仙台にはアウトリーチ活動がありますか？
+  - YWAM仙台のコミュニティ活動にはどのようなものがありますか？
+  - YWAM仙台では礼拝、祈り、ミニストリーをどのように行っていますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🗓️ 私たちが日々のリズムを大切にする理由  
 私たちは、その場の思いつきではなく、一貫した週間のリズムを土台にしてコミュニティの生活を組み立てています。明確な流れがあることで、礼拝、日々の働き、もてなし、休息、そして語学学習を無理なく続けることができます。こうした共通の枠組みがないと、宣教の働きはすぐに慌ただしいものになり、疲れ切ってしまいます。長く健やかに歩み続けるために、このリズムを大切にしています。  

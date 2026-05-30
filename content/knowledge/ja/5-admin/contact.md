@@ -1,13 +1,29 @@
----  
-title: ベース連絡先＆コミュニケーション・ディレクトリ  
-description: YWAM Sendaiの公式コミュニケーション窓口、インスタントメッセージ、および電子メールのディレクトリ。  
-sidebar:  
-  order: 4  
-metadata:  
-  audience: public  
-  category: administration  
-  chunk-type: header-atomic  
----  
+---
+title: 連絡先・コミュニケーション案内
+summary: お問い合わせ、入学申請、運営連絡のための公式連絡手段、チャットツール、メール窓口、オンラインポータルの案内です。
+language: ja
+tags:
+  - 連絡先
+  - コミュニケーション
+  - メール
+  - discord
+  - line
+  - instagram
+  - 入学申請
+  - 事務
+category: operations
+audience:
+  - public
+status: published
+priority: 2
+chatSuggestions:
+  - YWAM仙台への連絡方法を教えてください
+  - DTSについて問い合わせるにはどうすればよいですか
+  - LINEやDiscordで連絡できますか
+  - 入学申請に関する問い合わせ先はどこですか
+  - YWAM仙台の公式SNSはありますか
+lastReviewed: 2026-05-30
+---
   
 ## 📞 チャット優先のコミュニケーション方針  
 YWAM Sendaiでは、気軽な問い合わせ、一般的な質問、来日前のやり取りについては、従来のメールよりもダイレクトメッセージを優先しています。  

@@ -1,13 +1,31 @@
----  
-title: 私たちのアイデンティティとビジョン  
-description: YWAM Sendaiの中心にある想い、大切にしている価値観、そして東北へのミッション。  
-sidebar:  
-  order: 2  
-metadata:  
-  audience: public-incoming-staff  
-  category: core-identity  
-  chunk-type: header-atomic  
----  
+---
+title: YWAM仙台のアイデンティティとビジョン
+summary: YWAM仙台のアイデンティティ、神学的基盤、ビジョンの柱、そして東北地域への召命について紹介します。
+language: ja
+tags:
+  - ywamsendai
+  - identity
+  - vision
+  - theology
+  - mission
+  - tohoku
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 3
+chatSuggestions:
+  - YWAM仙台とはどのような団体ですか？
+  - YWAM仙台は何を信じていますか？
+  - YWAM仙台のビジョンは何ですか？
+  - なぜYWAM仙台は東北に焦点を当てているのですか？
+  - YWAM仙台の使命は何ですか？
+  - YWAM仙台の特徴は何ですか？
+lastReviewed: 2026-05-30
+--- 
   
 ## 🏔️ コアにあるアイデンティティ  
 YWAM Sendaiは、日本の仙台を拠点とするクリスチャン・コミュニティです。私たちは、文化の違いを越えてイエス・キリストの愛を伝え、人々に仕えるグローバルなムーブメント「Youth With A Mission（YWAM）」の一員として、東北に根ざして活動しています。私たちの姿勢はシンプルです。神を愛し、人を愛し、この東北の地に誠実に寄り添うこと。それが、私たちの土台にあるアイデンティティです。  

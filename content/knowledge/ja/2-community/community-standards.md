@@ -1,13 +1,34 @@
----  
-title: コミュニティスタンダードと行動規範  
-description: 霊的な土台、人間関係におけるコミュニケーション、共同生活のルール、安全の境界線、そしてチームとして歩むための基準。  
-sidebar:  
-  order: 2  
-metadata:  
-  audience: community  
-  category: operational-culture  
-  chunk-type: header-atomic  
----  
+---
+title: コミュニティ基準と行動規範
+summary: YWAM仙台におけるコミュニティの期待事項、霊的な取り組み、行動基準、住居ガイドライン、および説明責任のプロセス。
+language: ja
+tags:
+  - community
+  - conduct
+  - standards
+  - discipleship
+  - accountability
+  - housing
+  - relationships
+  - culture
+  - expectations
+category: community
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - YWAM仙台のコミュニティ基準とは何ですか？
+  - スタッフや学生にはどのような行動が求められますか？
+  - YWAM仙台の住居に関するルールを教えてください。
+  - コミュニティ基準に違反した場合はどうなりますか？
+  - 人間関係や行動についてどのような期待がありますか？
+  - YWAM仙台のコミュニティを形作る価値観は何ですか？
+lastReviewed: 2026-05-30
+---
   
 ## 🕊️ 私たちが共有するコミットメント  
 YWAM Sendaiでの暮らしは、霊的な面、人間関係、そして日々の実務における共通の土台の上に成り立っています。これらのスタンダードは、コミュニティ全体の健やかさを守り、お互いに責任を持って歩むためのものです。長期スタッフ、学生、短期アウトリーチチーム、インターン、すべてのゲストに共通して適用されます。このコミュニティに加わるということは、この文化をともに大切にし、育てていく一員になるということです。  

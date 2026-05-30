@@ -1,13 +1,28 @@
----  
-title: 外国運転免許証の日本免許への切り替え  
-description: 海外の運転免許証を、日本国内で有効な運転免許証へ法的に書き換えるためのステップ・バイ・ステップの手順。  
-sidebar:  
-  order: 2  
-metadata:  
-  audience: incoming-staff  
-  category: practical-onboarding  
-  chunk-type: header-atomic  
----  
+---
+title: 外国運転免許証の切替手続き
+summary: 宮城県において外国の運転免許証を日本の運転免許証へ切り替えるための要件、必要書類、試験手順、および居住実績証明について。
+language: ja
+tags:
+  - driving
+  - drivers-license
+  - japan
+  - onboarding
+  - transportation
+  - miyagi
+  - legal
+category: operations
+audience:
+  - staff
+status: published
+priority: 0
+chatSuggestions:
+  - 外国の運転免許証を日本の免許証に切り替えるにはどうすればよいですか？
+  - 日本での免許切替に必要な書類は何ですか？
+  - 免許切替に必要な「3か月ルール」とは何ですか？
+  - JAFによる運転免許証の翻訳は必要ですか？
+  - 日本で運転試験を受ける必要がありますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🚗 宮城県での運転手続きについて  
 日本で車を運転する予定がある方は、海外の運転免許証を日本の免許証へ切り替える手続き（外国免許切り替え、いわゆる「外免切替」）を行ってください。宮城県での正式な手続きは、宮城県警察本部の運転免許センターで行われます。  

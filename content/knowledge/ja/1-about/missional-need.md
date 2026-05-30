@@ -1,13 +1,33 @@
----  
-title: 東北のリアルな現状とニーズ  
-description: 日本、そして東北地域が抱える精神的な背景、文化的な特徴、社会的なプレッシャーを理解する。  
-sidebar:  
-  order: 3  
-metadata:  
-  audience: public-incoming-staff-student  
-  category: core-identity  
-  chunk-type: header-atomic  
----  
+---
+title: 東北における宣教の必要性
+summary: 日本と東北地域における霊的状況、文化的背景、そして宣教上の課題について理解を深めます。
+language: ja
+tags:
+  - tohoku
+  - japan
+  - missions
+  - unreached
+  - culture
+  - evangelism
+  - prayer
+  - sendai
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - なぜYWAM仙台は東北に焦点を当てているのですか？
+  - 日本の霊的状況はどのようなものですか？
+  - なぜ日本は未伝地と呼ばれるのですか？
+  - 日本のクリスチャンはどのような課題に直面していますか？
+  - 東北にはどのような宣教の機会がありますか？
+  - なぜ日本では長期的な宣教が重要なのですか？
+lastReviewed: 2026-05-30
+---
   
 ## 🇯🇵 クリスチャン人口が少ない日本の現状  
 日本は、世界有数の経済力と技術力を持つ国である一方で、キリスト教に触れる機会が限られている社会でもあります。人口約1億2600万人のうち、クリスチャンであるとされる人の割合はごくわずかです。地域の教会の多くは小規模で、キリスト教に日常的に触れたことのない人も少なくありません。  

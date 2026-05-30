@@ -1,12 +1,27 @@
 ---
 title: Student Policies & Expectations
-description: Official student code of conduct, academic standards, work duties, and restorative discipline pathways.
-sidebar:
-  order: 1
-metadata:
-  audience: accepted-students
-  category: student-policy
-  chunk-type: header-atomic
+summary: Official student code of conduct, academic standards, attendance requirements, work duties, and restorative discipline processes.
+language: en
+tags:
+  - students
+  - policies
+  - conduct
+  - academics
+  - attendance
+  - discipline
+category: schools
+audience:
+  - students
+status: published
+priority: 2
+chatSuggestions:
+  - What are the expectations for students?
+  - What happens if I miss classes?
+  - How are DTS and DBS students evaluated?
+  - What work duties do students have?
+  - What is the disciplinary process for students?
+  - Can a student be dismissed from a school?
+lastReviewed: 2026-05-30
 ---
 
 ## 🎓 Academic Standards

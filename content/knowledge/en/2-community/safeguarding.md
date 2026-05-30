@@ -1,12 +1,31 @@
 ---
 title: Abuse Prevention & Reporting Protocols
-description: Absolute commitment to safety, abuse prevention, boundary maintenance, and formal reporting procedures.
-sidebar:
-  order: 5
-metadata:
-  audience: community
-  category: safety
-  chunk-type: header-atomic
+summary: Safeguarding standards, abuse prevention principles, reporting responsibilities, and procedures for maintaining a safe community.
+language: en
+tags:
+  - safeguarding
+  - safety
+  - abuse-prevention
+  - reporting
+  - community
+  - leadership
+  - accountability
+  - protection
+category: operations
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - How does YWAM Sendai handle safeguarding concerns?
+  - What should I do if I witness abuse or misconduct?
+  - What is YWAM Sendai's abuse prevention policy?
+  - How are safeguarding reports handled?
+  - What behaviors are considered safeguarding violations?
+  - What are the limits of confidentiality in abuse reporting?
+lastReviewed: 2026-05-30
 ---
 
 ## 🛡️ Zero Tolerance for Abuse

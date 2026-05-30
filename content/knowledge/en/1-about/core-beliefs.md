@@ -1,12 +1,31 @@
 ---
 title: YWAM Core Doctrinal Beliefs
-description: The structural theological responses and absolute biblical reference points strongly emphasized across YWAM global.
-sidebar:
-  order: 5
-metadata:
-  audience: public
-  category: global-identity
-  chunk-type: header-atomic
+summary: The structural theological responses and biblical foundations emphasized throughout the global YWAM movement.
+language: en
+tags:
+  - ywam
+  - doctrine
+  - theology
+  - beliefs
+  - discipleship
+  - prayer
+  - evangelism
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - What are YWAM's core doctrinal beliefs?
+  - What does YWAM teach about Christian discipleship?
+  - What theological convictions shape YWAM?
+  - What are the core values emphasized by YWAM?
+  - Why does YWAM emphasize prayer and evangelism?
+  - How do YWAM beliefs shape life in YWAM Sendai?
+lastReviewed: 2026-05-30
 ---
 
 ## 📖 The Biblical Reference Point

@@ -1,13 +1,29 @@
----  
-title: スタッフビザ申請用レター・テンプレート  
-description: 宗教ビザの申請や更新の際、派遣元組織（ホームチャーチ等）に作成を依頼する「派遣状（Dispatch Letter）」の公式テンプレート文面。  
-sidebar:  
-  order: 4  
-metadata:  
-  audience: incoming-current-staff-public  
-  category: operational-templates  
-  chunk-type: code-raw  
----  
+---
+title: スタッフ向けビザ申請書類テンプレート
+summary: 日本の宗教活動ビザ申請および更新に必要な派遣証明書、推薦状、COE関連書類などの公式テンプレート集。
+language: ja
+tags:
+  - visa
+  - immigration
+  - templates
+  - coe
+  - staff
+  - legal
+  - documentation
+category: operations
+audience:
+  - staff
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - 日本の宗教活動ビザにはどのような書類が必要ですか？
+  - COE申請用の派遣証明書とは何ですか？
+  - ビザ更新用の派遣教会推薦状はどのように作成しますか？
+  - 入管提出用テンプレートには何を含める必要がありますか？
+  - ビザ申請サポートレターのテンプレートを見ることはできますか？
+lastReviewed: 2026-05-30
+---
   
 ## 📝 ビザ用テンプレートの使い方  
 以下のテキストブロックには、日本の出入国在留管理局での審査に使用する、承認済みの公式な英文テンプレートを掲載しています。これは、あなたの宗教活動としての立場、派遣元組織による支援、そして海外からの経済的支援によって生活が成り立っていることを示すための文面です。派遣元の教会、教団、またはミッションネットワークに対して、この文章をそのまま公式レターヘッドにコピーし、角括弧 `[ ]` 内の項目を正しく記入したうえで、直筆の署名を付けて発行してもらうよう依頼してください。  

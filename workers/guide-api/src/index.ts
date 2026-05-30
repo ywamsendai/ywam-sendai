@@ -1,577 +1,394 @@
+import { z } from "zod";
+import type { VectorMetadata } from "../../../content/schema";
+
+/* ----------------------------------------
+   ENV
+---------------------------------------- */
+
 interface Env {
   VECTORIZE: VectorizeIndex;
   AI: Ai;
   INGEST_MANIFEST: KVNamespace;
 }
 
-interface Message {
-  role: 'system' | 'user' | 'assistant';
-  content: string;
-}
+/* ----------------------------------------
+   TYPES
+---------------------------------------- */
 
-interface IngestBody {
-  id: string;
-  text: string;
-  lang: string;
-  path: string;
-  title?: string;
-  description?: string;
-  audience?: string;
-  content_type?: string;
-  scope?: string;
-  status?: string;
-  topic?: string;
-  priority?: string;
-  last_reviewed?: string;
-  section?: string;
-}
+type Intent =
+  | "dts"
+  | "dbs"
+  | "apply"
+  | "community"
+  | "staff"
+  | "students"
+  | "general";
 
-interface DeleteByPathBody {
-  path: string;
-  lang: string;
-}
-
-interface AskBody {
-  question: string;
-  lang: string;
-  history?: { role: string; content: string }[];
-}
-
-interface ManifestRecord {
-  chunkIds: string[];
-  updatedAt: string;
-  path: string;
-  lang: string;
-}
-
-interface SourceLink {
-  title: string;
-  path: string;
-  url: string;
-  type: 'doc';
-}
-
-type MatchMetadata = {
+type MatchMetadata = VectorMetadata & {
   text?: string;
-  lang?: string;
-  path?: string;
-  title?: string;
-  description?: string;
-  audience?: string;
-  content_type?: string;
-  scope?: string;
-  status?: string;
-  topic?: string;
-  priority?: string;
-  last_reviewed?: string;
   section?: string;
 };
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
+/* ----------------------------------------
+   UTILS
+---------------------------------------- */
 
-const EMBEDDING_MODEL = '@cf/baai/bge-m3';
-const CHAT_MODEL = '@cf/meta/llama-3.1-8b-instruct';
-const DOCS_BASE_URL = 'https://guide.ywamsendai.org';
-
-function toDocUrl(path?: string): string {
-  if (!path) return DOCS_BASE_URL;
-  if (path.startsWith('http://') || path.startsWith('https://')) return path;
-  return `${DOCS_BASE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+function safeString(v: any): string {
+  return typeof v === "string" ? v : "";
 }
 
-function manifestKey(path: string, lang: string): string {
-  return `manifest:${lang}:${path}`;
+function normalizeQuestion(q: string) {
+  return q.toLowerCase().trim();
 }
 
-function normalizeQuestion(text: string): string {
-  return text.trim().toLowerCase();
+/* ----------------------------------------
+   INTENT DETECTION
+---------------------------------------- */
+
+function detectIntent(q: string): Intent {
+  const t = q.toLowerCase();
+
+  if (t.includes("dts")) return "dts";
+  if (t.includes("dbs")) return "dbs";
+
+  if (
+    t.includes("apply") ||
+    t.includes("application") ||
+    t.includes("申し込み") ||
+    t.includes("応募")
+  ) {
+    return "apply";
+  }
+
+  if (
+    t.includes("community") ||
+    t.includes("housing") ||
+    t.includes("living") ||
+    t.includes("生活")
+  ) {
+    return "community";
+  }
+
+  if (t.includes("staff") || t.includes("スタッフ")) return "staff";
+
+  if (t.includes("student") || t.includes("students") || t.includes("学生"))
+    return "students";
+
+  return "general";
 }
 
-function safeString(value: unknown, fallback = ''): string {
-  return typeof value === 'string' ? value : fallback;
-}
+/* ----------------------------------------
+   RETRIEVAL STRATEGY
+---------------------------------------- */
 
-async function getManifest(
-  env: Env,
-  path: string,
-  lang: string
-): Promise<ManifestRecord | null> {
-  const raw = await env.INGEST_MANIFEST.get(manifestKey(path, lang));
-  if (!raw) return null;
+function getStrategy(intent: Intent) {
+  switch (intent) {
+    case "dts":
+      return { topK: 10, category: "schools", boostAudience: null };
 
-  try {
-    return JSON.parse(raw) as ManifestRecord;
-  } catch {
-    return null;
+    case "dbs":
+      return { topK: 10, category: "schools", boostAudience: null };
+
+    case "apply":
+      return { topK: 12, category: "operations", boostAudience: null };
+
+    case "community":
+      return { topK: 8, category: "community", boostAudience: null };
+
+    case "staff":
+      return { topK: 8, category: null, boostAudience: ["staff"] };
+
+    case "students":
+      return { topK: 8, category: null, boostAudience: ["students"] };
+
+    default:
+      return { topK: 6, category: null, boostAudience: null };
   }
 }
 
-async function putManifest(
-  env: Env,
-  path: string,
-  lang: string,
-  chunkIds: string[]
-): Promise<void> {
-  const record: ManifestRecord = {
-    chunkIds,
-    updatedAt: new Date().toISOString(),
-    path,
-    lang,
-  };
+/* ----------------------------------------
+   KEYWORD SCORING (HYBRID LAYER)
+---------------------------------------- */
 
-  await env.INGEST_MANIFEST.put(manifestKey(path, lang), JSON.stringify(record));
+function escapeRegExp(str: string) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-async function deleteManifest(env: Env, path: string, lang: string): Promise<void> {
-  await env.INGEST_MANIFEST.delete(manifestKey(path, lang));
-}
+function keywordScore(question: string, text: string): number {
+  const q = normalizeQuestion(question);
+  const t = text.toLowerCase();
 
-async function deleteVectorIds(env: Env, ids: string[]): Promise<void> {
-  if (!ids.length) return;
+  const words = q.split(/\s+/).filter((w) => w.length > 2);
 
-  await (env.VECTORIZE as any).deleteByIds(ids);
-}
+  let score = 0;
 
-async function deleteChunksForPath(
-  env: Env,
-  path: string,
-  lang: string
-): Promise<{ deleted: number }> {
-  const manifest = await getManifest(env, path, lang);
+  for (const w of words) {
+    if (t.includes(w)) score += 0.02;
 
-  if (!manifest || !Array.isArray(manifest.chunkIds) || manifest.chunkIds.length === 0) {
-    return { deleted: 0 };
+    const regex = new RegExp(`\\b${escapeRegExp(w)}\\b`, "i");
+    if (regex.test(text)) score += 0.03;
   }
 
-  const batchSize = 100;
-  let deleted = 0;
-
-  for (let i = 0; i < manifest.chunkIds.length; i += batchSize) {
-    const batch = manifest.chunkIds.slice(i, i + batchSize);
-    await deleteVectorIds(env, batch);
-    deleted += batch.length;
-  }
-
-  await deleteManifest(env, path, lang);
-
-  return { deleted };
+  return Math.min(score, 0.25);
 }
 
-function scoreMatch(
-  question: string,
-  metadata: MatchMetadata,
-  originalScore: number
+/* ----------------------------------------
+   INTENT SCORING (DOMAIN BOOST)
+---------------------------------------- */
+
+function intentScore(
+  intent: Intent,
+  md: MatchMetadata,
+  question: string
 ): number {
-  let score = originalScore || 0;
+  let score = 0;
+
+  const category = md.category;
+  const audience = md.audience || [];
   const q = normalizeQuestion(question);
 
-  const title = safeString(metadata.title).toLowerCase();
-  const section = safeString(metadata.section).toLowerCase();
-  const scope = safeString(metadata.scope);
-  const priority = safeString(metadata.priority);
-  const audience = safeString(metadata.audience);
-  const path = safeString(metadata.path).toLowerCase();
+  if (intent === "dts" && category === "schools") score += 0.12;
+  if (intent === "dbs" && category === "schools") score += 0.12;
 
-  if (title && q.includes(title)) score += 0.08;
-  if (section && q.includes(section)) score += 0.05;
+  if (intent === "apply" && category === "operations") score += 0.12;
 
-  if (scope === 'local') score += 0.04;
-  if (priority === 'high') score += 0.03;
+  if (intent === "community" && category === "community") score += 0.12;
 
-  if (
-    q.includes('apply') ||
-    q.includes('application') ||
-    q.includes('応募') ||
-    q.includes('申し込み')
-  ) {
-    if (path.includes('/apply')) score += 0.08;
-  }
+  if (intent === "staff" && audience.includes("staff")) score += 0.1;
 
-  if (
-    q.includes('student') ||
-    q.includes('students') ||
-    q.includes('生徒') ||
-    q.includes('学生')
-  ) {
-    if (audience === 'student' || path.includes('/roles/students')) score += 0.08;
-  }
+  if (intent === "students" && audience.includes("students")) score += 0.1;
 
-  if (q.includes('staff') || q.includes('スタッフ')) {
-    if (audience === 'staff' || path.includes('/roles/staff')) score += 0.08;
-  }
-
-  if (
-    q.includes('short-term') ||
-    q.includes('visitor') ||
-    q.includes('team') ||
-    q.includes('短期')
-  ) {
-    if (audience === 'short-term' || path.includes('/roles/short-term')) score += 0.08;
-  }
-
-  if (q.includes('dts') && path.includes('/schools/dts')) score += 0.08;
-  if (q.includes('dbs') && path.includes('/schools/dbs')) score += 0.08;
-
-  if (
-    q.includes('what is ywam') ||
-    q.includes('ywam values') ||
-    q.includes('ywam beliefs') ||
-    q.includes('ywamとは') ||
-    q.includes('価値観') ||
-    q.includes('信条')
-  ) {
-    if (scope === 'ywam-global' || path.includes('/ywam')) score += 0.06;
-  }
+  if (intent === "dts" && q.includes("lecture")) score += 0.05;
+  if (intent === "dbs" && q.includes("weeks")) score += 0.05;
 
   return score;
 }
 
-function buildContext(matches: Array<{ metadata?: MatchMetadata }>): string {
+/* ----------------------------------------
+   FINAL RERANK SCORE
+---------------------------------------- */
+
+function computeScore(
+  match: any,
+  question: string,
+  intent: Intent
+): number {
+  const md = match.metadata || {};
+
+  const vector = match.score || 0;
+  const text = md.text || "";
+
+  const k = keywordScore(question, text);
+  const i = intentScore(intent, md, question) * 0.01;
+
+  return vector + k + i;
+}
+
+/* ----------------------------------------
+   CONTEXT BUILDER
+---------------------------------------- */
+
+function buildContext(matches: any[]) {
   return matches
     .map((m, i) => {
       const md = m.metadata || {};
+
       return [
         `SOURCE ${i + 1}`,
-        `Title: ${safeString(md.title)}`,
-        `Section: ${safeString(md.section)}`,
-        `Audience: ${safeString(md.audience)}`,
-        `Content Type: ${safeString(md.content_type)}`,
-        `Scope: ${safeString(md.scope)}`,
-        `Priority: ${safeString(md.priority)}`,
-        `Text: ${safeString(md.text)}`,
-      ].join('\n');
+        `TITLE: ${safeString(md.title)}`,
+        `CATEGORY: ${safeString(md.category)}`,
+        `AUDIENCE: ${(md.audience || []).join(", ")}`,
+        `SECTION: ${safeString(md.section)}`,
+        ``,
+        safeString(md.text),
+      ].join("\n");
     })
-    .join('\n\n---\n\n');
+    .join("\n\n---\n\n");
 }
 
-function buildSystemPrompt(lang: string, context: string): string {
-  if (lang === 'ja') {
-    return `あなたは親切で温かい YWAM Sendai（ワイワム仙台）のデジタルガイドです。
+/* ----------------------------------------
+   SYSTEM PROMPT
+---------------------------------------- */
+
+function buildPrompt(lang: string, context: string) {
+  if (lang === "ja") {
+    return `
+あなたはYWAM Sendaiの案内アシスタントです。
 
 ルール:
-1. 回答はすべて自然な日本語（です・ます調）で行ってください。
-2. 提供された情報だけを使って答えてください。
-3. 情報にないことは、分からないと正直に伝えてください。
-4. 「コンテキストによると」「資料によると」などの言い方は使わないでください。
-5. 推測で断定しないでください。
-6. 必要に応じて、ユーザーの次の行動に役立つ案内をしてください。
-7. 申込フォームを案内する場合は、必ずこの正確なリンクを使ってください: [申込フォーム](https://ywamsendai.org/ja/apply)
-8. お問い合わせを案内する場合は、必ずこの正確なリンクを使ってください: [お問い合わせ](https://ywamsendai.org/ja/contact)
-9. ハンドブックのURLを推測・生成・出力しないでください。ハンドブックへの参照リンクは別途提供されます。
-10. donateのリンクは、正確な承認済みリンクがある場合のみ案内してください。
-11. 書式はMarkdownを使い、必要な箇所は太字で分かりやすくしてください。
+- 提供された情報のみ使用
+- 推測しない
+- コンテキストに言及しない
+- Markdownで回答
 
 情報:
-${context}`;
+${context}
+`;
   }
 
-  return `You are the friendly, helpful YWAM Sendai Digital Assistant.
+  return `
+You are a YWAM Sendai assistant.
 
-RULES:
-1. Answer naturally and clearly in English.
-2. Use only the provided information.
-3. If the answer is not in the provided information, say you do not know rather than guessing.
-4. Do not mention "the context," "the documents," or "the provided information."
-5. Do not use outside knowledge.
-6. When helpful, you may point the user to a relevant next step.
-7. If referring to the application form, always use this exact link: [Application Form](https://ywamsendai.org/en/apply).
-8. If referring to the contact page, always use this exact link: [Contact Us](https://ywamsendai.org/en/contact).
-9. Do not create, guess, or output handbook URLs. Handbook source links are provided separately.
-10. Do not invent donate links unless exact approved links are provided.
-11. Use Markdown formatting clearly and naturally.
+Rules:
+- Use only provided information
+- Do not guess
+- Do not mention sources or context
+- Respond in Markdown
 
 INFORMATION:
-${context}`;
+${context}
+`;
 }
 
-function extractAnswer(aiResponse: any): string {
-  if (typeof aiResponse === 'string') return aiResponse;
-  if (aiResponse?.response) return aiResponse.response;
-  if (aiResponse?.answer) return aiResponse.answer;
-  if (Array.isArray(aiResponse) && aiResponse[0]?.response) return aiResponse[0].response;
-  return '';
-}
+/* ----------------------------------------
+   MAIN HANDLER
+---------------------------------------- */
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
 
 export default {
   async fetch(request: Request, env: Env) {
     const url = new URL(request.url);
 
-    if (request.method === 'OPTIONS') {
+    if (request.method === "OPTIONS") {
       return new Response(null, { headers: corsHeaders });
     }
 
-    if (url.pathname === '/ingest' && request.method === 'POST') {
-      try {
-        const body = (await request.json()) as IngestBody;
-
-        const {
-          id,
-          text,
-          lang,
-          path,
-          title = '',
-          description = '',
-          audience = 'mixed',
-          content_type = 'reference',
-          scope = 'local',
-          status = 'active',
-          topic = '',
-          priority = 'normal',
-          last_reviewed = '',
-          section = '',
-        } = body;
-
-        if (!id || !text || !lang || !path) {
-          return new Response('Missing required fields: id, text, lang, path', {
-            status: 400,
-            headers: corsHeaders,
-          });
-        }
-
-        const aiResponse = (await env.AI.run(EMBEDDING_MODEL, { text })) as any;
-        const values = aiResponse?.data?.[0];
-
-        if (!values) {
-          return new Response('Failed to generate embedding', {
-            status: 500,
-            headers: corsHeaders,
-          });
-        }
-
-        await env.VECTORIZE.upsert([
-          {
-            id,
-            values,
-            metadata: {
-              text,
-              lang,
-              path,
-              title,
-              description,
-              audience,
-              content_type,
-              scope,
-              status,
-              topic,
-              priority,
-              last_reviewed,
-              section,
-            },
-          },
-        ]);
-
-        const existingManifest = await getManifest(env, path, lang);
-        const existingIds = existingManifest?.chunkIds || [];
-        const mergedIds = Array.from(new Set([...existingIds, id]));
-        await putManifest(env, path, lang, mergedIds);
-
-        return new Response(
-          JSON.stringify({
-            success: true,
-            id,
-            path,
-            lang,
-          }),
-          {
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-          }
-        );
-      } catch (err: any) {
-        return new Response(err?.message || 'Ingest error', {
-          status: 500,
-          headers: corsHeaders,
-        });
-      }
+    if (url.pathname !== "/ask") {
+      return new Response("Not Found", { status: 404 });
     }
 
-    if (url.pathname === '/delete-by-path' && request.method === 'POST') {
-      try {
-        const body = (await request.json()) as DeleteByPathBody;
-        const { path, lang } = body;
+    try {
+      const body = (await request.json()) as any;
 
-        if (!path || !lang) {
-          return new Response('Missing required fields: path, lang', {
-            status: 400,
-            headers: corsHeaders,
-          });
-        }
+      const question = body?.question;
+      const lang = body?.lang;
+      const history = body?.history ?? [];
 
-        const result = await deleteChunksForPath(env, path, lang);
-
+      if (!question || !lang) {
         return new Response(
           JSON.stringify({
-            success: true,
-            path,
-            lang,
-            deleted: result.deleted,
-          }),
-          {
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-          }
-        );
-      } catch (err: any) {
-        return new Response(err?.message || 'Delete error', {
-          status: 500,
-          headers: corsHeaders,
-        });
-      }
-    }
-
-    if (url.pathname === '/ask' && request.method === 'POST') {
-      try {
-        const { question, lang, history = [] } = (await request.json()) as AskBody;
-
-        if (!question || !lang) {
-          return new Response(
-            JSON.stringify({
-              answer: 'Missing required fields: question, lang',
-              sources: [],
-            }),
-            {
-              status: 400,
-              headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-            }
-          );
-        }
-
-        const questionQuery = (await env.AI.run(EMBEDDING_MODEL, {
-          text: question,
-        })) as any;
-
-        const vector = questionQuery?.data?.[0] as number[] | undefined;
-
-        if (!vector) {
-          return new Response(
-            JSON.stringify({
-              answer:
-                lang === 'ja'
-                  ? '申し訳ありません。検索の準備中に問題が発生しました。'
-                  : 'Sorry, there was a problem preparing the search.',
-              sources: [],
-            }),
-            {
-              status: 500,
-              headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-            }
-          );
-        }
-
-        const rawMatches = await env.VECTORIZE.query(vector, {
-          topK: 8,
-          returnMetadata: true,
-          filter: { lang },
-        } as any);
-
-        const reranked = (rawMatches.matches || [])
-          .map((m: any) => ({
-            ...m,
-            rerankScore: scoreMatch(
-              question,
-              (m.metadata || {}) as MatchMetadata,
-              m.score || 0
-            ),
-          }))
-          .sort((a: any, b: any) => b.rerankScore - a.rerankScore)
-          .slice(0, 4);
-
-        const hasUsableMatches =
-          reranked.length > 0 &&
-          typeof reranked[0].score === 'number' &&
-          reranked[0].score > 0.15;
-
-        const context = hasUsableMatches ? buildContext(reranked) : '';
-
-        const sourceMap = new Map<string, SourceLink>();
-
-        if (hasUsableMatches) {
-          for (const m of reranked) {
-            const md = (m.metadata || {}) as MatchMetadata;
-            const path = safeString(md.path);
-            if (!path) continue;
-
-            const title = safeString(md.title, path || 'Documentation');
-
-            sourceMap.set(path, {
-              title,
-              path,
-              url: toDocUrl(path),
-              type: 'doc',
-            });
-          }
-        }
-
-        const sources: SourceLink[] = Array.from(sourceMap.values());
-
-        if (!context.trim()) {
-          const fallback =
-            lang === 'ja'
-              ? '申し訳ありません。その質問に関する情報がハンドブック内では見つかりませんでした。別の言い方で質問するか、スタッフにお問い合わせください。'
-              : "I'm sorry, I couldn't find that in the handbook. Please try rephrasing your question or contact a staff member.";
-
-          return new Response(
-            JSON.stringify({
-              answer: fallback,
-              sources: [],
-            }),
-            {
-              headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-            }
-          );
-        }
-
-        const systemPrompt = buildSystemPrompt(lang, context);
-
-        const messages: Message[] = [
-          { role: 'system', content: systemPrompt },
-          ...history.slice(-4).map((m) => ({
-            role: m.role as 'system' | 'user' | 'assistant',
-            content: m.content,
-          })),
-          { role: 'user', content: question },
-        ];
-
-        const aiResponse = (await env.AI.run(CHAT_MODEL, {
-          messages,
-          max_tokens: 900,
-        })) as any;
-
-        let answer = extractAnswer(aiResponse);
-
-        if (!answer.trim()) {
-          answer =
-            lang === 'ja'
-              ? '申し訳ありません。回答を生成できませんでした。質問を少し変えてもう一度お試しください。'
-              : "I'm sorry, I couldn't generate a clear answer. Please try rephrasing your question.";
-        }
-
-        return new Response(
-          JSON.stringify({
-            answer,
-            sources,
-          }),
-          {
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-          }
-        );
-      } catch (err: any) {
-        console.error('WORKER_ERROR:', err?.message || err);
-        return new Response(
-          JSON.stringify({
-            answer: "I'm having trouble right now. Please try again in a minute.",
+            answer: "Missing question or lang",
             sources: [],
           }),
           {
-            status: 200,
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+            headers: {
+              "Content-Type": "application/json",
+              ...corsHeaders,
+            },
           }
         );
       }
-    }
 
-    return new Response('Not Found', { status: 404, headers: corsHeaders });
+      const intent = detectIntent(question);
+      const strategy = getStrategy(intent);
+
+      const embedding = (await env.AI.run("@cf/baai/bge-m3", {
+        text: question,
+      })) as any;
+
+      const vector =
+        embedding?.data?.[0] ??
+        embedding?.data ??
+        null;
+
+      if (!Array.isArray(vector)) {
+        return new Response(
+          JSON.stringify({
+            answer: "Embedding failed",
+            sources: [],
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json",
+              ...corsHeaders,
+            },
+          }
+        );
+      }
+
+      /* ----------------------------------------
+         3. VECTOR SEARCH
+      ---------------------------------------- */
+
+      const results = await env.VECTORIZE.query(vector, {
+        topK: strategy.topK,
+        returnMetadata: true,
+        filter: { lang },
+      });
+
+      const matches = results.matches || [];
+
+      /* ----------------------------------------
+         4. HYBRID RERANK
+      ---------------------------------------- */
+
+      const reranked = matches
+        .map((m: any) => ({
+          ...m,
+          rerankScore: computeScore(m, question, intent),
+        }))
+        .sort((a, b) => b.rerankScore - a.rerankScore)
+        .slice(0, 4);
+
+      const hasMatches =
+        reranked.length > 0 &&
+        reranked[0].rerankScore > 0.22;
+
+      const context = hasMatches ? buildContext(reranked) : "";
+
+      /* ----------------------------------------
+         5. FALLBACK
+      ---------------------------------------- */
+
+      if (!context) {
+        return Response.json({
+          answer:
+            lang === "ja"
+              ? "申し訳ありません。その情報は見つかりませんでした。"
+              : "Sorry, I couldn't find that information.",
+          sources: [],
+        });
+      }
+
+      /* ----------------------------------------
+         6. LLM
+      ---------------------------------------- */
+
+      const prompt = buildPrompt(lang, context);
+
+      const messages = [
+        { role: "system", content: prompt },
+        ...history.slice(-4),
+        { role: "user", content: question },
+      ];
+
+      const ai = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+        messages,
+        max_tokens: 900,
+      });
+
+      const answer =
+        ai?.response ||
+        ai?.answer ||
+        "No response generated.";
+
+      return Response.json({
+        answer,
+        sources: reranked.map((m: any) => ({
+          title: m.metadata?.title,
+          path: m.metadata?.documentId,
+        })),
+      });
+    } catch (e: any) {
+      return Response.json({
+        answer: "Server error",
+        sources: [],
+      });
+    }
   },
-} satisfies ExportedHandler<Env>;
+};

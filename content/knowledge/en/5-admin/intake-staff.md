@@ -1,12 +1,29 @@
 ---
 title: Missionary Staff Onboarding Pipeline
-description: Application workflows, Certificate of Eligibility (CoE) logic, and legal entry requirements for long-term staff.
-sidebar:
-  order: 2
-metadata:
-  audience: incoming-staff
-  category: admissions
-  chunk-type: header-atomic
+summary: Application process, eligibility requirements, interview stages, fundraising milestones, visa preparation, and arrival procedures for long-term staff.
+language: en
+tags:
+  - staff
+  - onboarding
+  - admissions
+  - application
+  - missionary
+  - visa
+  - coe
+  - support-raising
+category: staffing
+audience:
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - How do I become staff at YWAM Sendai?
+  - What are the requirements for long-term staff?
+  - Do I need a DTS to join staff?
+  - What is the staff application process?
+  - When does the visa process begin?
+  - How much support do I need to raise before moving to Japan?
+lastReviewed: 2026-05-30
 ---
 
 ## 🚪 Long-Term Staff Application

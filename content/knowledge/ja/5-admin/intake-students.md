@@ -1,13 +1,30 @@
----  
-title: 生徒の入学管理＆インテイク  
-description: DTSおよびDBSの生徒向けの申請ステップ、入学要件、パッキングリスト、および来日前ルール。  
-sidebar:  
-  order: 1  
-metadata:  
-  audience: incoming-students  
-  category: admissions  
-  chunk-type: header-atomic  
----  
+---
+title: 学生応募・入学案内
+summary: DTSおよびDBSの応募手続き、参加条件、受け入れ準備、持ち物案内、および来日までの流れを説明します。
+language: ja
+tags:
+  - 学生
+  - 入学申請
+  - 応募
+  - dts
+  - dbs
+  - 受け入れ
+  - 渡航
+  - 持ち物
+category: schools
+audience:
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - DTSへの応募方法を教えてください
+  - DBSへの応募方法を教えてください
+  - DTS参加条件は何ですか
+  - 日本でDTSに参加するためにビザは必要ですか
+  - DTSに持っていくべきものは何ですか
+  - 合格後はどのような流れになりますか
+lastReviewed: 2026-05-30
+---
   
 ## 🚪 生徒の申請について  
 YWAM Sendaiでは、すべてのスクール生の応募をオンラインで一元管理しています。Discipleship Training School（DTS）や Disciple Makers Bible School（DBS）への入学は、単なる事務手続きではなく、霊的な備えと召しをともに確認していく大切なプロセスです。  

@@ -1,13 +1,29 @@
----  
-title: 学費・費用・支払いプロトコル  
-description: DTSおよびDBSの学費の内訳、支払期日、現金での支払い方針、返金に関する基本原則。  
-sidebar:  
-  order: 4  
-metadata:  
-  audience: accepted-students  
-  category: finance  
-  chunk-type: header-atomic  
----  
+---
+title: 学費・費用・支払い案内
+summary: DTSおよびDBSの学費、滞在費、アウトリーチ費用、支払期限、返金方針、および学生の財務責任に関する案内。
+language: ja
+tags:
+  - dts
+  - dbs
+  - tuition
+  - payments
+  - fees
+  - finances
+  - outreach
+category: schools
+audience:
+  - prospective
+  - students
+status: published
+priority: 2
+chatSuggestions:
+  - DTSの費用はいくらですか？
+  - DBSの費用はいくらですか？
+  - 学費の支払期限はいつですか？
+  - 学生が守るべき支払スケジュールを教えてください。
+  - DTSやDBSの返金ポリシーはありますか？
+lastReviewed: 2026-05-30
+---
   
 ## 💰 支払いに関する責任  
 スクール生は、自分の学費と支払いスケジュールを把握し、期日までに支払う責任を負います。日本への往復航空券、医療保険、個人のSIMカードや通信費、衣類、洗面用品、自由時間の個人的な支出は、すべて自己負担です。  

@@ -1,12 +1,27 @@
 ---
 title: Foreign Driver's License Conversion
-description: Step-by-step procedure to legally transfer a foreign driver's license into a valid Japanese driving permit.
-sidebar:
-  order: 2
-metadata:
-  audience: incoming-staff
-  category: practical-onboarding
-  chunk-type: header-atomic
+summary: Requirements, documentation, testing procedures, and residency verification needed to convert a foreign driver's license to a Japanese license in Miyagi Prefecture.
+language: en
+tags:
+  - driving
+  - drivers-license
+  - japan
+  - onboarding
+  - transportation
+  - miyagi
+  - legal
+category: operations
+audience:
+  - staff
+status: published
+priority: 0
+chatSuggestions:
+  - How do I convert my foreign driver's license to a Japanese license?
+  - What documents are required for license conversion in Japan?
+  - What is the 3-month residency rule for Japanese license conversion?
+  - Do I need a JAF translation of my driver's license?
+  - Will I need to take a driving test in Japan?
+lastReviewed: 2026-05-30
 ---
 
 ## 🚗 Driving Legally in Miyagi Prefecture

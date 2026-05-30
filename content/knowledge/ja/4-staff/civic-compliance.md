@@ -1,13 +1,28 @@
----  
-title: 税務・法務・市民義務のコンプライアンス  
-description: スタッフ自身が管理する確定申告の基本方針、収入申告の考え方、そして個人の財務記録の保管について。  
-sidebar:  
-  order: 3  
-metadata:  
-  audience: current-staff  
-  category: legal-compliance  
-  chunk-type: header-atomic  
----  
+---
+title: 税務・法令・社会制度遵守
+summary: 日本における長期スタッフ向けの税務申告義務、収入報告の考え方、記録保管要件、および法令遵守に関するガイドライン。
+language: ja
+tags:
+  - taxes
+  - legal
+  - compliance
+  - staff
+  - japan
+  - finances
+  - visas
+category: operations
+audience:
+  - staff
+status: published
+priority: 1
+chatSuggestions:
+  - スタッフは日本で確定申告をする必要がありますか？
+  - 宣教師のサポート献金はどのように申告すればよいですか？
+  - スタッフはどのような財務記録を保管すべきですか？
+  - 税金や保険料の支払いが遅れた場合はどうなりますか？
+  - 税務状況はビザ更新に影響しますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🏛️ 各自で管理する法的・市民的な手続き  
 YWAM Sendaiのスタッフは、一般的な雇用契約に基づく従業員ではなく、各自が支援を受けながら仕える立場にあります。そのため、住民税や所得税の源泉徴収をベースが代行することはありません。住民登録、住所変更、銀行口座の管理、税金、保険、年金などに関する手続きは、すべて各自の責任で行う必要があります。  

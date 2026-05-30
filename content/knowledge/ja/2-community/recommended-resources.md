@@ -1,13 +1,32 @@
----  
-title: アペンディクス（付録）＆おすすめリソース一覧  
-description: 厳選したアプリ、日本文化への理解を深める書籍、霊的成長のための本、そして健康的に長く歩むためのリソース。  
-sidebar:  
-  order: 6  
-metadata:  
-  audience: public-student-staff  
-  category: educational-resources  
-  chunk-type: header-atomic  
----  
+---
+title: 付録・推奨リソース
+summary: 日本での生活とミニストリーに役立つ語学学習ツール、文化理解のための資料、弟子訓練書籍、および自己成長のためのリソース集。
+language: ja
+tags:
+  - resources
+  - books
+  - language-learning
+  - japanese
+  - discipleship
+  - culture
+  - health
+  - productivity
+category: general
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - 日本語学習におすすめの教材やアプリはありますか？
+  - 日本へ移住する前に読んでおくべき本は何ですか？
+  - YWAM仙台がおすすめする弟子訓練の本はありますか？
+  - 日本文化を理解するための良い資料を教えてください。
+  - 健全で持続可能な宣教生活に役立つ本はありますか？
+  - 日本語学習におすすめのアプリは何ですか？
+lastReviewed: 2026-05-30
+---
   
 ## 📚 リソースライブラリの目的  
 このリソース集は、日本語学習、日本文化への理解、霊的成長、そして健やかな生活を支えるためのアプリや書籍をまとめたものです。これらは、リーダーシップから特別に指定されない限り、すべて自由に活用できる補助的なリソースです。  

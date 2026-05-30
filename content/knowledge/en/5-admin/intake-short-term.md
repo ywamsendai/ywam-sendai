@@ -1,12 +1,30 @@
 ---
 title: Short-Term Intake (Teams & Visitors)
-description: Guidelines, coordinator responsibilities, cash rules, and visa waiver frameworks for visiting teams and short-term guests.
-sidebar:
-  order: 3
-metadata:
-  audience: outreach-teams-visitors
-  category: admissions
-  chunk-type: header-atomic
+summary: Requirements, expectations, financial responsibilities, and coordination procedures for short-term teams, visitors, and outreach groups.
+language: en
+tags:
+  - short-term
+  - teams
+  - visitors
+  - outreach
+  - admissions
+  - travel
+  - onboarding
+  - hospitality
+category: community
+audience:
+  - public
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - Can my team visit YWAM Sendai?
+  - How do I apply for a short-term outreach visit?
+  - Does YWAM Sendai sponsor visas for short-term visitors?
+  - What should visiting teams bring to Japan?
+  - What are the expectations for short-term teams?
+  - How do I arrange a visit to YWAM Sendai?
+lastReviewed: 2026-05-30
 ---
 
 ## 🚪 Short-Term Guest & Team Pipeline

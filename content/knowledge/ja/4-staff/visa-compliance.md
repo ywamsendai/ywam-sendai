@@ -1,13 +1,30 @@
----  
-title: ビザ・入国管理のコンプライアンス  
-description: 在留資格認定証明書（CoE）手続き、提出書類のクオリティ基準、およびビザ更新コンプライアンスに関する必須プロトコル。  
-sidebar:  
-  order: 4  
-metadata:  
-  audience: incoming-current-staff  
-  category: legal-compliance  
-  chunk-type: header-atomic  
----  
+---
+title: ビザ・在留資格コンプライアンス
+summary: 日本におけるスタッフ向けの在留資格要件、在留資格認定証明書（COE）申請、ビザ更新手続き、必要書類、および在留中の法的責任について。
+language: ja
+tags:
+  - visa
+  - immigration
+  - compliance
+  - onboarding
+  - staff
+  - japan
+  - residence-card
+  - coe
+category: operations
+audience:
+  - staff
+status: published
+priority: 1
+chatSuggestions:
+  - 日本の宗教活動ビザを取得するにはどうすればよいですか？
+  - 在留資格認定証明書（COE）の申請に必要な書類は何ですか？
+  - 日本のビザはいつ更新できますか？
+  - ビザ更新にはどのような書類が必要ですか？
+  - ビザが承認される前に日本へ入国できますか？
+  - COE申請の流れを教えてください。
+lastReviewed: 2026-05-30
+---
   
 ## 🛃 在留資格の管理責任  
 日本国籍を持たないすべての長期スタッフは、日本で有効な在留資格を維持することについて、個人として法的な責任を負います。YWAM Sendaiは受入機関として、行政手続きの案内や書類準備のサポートを行いますが、最終的に入国や在留を許可するのは日本の出入国在留管理局です。入管に関する手続きは、どの段階も軽く考えず、正確に進めてください。  

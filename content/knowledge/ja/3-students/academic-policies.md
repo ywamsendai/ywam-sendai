@@ -1,13 +1,28 @@
----  
-title: スクール生のポリシーと期待される姿勢  
-description: 公式の行動規範、学びの基準、作業の役割、そして関係修復のためのステップ。  
-sidebar:  
-  order: 1  
-metadata:  
-  audience: accepted-students  
-  category: student-policy  
-  chunk-type: header-atomic  
----  
+---
+title: 学生ポリシーと参加基準
+summary: 学生向けの行動規範、学業基準、出席要件、実務奉仕、および回復を目的とした指導プロセス。
+language: ja
+tags:
+  - students
+  - policies
+  - conduct
+  - academics
+  - attendance
+  - discipline
+category: schools
+audience:
+  - students
+status: published
+priority: 2
+chatSuggestions:
+  - 学生にはどのような期待がありますか？
+  - 授業を欠席した場合はどうなりますか？
+  - DTSやDBSの学生はどのように評価されますか？
+  - 学生にはどのような実務奉仕がありますか？
+  - 学生向けの指導プロセスについて教えてください。
+  - 学校から退校になることはありますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🎓 学びの基準  
 スクール生には、講義、課題図書、毎週の振り返り、そしてアウトリーチ準備を含むすべての学びに誠実に取り組むことが求められます。評価はUniversity of the Nations（U of N）の基準に従い、「Successful（修了：S）」または「Unsuccessful（未修了：U）」で記録されます。正当な理由のない欠席が続く場合や、学びへの取り組みが著しく不十分である場合は、未修了となり、単位は発行されません。  

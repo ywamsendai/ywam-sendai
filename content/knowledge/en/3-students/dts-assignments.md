@@ -1,12 +1,25 @@
 ---
 title: DTS Academic Assignments
-description: Specific structural guidelines, deadlines, and delivery protocols for required DTS coursework, books, and regional projects.
-sidebar:
-  order: 2
-metadata:
-  audience: current-students
-  category: academic-tracks
-  chunk-type: header-atomic
+summary: Assignment requirements, journal expectations, book reports, presentation criteria, and Tohoku research projects for DTS students.
+language: en
+tags:
+  - dts
+  - assignments
+  - journals
+  - books
+  - academics
+  - students
+  - tohoku
+category: schools
+audience: students
+status: published
+priority: 0
+chatSuggestions:
+  - What assignments are required during DTS?
+  - What are the DTS journal requirements?
+  - What books do DTS students need to read?
+  - What is the Tohoku Intercession Project?
+lastReviewed: 2026-05-30
 ---
 
 ## 📅 Journal Submission Rules

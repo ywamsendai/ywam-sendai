@@ -1,12 +1,32 @@
 ---
 title: Foundational Values 10-18
-description: Detailed operational values 10 through 18 outlining leadership, relational structures, and stewardship frameworks.
-sidebar:
-  order: 7
-metadata:
-  audience: public
-  category: global-values
-  chunk-type: header-atomic
+summary: Detailed explanations of YWAM foundational values 10 through 18, covering teamwork, servant leadership, relationships, family, hospitality, stewardship, and integrity.
+language: en
+tags:
+  - ywam
+  - foundational-values
+  - values
+  - culture
+  - leadership
+  - teamwork
+  - hospitality
+  - stewardship
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 1
+chatSuggestions:
+  - What are YWAM values 10 through 18?
+  - What does YWAM teach about leadership?
+  - Why does YWAM emphasize teamwork?
+  - What is YWAM's approach to fundraising and support raising?
+  - What does YWAM believe about family and community?
+  - Why is hospitality important in YWAM?
+lastReviewed: 2026-05-30
 ---
 
 ## 📌 Values 10 through 18

@@ -1,13 +1,32 @@
----  
-title: 私たちが大切にするコアな信仰  
-description: YWAMグローバルが大切にしている、聖書に基づく応答と日々の生き方。  
-sidebar:  
-  order: 5  
-metadata:  
-  audience: public  
-  category: global-identity  
-  chunk-type: header-atomic  
----  
+---
+title: YWAMの基本教理
+summary: YWAMが世界的に重視している神学的信念と聖書的基盤について説明します。
+language: ja
+tags:
+  - ywam
+  - doctrine
+  - theology
+  - beliefs
+  - discipleship
+  - prayer
+  - evangelism
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - YWAMの基本的な教理とは何ですか？
+  - YWAMは弟子訓練についてどのように教えていますか？
+  - YWAMを形作る神学的信念にはどのようなものがありますか？
+  - YWAMが重視する価値観とは何ですか？
+  - なぜYWAMは祈りと伝道を重視するのですか？
+  - YWAMの信念はYWAM仙台の生活にどのような影響を与えていますか？
+lastReviewed: 2026-05-30
+---
   
 ## 📖 ライフスタイルの基準としての聖書  
 YWAMは、聖書が神の言葉であり、人生のあらゆる側面、コミュニティのあり方、そして文化を越えた働きにおける基準であると信じています。イエス・キリストの十字架による救いと神の愛を土台として、私たちは日々の生き方の中で、特に次の6つの実践を大切にしています。  

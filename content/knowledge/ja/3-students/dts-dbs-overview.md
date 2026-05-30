@@ -1,13 +1,30 @@
----  
-title: DTS & DBS コース概要  
-description: トレーニングの基本姿勢、バイリンガルでの運営、各コースの内容、日程、そして申請締切。  
-sidebar:  
-  order: 5  
-metadata:  
-  audience: prospective-students  
-  category: academic-tracks  
-  chunk-type: header-atomic  
----  
+---
+title: DTS・DBSコース概要
+summary: DTSおよびDBSプログラムの概要、学習内容、トレーニング要件、カリキュラム構成、期間、参加条件、および申込締切について。
+language: ja
+tags:
+  - dts
+  - dbs
+  - schools
+  - training
+  - discipleship
+  - bible-study
+  - admissions
+category: schools
+audience:
+  - prospective
+  - students
+status: published
+priority: 2
+chatSuggestions:
+  - DTSとは何ですか？
+  - DBSとは何ですか？
+  - DTSとDBSの違いは何ですか？
+  - 次回のDTSはいつ始まりますか？
+  - DTSの申込締切はいつですか？
+  - DTSやDBSでは何を学びますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🎓 生活全体を通して学ぶトレーニング  
 YWAM Sendaiでのトレーニングは、霊的成長、聖書の学び、共同生活、そして異文化の中での実践を一つに結びつけたものです。私たちのスクールは、知識を得るだけの場ではなく、日々の生活を通して人格が形づくられ、神との関係が深められ、実際の働きへ備えていくための学びの場です。  

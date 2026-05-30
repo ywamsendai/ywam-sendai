@@ -1,12 +1,28 @@
 ---
 title: Base Contact & Communication Directory
-description: Official communication channels, instant messaging networks, and email directories for YWAM Sendai.
-sidebar:
-  order: 4
-metadata:
-  audience: public
-  category: administration
-  chunk-type: header-atomic
+summary: Official communication channels including chat platforms, email contacts, and online portals for inquiries, admissions, and base coordination.
+language: en
+tags:
+  - contact
+  - communication
+  - email
+  - discord
+  - line
+  - instagram
+  - admissions
+  - administration
+category: operations
+audience:
+  - public
+status: published
+priority: 2
+chatSuggestions:
+  - How do I contact YWAM Sendai?
+  - What is the best way to ask about DTS applications?
+  - Can I message YWAM Sendai on LINE or Discord?
+  - What email should I use for admissions questions?
+  - Where can I find official YWAM Sendai social media?
+lastReviewed: 2026-05-30
 ---
 
 ## 📞 Chat-First Communication Policy

@@ -1,12 +1,31 @@
 ---
 title: Appendix & Recommended Resources
-description: Curated third-party application tools, historical literature, spiritual formation texts, and physical longevity references.
-sidebar:
-  order: 5
-metadata:
-  audience: public-student-staff
-  category: educational-resources
-  chunk-type: header-atomic
+summary: Recommended language-learning tools, cultural resources, discipleship books, and personal development materials for life and ministry in Japan.
+language: en
+tags:
+  - resources
+  - books
+  - language-learning
+  - japanese
+  - discipleship
+  - culture
+  - health
+  - productivity
+category: general
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 0
+chatSuggestions:
+  - What resources do you recommend for learning Japanese?
+  - What books should I read before moving to Japan?
+  - What discipleship books are recommended by YWAM Sendai?
+  - What resources help me understand Japanese culture?
+  - What books support healthy and sustainable missionary life?
+  - What apps should I use for Japanese language study?
+lastReviewed: 2026-05-30
 ---
 
 ## 📚 Resource Library Purpose

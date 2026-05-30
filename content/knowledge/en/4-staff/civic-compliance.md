@@ -1,12 +1,27 @@
 ---
 title: Tax, Legal & Civic Compliance
-description: Self-managed tax filing guidelines, global income reporting rules, and financial recordkeeping requirements for staff.
-sidebar:
-  order: 3
-metadata:
-  audience: current-staff
-  category: legal-compliance
-  chunk-type: header-atomic
+summary: Tax filing responsibilities, income reporting expectations, recordkeeping requirements, and civic compliance obligations for long-term staff in Japan.
+language: en
+tags:
+  - taxes
+  - legal
+  - compliance
+  - staff
+  - japan
+  - finances
+  - visas
+category: operations
+audience:
+  - staff
+status: published
+priority: 1
+chatSuggestions:
+  - Do staff need to file taxes in Japan?
+  - How should missionaries report support income in Japan?
+  - What financial records should staff keep?
+  - What happens if I fall behind on taxes or insurance payments?
+  - How do taxes affect visa renewals?
+lastReviewed: 2026-05-30
 ---
 
 ## 🏛️ Self-Managed Civic Compliance

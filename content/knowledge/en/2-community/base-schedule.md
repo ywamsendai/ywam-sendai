@@ -1,12 +1,33 @@
 ---
 title: Base Rhythms & Ministries
-description: The structural weekly calendar, corporate spiritual tracks, and local ministry platforms at YWAM Sendai.
-sidebar:
-  order: 1
-metadata:
-  audience: community
-  category: operational-culture
-  chunk-type: header-atomic
+summary: Weekly community rhythms, worship gatherings, outreach ministries, prayer initiatives, and volunteer activities at YWAM Sendai.
+language: en
+tags:
+  - rhythms
+  - community
+  - worship
+  - prayer
+  - outreach
+  - ministry
+  - discipleship
+  - sendai
+  - tohoku
+category: community
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - What are the weekly rhythms at YWAM Sendai?
+  - What ministries does YWAM Sendai participate in?
+  - What happens during a typical week at YWAM Sendai?
+  - Does YWAM Sendai have outreach ministries?
+  - What community activities are part of life at YWAM Sendai?
+  - How does YWAM Sendai structure worship, prayer, and ministry?
+lastReviewed: 2026-05-30
 ---
 
 ## 🗓️ The Purpose of Shared Rhythms

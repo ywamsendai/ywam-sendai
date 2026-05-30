@@ -1,13 +1,30 @@
----  
-title: スタッフライフと週間のリズム  
-description: 非雇用モデルのミニストリー形態、週30+5時間のタイムスプリット、休暇のパラメータ、およびスタッフの財務ベンチマーク。  
-sidebar:  
-  order: 1  
-metadata:  
-  audience: current-staff  
-  category: community-life  
-  chunk-type: header-atomic  
----  
+---
+title: スタッフ生活と週間リズム
+summary: 長期スタッフに求められるミニストリー参加、コミュニティ生活、休暇制度、サポートレイズ、財務基準、および個人成長に関する期待事項。
+language: ja
+tags:
+  - staff
+  - community-life
+  - schedule
+  - support-raising
+  - finances
+  - mentoring
+  - discipleship
+  - onboarding
+category: staffing
+audience:
+  - staff
+status: published
+priority: 2
+chatSuggestions:
+  - YWAM仙台のスタッフには何が期待されていますか？
+  - スタッフは週に何時間働きますか？
+  - スタッフはどれくらいのサポートを集める必要がありますか？
+  - スタッフにはどのような休暇制度がありますか？
+  - YWAM仙台のスタッフには給与がありますか？
+  - 長期スタッフに求められる財務基準は何ですか？
+lastReviewed: 2026-05-30
+---
   
 ## 🛠️ 「非雇用型」の宣教コミュニティモデル  
 YWAM Sendaiでのスタッフの奉仕は、企業のような雇用契約や労働契約ではなく、自発的な宣教コミュニティの一員としての働きに基づいています。長期スタッフはそれぞれが支援者によって支えられながら自立して仕えており、東北での開拓的な働いきを担うために、霊的な責任を分かち合い、柔軟に環境へ適応していく姿勢が求められます。  

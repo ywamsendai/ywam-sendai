@@ -1,13 +1,33 @@
----  
-title: 基本的な行動価値観 10-18  
-description: リーダーシップ、人間関係のあり方、そしてリソースの管理を形づくる価値観（10〜18）。  
-sidebar:  
-  order: 7  
-metadata:  
-  audience: public  
-  category: global-values  
-  chunk-type: header-atomic  
----  
+---
+title: YWAMの基本的価値観 10〜18
+summary: チームワーク、サーバントリーダーシップ、人間関係、家族、ホスピタリティ、献身的な管理、誠実さに関するYWAMの価値観を解説します。
+language: ja
+tags:
+  - ywam
+  - foundational-values
+  - values
+  - culture
+  - leadership
+  - teamwork
+  - hospitality
+  - stewardship
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 1
+chatSuggestions:
+  - YWAMの価値観10〜18とは何ですか？
+  - YWAMはリーダーシップについてどのように教えていますか？
+  - なぜYWAMはチームワークを重視するのですか？
+  - YWAMでは献金やサポートレイズをどのように考えていますか？
+  - YWAMは家族やコミュニティについてどのように考えていますか？
+  - なぜYWAMではホスピタリティが重要なのですか？
+lastReviewed: 2026-05-30
+---
   
 ## 📌 バリュー 10〜18  
   

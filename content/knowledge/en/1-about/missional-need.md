@@ -1,12 +1,32 @@
 ---
 title: The Missional Need in Tohoku
-description: Understanding the spiritual landscape, cultural dynamics, and societal pressures facing Japan and the Tohoku region.
-sidebar:
-  order: 3
-metadata:
-  audience: public-incoming-staff-student
-  category: core-identity
-  chunk-type: header-atomic
+summary: Understanding the spiritual landscape, cultural dynamics, and societal challenges shaping ministry in Japan and the Tohoku region.
+language: en
+tags:
+  - tohoku
+  - japan
+  - missions
+  - unreached
+  - culture
+  - evangelism
+  - prayer
+  - sendai
+category: about
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - Why does YWAM Sendai focus on Tohoku?
+  - What is the spiritual situation in Japan?
+  - Why is Japan considered unreached?
+  - What challenges do Christians face in Japan?
+  - What ministry opportunities exist in Tohoku?
+  - Why is long-term mission important in Japan?
+lastReviewed: 2026-05-30
 ---
 
 ## 🇯🇵 The Unreached Reality

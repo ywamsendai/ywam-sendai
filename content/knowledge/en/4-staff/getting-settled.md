@@ -1,12 +1,29 @@
 ---
 title: Getting Settled & Local Registration
-description: Post-arrival administrative workflows including city office registration, banking, mobile setup, and housing procurement.
-sidebar:
-  order: 2
-metadata:
-  audience: incoming-staff
-  category: practical-onboarding
-  chunk-type: header-atomic
+summary: Essential post-arrival setup tasks including resident registration, health insurance, pension enrollment, banking, mobile services, and housing in Sendai.
+language: en
+tags:
+  - onboarding
+  - registration
+  - housing
+  - banking
+  - insurance
+  - mynumber
+  - japan
+  - staff
+category: operations
+audience:
+  - staff
+status: published
+priority: 1
+chatSuggestions:
+  - What should I do after arriving in Japan?
+  - How do I register my address in Sendai?
+  - How do I enroll in Japanese health insurance?
+  - How do I open a bank account in Japan?
+  - Where should staff live in Sendai?
+  - What is MyNumber and do I need a card?
+lastReviewed: 2026-05-30
 ---
 
 ## 🏛️ Post-Arrival Administrative Checklist

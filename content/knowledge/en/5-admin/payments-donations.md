@@ -1,12 +1,32 @@
 ---
 title: Payment Channels & Financial Tracking
-description: Master reference for base bank accounts, Wise configurations, transfer notifications, and domestic cash protocols.
-sidebar:
-  order: 5
-metadata:
-  audience: incoming-current-staff-student-supporter
-  category: finance
-  chunk-type: header-atomic
+summary: Payment methods, bank account details, Wise transfers, donation channels, cash requirements, and transaction reporting procedures.
+language: en
+tags:
+  - payments
+  - donations
+  - finance
+  - wise
+  - banking
+  - supporters
+  - staff
+  - students
+category: operations
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - How do I pay YWAM Sendai?
+  - What bank account should I use for payments?
+  - How do I send money using Wise?
+  - How do I donate to YWAM Sendai?
+  - What information should I include in a payment notification?
+  - Can I support a specific staff member financially?
+lastReviewed: 2026-05-30
 ---
 
 ## 💳 Base Payment Channels

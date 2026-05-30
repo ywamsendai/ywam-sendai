@@ -1,12 +1,29 @@
 ---
 title: Staff Life & Weekly Rhythms
-description: Operational work models, the 30+5 weekly hour split, leave parameters, and financial benchmarks for YWAM Sendai staff.
-sidebar:
-  order: 1
-metadata:
-  audience: current-staff
-  category: community-life
-  chunk-type: header-atomic
+summary: Expectations for long-term staff including ministry commitments, community participation, leave policies, support raising, financial benchmarks, and personal development.
+language: en
+tags:
+  - staff
+  - community-life
+  - schedule
+  - support-raising
+  - finances
+  - mentoring
+  - discipleship
+  - onboarding
+category: staffing
+audience:
+  - staff
+status: published
+priority: 2
+chatSuggestions:
+  - What is expected of YWAM Sendai staff?
+  - How many hours do staff work each week?
+  - How much support do staff need to raise?
+  - What leave do staff members receive?
+  - Do YWAM Sendai staff receive a salary?
+  - What are the financial requirements for long-term staff?
+lastReviewed: 2026-05-30
 ---
 
 ## 🛠️ Non-Employment Ministry Model

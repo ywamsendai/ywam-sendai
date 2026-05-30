@@ -1,13 +1,32 @@
----  
-title: 緊急事態・災害対策・野生動物への安全対策  
-description: 緊急時の初動、緊急連絡先（119/110）、地震への備え、そして熊に遭遇した際の安全行動。  
-sidebar:  
-  order: 4  
-metadata:  
-  audience: community  
-  category: safety  
-  chunk-type: header-atomic  
----  
+---
+title: 緊急対応・災害対策・野生動物安全ガイド
+summary: 日本で生活するための緊急時対応、災害への備え、地震対策、緊急連絡先、および野生動物への注意事項。
+language: ja
+tags:
+  - safety
+  - emergency
+  - disaster
+  - earthquake
+  - preparedness
+  - wildlife
+  - japan
+  - orientation
+category: operations
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - 日本で緊急事態が起きたらどうすればよいですか？
+  - 日本で知っておくべき緊急連絡先を教えてください。
+  - 仙台での地震対策には何が必要ですか？
+  - 非常持ち出し袋には何を入れるべきですか？
+  - YWAM仙台ではどのように災害へ備えていますか？
+  - 東北でクマに遭遇した場合はどうすればよいですか？
+lastReviewed: 2026-05-30
+---
   
 ## 🆘 緊急時の初動  
 どのような緊急事態でも、まず最優先すべきなのは目の前の人命と身体の安全です。組織内の連絡順序よりも、必要な救助や通報を先に行ってください。

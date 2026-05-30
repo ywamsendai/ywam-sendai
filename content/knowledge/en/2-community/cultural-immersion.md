@@ -1,12 +1,31 @@
 ---
 title: Japanese Cultural Immersion
-description: Reading the air, everyday social etiquette, neighborhood civic rules, and functional language frameworks.
-sidebar:
-  order: 3
-metadata:
-  audience: community
-  category: cultural-immersion
-  chunk-type: header-atomic
+summary: Reading the air, everyday social etiquette, neighborhood civic rules, and practical language-learning foundations for life in Japan.
+language: en
+tags:
+  - japan
+  - culture
+  - etiquette
+  - language
+  - community
+  - orientation
+  - newcomers
+  - sendai
+category: community
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - What cultural etiquette should I know before coming to Japan?
+  - What does reading the air mean in Japanese culture?
+  - What are common social mistakes foreigners make in Japan?
+  - How should I behave in Japanese homes and public spaces?
+  - What are the most important Japanese customs for missionaries?
+  - What basic Japanese phrases should I learn before arriving?
+lastReviewed: 2026-05-30
 ---
 
 ## 🏔️ Navigating with Cultural Humility

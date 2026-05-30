@@ -1,12 +1,31 @@
 ---
 title: Emergency, Disaster & Wildlife Security
-description: Immediate emergency procedures, emergency service contacts (119/110), earthquake survival metrics, and bear safety protocols.
-sidebar:
-  order: 7
-metadata:
-  audience: community
-  category: safety
-  chunk-type: header-atomic
+summary: Emergency procedures, disaster preparedness, earthquake safety, emergency contacts, and wildlife awareness for life in Japan.
+language: en
+tags:
+  - safety
+  - emergency
+  - disaster
+  - earthquake
+  - preparedness
+  - wildlife
+  - japan
+  - orientation
+category: operations
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - What should I do during an emergency in Japan?
+  - What emergency numbers should I know in Japan?
+  - How do I prepare for earthquakes in Sendai?
+  - What should be included in an emergency evacuation bag?
+  - How does YWAM Sendai prepare for natural disasters?
+  - What should I do if I encounter a bear in Tohoku?
+lastReviewed: 2026-05-30
 ---
 
 ## 🆘 Immediate Emergency Action
@@ -22,7 +41,7 @@ Japan's automated disaster warning systems are incredibly advanced. You must ins
 
 ## 🎒 The 3-Day Grab-and-Go Bag
 External disaster relief can take up to 72 hours to organize. Every community member should assemble or purchase a ready-made emergency backpack designed to sustain one adult for **1 to 3 days**. Ensure this bag is stored near your exit door for immediate access.
-* **Water & Food:** 1.5L to 6L of long-life water (the most critical item), alpha rice, canned food, energy bars, and dried bread.
+* **Water & Food:** long-life water (the most critical item), alpha rice, canned food, energy bars, and dried bread.
 * **Valuables:** Physical cash, your passport, a copy of your Residence Card, and your health insurance card.
 
 ## 🧻 Emergency Bag Sanitation & Tools

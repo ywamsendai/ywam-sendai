@@ -1,13 +1,32 @@
----  
-title: ハラスメント・虐待防止と報告プロトコル  
-description: 安全への明確なコミットメント、あらゆるハラスメントの防止、適切な境界線の維持、そして正式な報告手順。  
-sidebar:  
-  order: 7  
-metadata:  
-  audience: community  
-  category: safety  
-  chunk-type: header-atomic  
----  
+---
+title: 虐待防止と通報手順
+summary: 安全なコミュニティを維持するためのセーフガーディング基準、虐待防止の原則、通報責任、および対応手順。
+language: ja
+tags:
+  - safeguarding
+  - safety
+  - abuse-prevention
+  - reporting
+  - community
+  - leadership
+  - accountability
+  - protection
+category: operations
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - YWAM仙台ではセーフガーディング上の懸念にどのように対応しますか？
+  - 虐待や不適切な行為を目撃した場合はどうすればよいですか？
+  - YWAM仙台の虐待防止方針について教えてください。
+  - セーフガーディングの通報はどのように扱われますか？
+  - どのような行為がセーフガーディング違反とみなされますか？
+  - 虐待通報における守秘義務にはどのような限界がありますか？
+lastReviewed: 2026-05-30
+---
   
 ## 🛡️ あらゆるハラスメント・虐待を容認しない姿勢  
 YWAM Sendaiは、パワーハラスメント、モラルハラスメント、性的虐待、霊的虐待、その他あらゆる搾取や不適切な支配を容認しません。安全を守ることは、私たちのコミュニティにおける信頼の土台です。子どもたち、弱い立場に置かれやすい大人、そして訓練中の学生たちの安全を守ることは、組織の評判や個人の立場よりも優先される、私たちの大切な責任です。  

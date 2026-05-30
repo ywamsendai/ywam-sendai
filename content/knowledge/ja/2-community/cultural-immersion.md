@@ -1,13 +1,32 @@
----  
-title: 日本カルチャーへのイマージョン  
-description: 空気を読む感覚、日常のマナー、地域での生活ルール、そして実践的な日本語学習の土台。  
-sidebar:  
-  order: 3  
-metadata:  
-  audience: community  
-  category: cultural-immersion  
-  chunk-type: header-atomic  
----  
+---
+title: 日本文化への適応ガイド
+summary: 空気を読む力、日常マナー、地域社会のルール、日本で生活するための実践的な語学学習の基礎。
+language: ja
+tags:
+  - japan
+  - culture
+  - etiquette
+  - language
+  - community
+  - orientation
+  - newcomers
+  - sendai
+category: community
+audience:
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - 日本に来る前に知っておくべき文化的マナーは何ですか？
+  - 日本文化における「空気を読む」とはどういう意味ですか？
+  - 外国人が日本でよくする失敗にはどのようなものがありますか？
+  - 日本の家庭や公共の場ではどのように振る舞うべきですか？
+  - 宣教師にとって重要な日本の習慣は何ですか？
+  - 来日前に覚えておくべき基本的な日本語表現は何ですか？
+lastReviewed: 2026-05-30
+---
   
 ## 🏔️ 文化的な謙遜さを持って歩く  
 仙台で仕えていくうえで大切なのは、文化に対して謙虚であることです。どれだけ良い思いがあっても、相手の文化を十分に理解しないまま踏み込んでしまうと、思いはうまく届きません。まずはよく観察し、その土地の習慣や感覚を学び、自分の当たり前を絶対視しないことが大切です。最初から完璧である必要はありません。周りからの助言やフィードバックを受け取りながら、柔軟に学び続ける姿勢を大切にしています。  

@@ -1,13 +1,33 @@
----  
-title: お支払いチャンネル＆財務トラッキング  
-description: ベースの銀行口座、Wiseの設定、送金通知プロトコル、および日本国内での現金プロトコルに関するマスターリファレンス。  
-sidebar:  
-  order: 5  
-metadata:  
-  audience: incoming-current-staff-student-supporter  
-  category: finance  
-  chunk-type: header-atomic  
----  
+---
+title: 支払い方法・送金案内
+summary: 支払い方法、銀行口座情報、Wise送金、献金窓口、現金管理、および送金報告手続きについて説明します。
+language: ja
+tags:
+  - 支払い
+  - 献金
+  - 財務
+  - wise
+  - 銀行
+  - サポーター
+  - スタッフ
+  - 学生
+category: operations
+audience:
+  - public
+  - staff
+  - students
+  - prospective
+status: published
+priority: 2
+chatSuggestions:
+  - YWAM仙台への支払い方法を教えてください
+  - どの銀行口座に送金すればよいですか
+  - Wiseで送金する方法を教えてください
+  - YWAM仙台に献金するにはどうすればよいですか
+  - 送金報告には何を記載する必要がありますか
+  - 特定のスタッフを経済的に支援できますか
+lastReviewed: 2026-05-30
+---
   
 ## 💳 お支払い方法  
 YWAM Sendaiでは、スクール費用、スタッフのベース貢献金、ミニストリーへの献金を、利用者の所在地に応じた方法で受け付けています。日本国外からの送金には Wise を標準の方法として使用し、日本国内からは銀行振込を利用します。手数料や事務負担が大きいため、一般的な海外銀行からの国際送金は受け付けていません。  
