@@ -41,7 +41,7 @@ export interface DocumentFrontmatter {
 
   chatSuggestions: string[];
 
-  lastReviewed?: string;
+  lastReviewed?: Date;
 }
 
 export interface KnowledgeChunk {

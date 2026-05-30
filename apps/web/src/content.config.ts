@@ -20,8 +20,8 @@ const knowledge = defineCollection({
   category: z.enum([
     "about",
     "community",
-    "academic-tracks",
-    "theology",
+    "schools",
+    "staffing",
     "operations",
     "general",
   ]),
@@ -39,7 +39,7 @@ const knowledge = defineCollection({
 
   chatSuggestions: z.array(z.string()).default([]),
 
-  lastReviewed: z.string().optional(),
+  lastReviewed: z.coerce.date().optional(),
 }),
 });
 

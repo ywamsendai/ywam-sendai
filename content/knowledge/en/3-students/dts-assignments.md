@@ -11,7 +11,8 @@ tags:
   - students
   - tohoku
 category: schools
-audience: students
+audience:
+  - students
 status: published
 priority: 0
 chatSuggestions:

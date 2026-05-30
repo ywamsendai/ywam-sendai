@@ -16,7 +16,7 @@ audience:
   - students
   - prospective
 status: published
-priority: 3
+priority: 2
 chatSuggestions:
   - YWAM仙台とはどのような団体ですか？
   - YWAM仙台は何を信じていますか？
