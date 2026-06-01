@@ -2,9 +2,9 @@
 dist/
 # generated types
 apps/web/.astro/
-apps/guide-api/.astro/
+workers/api/.astro/
 apps/web/.wrangler/
-apps/guide-api/.wrangler/
+workers/api/.wrangler/
 
 # dependencies
 node_modules/

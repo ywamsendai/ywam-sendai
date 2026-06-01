@@ -5,7 +5,7 @@ import crypto from "crypto";
 
 const WORKER_URL =
   process.env.WORKER_URL ||
-  "https://ywam-guide-api.ywamsendai.workers.dev";
+  "https://api.ywamsendai.org";
 
 const MIN_CHUNK_LENGTH = 120;
 const MAX_CHUNK_LENGTH = 1800;

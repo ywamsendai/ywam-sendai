@@ -1,13 +1,13 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ywam-guide-api",
+  "name": "ywam-sendai-api",
   "main": "src/index.ts",
   "compatibility_date": "2026-05-29",
   "workers_dev": true,
   "vectorize": [
     {
       "binding": "VECTORIZE",
-      "index_name": "ywam-guide-index",
+      "index_name": "ywam-sendai-knowledge",
       "remote": true
     }
   ],

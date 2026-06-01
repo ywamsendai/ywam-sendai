@@ -4,10 +4,10 @@
   "packageManager": "pnpm@11.4.0",
 
   "scripts": {
-    "dev:web": "pnpm --filter web dev",
-    "build:web": "pnpm --filter web build",
+    "dev:web": "pnpm --filter ywam-sendai-web dev",
+    "build:web": "pnpm --filter ywam-sendai-web build",
 
-    "dev:api": "pnpm --filter guide-api dev",
-    "deploy:api": "pnpm --filter guide-api deploy"
+    "dev:api": "pnpm --filter ywam-sendai-api dev",
+    "deploy:api": "pnpm --filter ywam-sendai-api run deploy"
   }
 }
