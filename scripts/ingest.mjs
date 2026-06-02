@@ -182,13 +182,15 @@ function buildChunks(documentId, frontmatter, content) {
     subchunks.forEach((chunkText, i) => {
       const chunkId = crypto
         .createHash("sha1")
-        .update(`${filePath}:${section.heading}:${i}`)
+        .update(
+          `${documentId}:${frontmatter.language}:${section.heading}:${i}`
+        )
         .digest("hex");
 
       const chunk = {
         id: chunkId,
 
-        documentId: getDocumentId(filePath),
+        documentId,
         language: frontmatter.language,
 
         title: frontmatter.title,
@@ -306,7 +308,7 @@ async function getFiles() {
   if (cli.length) return cli;
 
   return await glob(
-    "../content/knowledge/**/*.{md,mdx}"
+    "content/knowledge/**/*.{md,mdx}"
   );
 }
 

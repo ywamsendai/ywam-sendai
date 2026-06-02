@@ -30,7 +30,6 @@ export async function askHandler(
         lang === "ja"
           ? "申し訳ありません。その情報は見つかりませんでした。"
           : "Sorry, I couldn't find that information.",
-      sources: [],
     });
   }
 
