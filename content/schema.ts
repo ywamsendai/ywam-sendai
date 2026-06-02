@@ -66,8 +66,12 @@ export interface KnowledgeChunk {
 
 export interface VectorMetadata {
   documentId: string;
+  chunkIndex: number;
+  documentTitle?: string;
 
   title: string;
+  summary?: string;
+
   section: string;
 
   language: Language;
@@ -75,6 +79,8 @@ export interface VectorMetadata {
   category: Category;
   tags: string[];
   audience: Audience[];
+
+  text: string;
 }
 
 export interface IngestRequest {

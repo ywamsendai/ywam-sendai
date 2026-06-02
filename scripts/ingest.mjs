@@ -228,11 +228,11 @@ async function embedAndSend(chunk) {
    DELETE OLD CHUNKS
 ---------------------------------------- */
 
-async function deleteExisting(path, lang) {
-  await fetch(`${WORKER_URL}/delete-by-path`, {
+async function deleteExisting(documentId, language) {
+  await fetch(`${WORKER_URL}/delete-document`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ path, lang }),
+    body: JSON.stringify({ documentId, language }),
   });
 }
 
@@ -278,7 +278,7 @@ async function getFiles() {
   if (cli.length) return cli;
 
   return await glob(
-    "../../../content/knowledge/**/*.{md,mdx}"
+    "../content/knowledge/**/*.{md,mdx}"
   );
 }
 

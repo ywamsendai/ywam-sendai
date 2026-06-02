@@ -1,12 +1,68 @@
-import type { Context } from "hono";
-import { z } from "zod";
+import type {
+  VectorMetadata,
+  Language,
+  IngestRequest,
+} from "../../../content/schema";
 
-export type AppContext = Context<{ Bindings: Env }>;
+export interface WorkerEnv {
+  VECTORIZE: VectorizeIndex;
+  AI: Ai;
+  INGEST_MANIFEST: KVNamespace;
+}
 
-export const Task = z.object({
-	name: z.string().openapi({ example: "lorem" }),
-	slug: z.string(),
-	description: z.string().optional(),
-	completed: z.boolean().default(false),
-	due_date: z.iso.date(),
-});
+/* ----------------------------------------
+   API REQUESTS
+---------------------------------------- */
+
+export interface AskRequest {
+  question: string;
+  lang: Language;
+  history?: ChatMessage[];
+}
+
+export interface DeleteDocumentRequest {
+  documentId: string;
+  language: Language;
+}
+
+/* ----------------------------------------
+   CHAT
+---------------------------------------- */
+
+export type ChatRole =
+  | "system"
+  | "user"
+  | "assistant";
+
+export interface ChatMessage {
+  role: ChatRole;
+  content: string;
+}
+
+/* ----------------------------------------
+   MANIFEST
+---------------------------------------- */
+
+export interface ManifestRecord {
+  chunkIds: string[];
+
+  updatedAt: string;
+
+  documentId: string;
+  language: Language;
+}
+
+/* ----------------------------------------
+   SOURCES
+---------------------------------------- */
+
+export interface SourceLink {
+  title: string;
+  path: string;
+}
+
+/* ----------------------------------------
+   RETRIEVAL
+---------------------------------------- */
+
+export type MatchMetadata = VectorMetadata;
