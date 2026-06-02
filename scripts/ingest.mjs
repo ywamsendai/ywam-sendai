@@ -18,15 +18,11 @@ function normalizeFilePath(file) {
   return file.replace(/\\/g, "/");
 }
 
-function detectLang(file) {
+function getDocumentId(file) {
   const normalized = normalizeFilePath(file);
-  return normalized.split("/").includes("ja") ? "ja" : "en";
-}
 
-function cleanPath(file) {
-  const normalized = normalizeFilePath(file);
   return normalized
-    .replace(/^.*\/content\/knowledge/, "")
+    .replace(/^.*\/content\/knowledge\/(en|ja)\//, "")
     .replace(/\.mdx?$/, "");
 }
 
@@ -41,27 +37,48 @@ function normalizeText(text) {
    FRONTMATTER NORMALISATION
 ---------------------------------------- */
 
-function normalizeFrontmatter(data, lang) {
+function normalizeFrontmatter(data) {
+  const language =
+    data.language === "ja"
+      ? "ja"
+      : data.language === "en"
+      ? "en"
+      : null;
+
+  if (!language) {
+    throw new Error(
+      `Invalid language "${data.language}". Must be "en" or "ja".`
+    );
+  }
+
   return {
     title: String(data.title || "Untitled").trim(),
     summary: String(data.summary || "").trim(),
 
-    language: lang,
+    language,
 
-    tags: Array.isArray(data.tags) ? data.tags : [],
+    tags: Array.isArray(data.tags)
+      ? data.tags
+      : [],
+
     category: data.category || "general",
 
-    audience: Array.isArray(data.audience) ? data.audience : [],
+    audience: Array.isArray(data.audience)
+      ? data.audience
+      : [],
 
     status: data.status || "published",
 
     priority: Number(data.priority || 0),
 
-    chatSuggestions: Array.isArray(data.chatSuggestions)
+    chatSuggestions: Array.isArray(
+      data.chatSuggestions
+    )
       ? data.chatSuggestions
       : [],
 
-    lastReviewed: data.lastReviewed || null,
+    lastReviewed:
+      data.lastReviewed || null,
   };
 }
 
@@ -150,7 +167,7 @@ function mergeTinySections(sections) {
    PIPELINE STEP: BUILD CHUNKS
 ---------------------------------------- */
 
-function buildChunks(filePath, frontmatter, content) {
+function buildChunks(documentId, frontmatter, content) {
   const sections = mergeTinySections(
     splitByHeadings(normalizeText(content))
   );
@@ -171,7 +188,7 @@ function buildChunks(filePath, frontmatter, content) {
       const chunk = {
         id: chunkId,
 
-        documentId: filePath,
+        documentId: getDocumentId(filePath),
         language: frontmatter.language,
 
         title: frontmatter.title,
@@ -256,18 +273,19 @@ async function processFile(file) {
 
   const { data, content } = matter(raw);
 
-  const lang = detectLang(filePath);
-  const clean = cleanPath(filePath);
+  const documentId =
+    getDocumentId(filePath);
 
-  const frontmatter = normalizeFrontmatter(data, data.language);
+  const frontmatter =
+    normalizeFrontmatter(data);
 
   console.log(
-    `📖 Processing: ${frontmatter.title} (${lang})`
+    `📖 Processing: ${frontmatter.title} (${frontmatter.language})`
   );
 
-  await deleteExisting(clean, lang);
+  await deleteExisting(documentId, frontmatter.language);
 
-  const chunks = buildChunks(clean, frontmatter, content);
+  const chunks = buildChunks(documentId, frontmatter, content);
 
   for (const chunk of chunks) {
     await embedAndSend(chunk);
