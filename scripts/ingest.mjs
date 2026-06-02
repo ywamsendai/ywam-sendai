@@ -201,19 +201,29 @@ function buildChunks(filePath, frontmatter, content) {
 async function embedAndSend(chunk) {
   const response = await fetch(`${WORKER_URL}/ingest`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       id: chunk.id,
       text: chunk.text,
 
       metadata: {
         documentId: chunk.documentId,
+        chunkIndex: chunk.chunkIndex,
+
         title: chunk.title,
+        summary: chunk.summary,
+
         section: chunk.section,
+
         language: chunk.language,
+
         category: chunk.category,
         tags: chunk.tags,
         audience: chunk.audience,
+
+        text: chunk.text,
       },
     }),
   });
@@ -249,7 +259,7 @@ async function processFile(file) {
   const lang = detectLang(filePath);
   const clean = cleanPath(filePath);
 
-  const frontmatter = normalizeFrontmatter(data, lang);
+  const frontmatter = normalizeFrontmatter(data, data.language);
 
   console.log(
     `📖 Processing: ${frontmatter.title} (${lang})`

@@ -87,7 +87,5 @@ export interface IngestRequest {
   id: string;
   text: string;
 
-  chunk: KnowledgeChunk;
-
   metadata: VectorMetadata;
 }

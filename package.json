@@ -2,12 +2,14 @@
   "name": "ywam-sendai-platform",
   "private": true,
   "packageManager": "pnpm@11.4.0",
-
   "scripts": {
     "dev:web": "pnpm --filter ywam-sendai-web dev",
     "build:web": "pnpm --filter ywam-sendai-web build",
-
     "dev:api": "pnpm --filter ywam-sendai-api dev",
     "deploy:api": "pnpm --filter ywam-sendai-api run deploy"
+  },
+  "devDependencies": {
+    "glob": "^13.0.6",
+    "gray-matter": "^4.0.3"
   }
 }
