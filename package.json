@@ -6,7 +6,8 @@
     "dev:web": "pnpm --filter ywam-sendai-web dev",
     "build:web": "pnpm --filter ywam-sendai-web build",
     "dev:api": "pnpm --filter ywam-sendai-api dev",
-    "deploy:api": "pnpm --filter ywam-sendai-api run deploy"
+    "deploy:api": "pnpm --filter ywam-sendai-api run deploy",
+    "ingest": "node scripts/ingest.mjs"
   },
   "devDependencies": {
     "glob": "^13.0.6",
