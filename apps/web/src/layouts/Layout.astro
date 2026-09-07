@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import ConnectHub from "../components/ConnectHub.astro";
 
 const {
   title = "YWAM Sendai",
@@ -27,7 +26,6 @@ const switchLabel = isEnglish ? "日本語" : "English";
 const navAria = isEnglish ? "Site navigation" : "サイトナビゲーション";
 
 const applyLabel = isEnglish ? "Apply" : "申込み";
-const askAiLabel = isEnglish ? "Ask AI" : "AIに相談";
 
 const footerExploreLabel = isEnglish ? "Explore" : "ページ";
 const footerConnectLabel = isEnglish ? "Connect" : "つながる";
@@ -92,13 +90,6 @@ const emailUrl = "mailto:hello@ywamsendai.org";
         </a>
 
         <nav class="site-nav" aria-label={navAria}>
-          <button
-            type="button"
-            class="site-nav-link open-hub-trigger"
-          >
-            {askAiLabel}
-          </button>
-
           <a
             href={applyUrl}
             onclick={`saveLanguagePreference('${lang}')`}
@@ -121,8 +112,6 @@ const emailUrl = "mailto:hello@ywamsendai.org";
     <main id="main-content">
       <slot />
     </main>
-
-    <ConnectHub lang={lang} />
 
     <footer class:list={["site-footer", { "snap-start": isSnap }]}>
       <div class="container">
@@ -202,11 +191,6 @@ const emailUrl = "mailto:hello@ywamsendai.org";
           <div class="site-footer-column">
             <p class="site-footer-heading">{footerConnectLabel}</p>
             <ul class="site-footer-links">
-              <li>
-                <button type="button" class="site-footer-button open-hub-trigger">
-                  {askAiLabel}
-                </button>
-              </li>
               <li>
                 <a href={handbookUrl} target="_blank" rel="noopener noreferrer">
                   {handbookLabel}
